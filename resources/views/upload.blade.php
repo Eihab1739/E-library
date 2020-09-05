@@ -12,7 +12,7 @@
                    <form action="{{route('upload.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="ISBN">ISBN </label>
+                        <label for="ISBN">Enter ISBN </label>
                         <input type="number" name="ISBN" id="ISBN"
                         class="form-control">
 
