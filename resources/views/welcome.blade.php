@@ -16,6 +16,7 @@
 
                         </div>
                         <div class="col-md-9 text-center">
+                            ISBN: {{$book->ISBN}}
                             <h2>{{$book->title}}</h2>
                             <p>{{$book->info}}</p>
                             <br/>
