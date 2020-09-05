@@ -18,14 +18,17 @@ Route::get('/','PagesController@index')->name('index');
 Route::get('/category/{id}','PagesController@viewcategory')->name('category');
 Route::get('/book/{id}','PagesController@viewbook')->name('book');
 Route::post('/comment/{id}',['uses'=>'PagesController@addcomment','middleware'=>'auth'])->name('comment');
+Route::resource('books','booksController');
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 Auth::routes();
+Route::group(['middleware'=>'roles','roles'=>'admins'],function(){
+Route::resource('/upload','UploadController');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/upload',['uses'=>'UploadController@index', 'middleware'=>'roles','roles'=>['admins','users']])->name('upload');
-Route::post('/upload',['uses'=>'UploadController@upload', 'middleware'=>'roles','roles'=>['admins','users']])->name('upload.save');
+});
+
 
 
 Route::group(['prefix' => 'admin','middleware'=>'roles','roles'=>'admins'], function () {

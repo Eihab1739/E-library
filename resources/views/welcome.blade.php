@@ -21,7 +21,9 @@
                             <br/>
                             Author : {{$book->author}}  <br/>
                             <a href="{{asset('storage/books/'.$book->bookfile)}}" class="btn btn-primary">Download </a>
-                            <a href="{{route('book',$book->id)}}" class="btn btn-info">More info</a>
+                            <a href="{{route('book',$book->id)}}" class="btn btn-info">More info</a> <br/>
+                            COPIES:{{$book->copies}}
+
 
                         </div>
                     </div>

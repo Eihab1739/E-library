@@ -16,11 +16,13 @@
 
                         </div>
                         <div class="col-md-9 text-center">
+                            <h2>{{$book->ISBN}}</h2>
                             <h2>{{$book->title}}</h2>
                             <p>{{$book->info}}</p>
                             <br/>
                             Author : {{$book->author}}  <br/>
                             <a href="{{asset('storage/books/'.$book->bookfile)}}" class="btn btn-primary">Download </a>
+                            <p>{{$book->copies}}</p>
                         </div>
                     </div>
                     <hr>

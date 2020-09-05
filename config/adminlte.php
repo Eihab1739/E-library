@@ -252,6 +252,21 @@ return [
 
             'label_color' => 'success',
         ],
+
+        [
+            'text'    => 'Books',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' =>[
+                [
+                    'text' => 'Upload Book',
+                    'url'  => '/upload',
+                ],
+                [
+                    'text' => 'view Books',
+                    'url'  => '/books',
+                    ]
+                ]
+            ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

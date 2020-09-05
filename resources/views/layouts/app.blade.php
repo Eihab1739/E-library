@@ -50,9 +50,6 @@
                                 </li>
                             @endif
                         @else
-                        <li class=" float-sm-left ml-5 p-3">  <a   href="{{route('upload')}}" > Upload
-
-                        </a></li>
 
                             <li>
 
