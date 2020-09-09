@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'E_library',
+    'title' => 'E-library',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,13 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Electronic</b>Library',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Admin Panel</b>',
+    'logo_img' => '',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
-
+    'logo_img_alt' => '',    
     /*
     |--------------------------------------------------------------------------
     | User Menu
@@ -85,8 +84,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
 
     /*
@@ -126,7 +125,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-purple elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -145,7 +144,7 @@ return [
     */
 
     'sidebar_mini' => true,
-    'sidebar_collapse' => false,
+    'sidebar_collapse' => true,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
@@ -241,97 +240,131 @@ return [
         [
             'text'        => 'Users',
             'url'         => 'admin/users',
-            'icon'        => 'user',
+            'icon'        => 'fa fa-user mr-1',
 
             'label_color' => 'success',
         ],
         [
             'text'        => 'Categories',
             'url'         => 'admin/categories',
-            'icon'        => 'list',
+            'icon'        => 'fa fa-list mr-1',
 
             'label_color' => 'success',
         ],
 
         [
             'text'    => 'Books',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fa fa-book mr-1',
             'submenu' =>[
                 [
                     'text' => 'Upload Book',
                     'url'  => '/upload',
+                    'icon' => 'fa fa-upload mr-1'
                 ],
                 [
-                    'text' => 'view Books',
+                    'text' => 'View Books',
                     'url'  => '/books',
+                    'icon' => 'fa fa-eye mr-1'
                     ]
                 ]
-            ],
+        ],
+        [
+            'text'    => 'Exams',
+            'icon'    => 'fa fa-file-alt mr-1',
+            'submenu' =>[
+                [
+                    'text' => 'Upload Exam',
+                    'url'  => '',
+                    'icon' => 'fa fa-upload mr-1'
+                ],
+                [
+                    'text' => 'View Exams',
+                    'url'  => '/exams',
+                    'icon' => 'fa fa-eye mr-1'
+                    ]
+                ]
+        ],
+        [
+            'text'    => 'Projects',
+            'icon'    => 'fa fa-box-open mr-1',
+            'submenu' =>[
+                [
+                    'text' => 'Upload Project',
+                    'url'  => '',
+                    'icon' => 'fa fa-upload mr-1'
+                ],
+                [
+                    'text' => 'View Projects',
+                    'url'  => '/projects',
+                    'icon' => 'fa fa-eye mr-1'
+                    ]
+                ]
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-user-edit mr-1',
         ],
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-lock mr-1',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            // 'text'    => 'multilevel',
+            // 'icon'    => 'fas fa-fw fa-share mr-1',
+            // 'submenu' => [
+            //     [
+            //         'text' => 'level_one',
+            //         'url'  => '#',
+            //     ],
+            //     [
+            //         'text'    => 'level_one',
+            //         'url'     => '#',
+            //         'submenu' => [
+            //             [
+            //                 'text' => 'level_two',
+            //                 'url'  => '#',
+            //             ],
+            //             [
+            //                 'text'    => 'level_two',
+            //                 'url'     => '#',
+            //                 'submenu' => [
+            //                     [
+            //                         'text' => 'level_three',
+            //                         'url'  => '#',
+            //                     ],
+            //                     [
+            //                         'text' => 'level_three',
+            //                         'url'  => '#',
+            //                     ],
+            //                 ],
+            //             ],
+            //         ],
+            //     ],
+            //     [
+            //         'text' => 'level_one',
+            //         'url'  => '#',
+            //     ],
+            // ],
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*

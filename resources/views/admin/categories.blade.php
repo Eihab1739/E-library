@@ -2,50 +2,29 @@
 @section('title')
 
 @section('content')
-<div class="box">
-    <div class="box-header with-border">
-        <h3 class="box-title">Categories</h3>
-
-      <div class="box-tools pull-right">
-          <a href="{{route('categories.create')}}" class="btn btn-primary pull-right">Add Category</a>
-        <!-- Buttons, labels, and many other things can be placed here! -->
-        <!-- Here is a label for example -->
+  <div class="container">
+      <div class="p-4 card" style="border-top: 4px solid var(--indigo)">
+          <h4><i class="mr-1 fa fa-list"></i> Categories</h4>
+          <hr>                  
+          <a href="{{route('categories.create')}}" class="btn bg-indigo">Add Category</a>          
+          <h5 class="my-4"><i class="mr-1 fa fa-list"></i> All Categoreis</h5>          
+          @if (count($categories)>0)            
+            <div class="row">
+              @foreach ($categories as $category )
+                <div class="col-sm-6 col-md-4 col-lg-3">                  
+                  <div class="text-center card rounded-0" style="border-top: 4px solid var(--indigo)">                    
+                    <div class="card-body">
+                      <div class="card-title">
+                        #{{$category->id}}
+                      </div>
+                      {{$category->name}}
+                    </div>
+                  </div>
+                </div>              
+              @endforeach
+            </div>
+          @endif
       </div>
-      <!-- /.box-tools -->
-    </div>
-    <!-- /.box-header -->
-    <div class="box-body">
-
-
-    <!-- /.box-body -->
-    <table class="table">
-        <thead>
-            <tr>
-                <td># </td>
-                <td>Name</td>
-
-            </tr>
-        </thead>
-        @if (count($categories)>0)
-        @foreach ($categories as $category )
-        <tr>
-            <td>{{$category->id}}</td>
-            <td>{{$category->name}}</td>
-        </tr>
-
-        @endforeach
-
-        @endif
-
-    </table>
-</div>
-
-  <!-- /.box -->
-
-
-
-
-
-
-
-@stop
+  </div>  
+  @stop
+@endsection
