@@ -2,46 +2,51 @@
 @section('title')
 
 @section('content')
-<div class="box">
-    <div class="box-header with-border">
-        <h3 class="box-title">Users</h3>
+<div class="container">
+    <div class="card">
+      <h3 class="card-header"><i class="fa fa-user mr-1"></i> Users</h3>
 
-      <div class="box-tools pull-right">
-          <a href="#" class="btn btn-primary pull-right">Add User</a>
-        <!-- Buttons, labels, and many other things can be placed here! -->
-        <!-- Here is a label for example -->
+      <div class="card-body">
+          <a href="#" class="btn bg-indigo">Add User</a>          
+          <div class="table-responsive">
+            <h5 class="my-4"><i class="fa fa-users mr-1"></i>All Users</h5>
+            <table class="table table-hover mt-4">
+              <thead class="thead bg-indigo">              
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+              </thead>
+              <tbody>
+                @if (count($users)>0)
+                  @foreach ($users as $user )
+                    <tr>
+                      <th scope="row">{{$user->id}}</th>
+                      <td>{{$user->name}}</td>
+                      <td>{{$user->email}}</td>
+                      <td><button class="btn btn-danger rounded-0" onclick="confirm('Do you really want to delete this ?')">Delete</button></td>
+                    </tr>              
+                  @endforeach
+                @endif
+              </tbody>
+            </table>
+        </div>
       </div>
-      <!-- /.box-tools -->
     </div>
-    <!-- /.box-header -->
-    <div class="box-body">
+        
+        {{-- @if (count($users)>0)
+          @foreach ($users as $user )
+        
+            {{$user->id}}
+            {{$user->name}}
+            {{$user->email}}
+         --}}
 
-
-    <!-- /.box-body -->
-    <table class="table">
-        <thead>
-            <tr>
-                <td># </td>
-                <td>Name</td>
-                <td>Email</td>
-            </tr>
-        </thead>
-        @if (count($users)>0)
-        @foreach ($users as $user )
-        <tr>
-            <td>{{$user->id}}</td>
-            <td>{{$user->name}}</td>
-            <td>{{$user->email}}</td>
-        </tr>
-
-        @endforeach
-
-        @endif
-
-    </table>
+          {{-- @endforeach
+        @endif --}}
 </div>
-
-  <!-- /.box -->
 
 
 
