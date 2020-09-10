@@ -6,10 +6,10 @@
 
             <div class="card">
                 <div class="card-header">UpdateFile</div>
-                @include('partials.alerts')
+
 
                 <div class="card-body">
-                   <form action="{{route('upload.update',$book->id)}}" method="Post" enctype="multipart/form-data">
+                        <form action="{{route('upload.update',$book->id)}}" method="Post" enctype="multipart/form-data">
 
                        @method('put')
                     @csrf

@@ -18,15 +18,7 @@ class UploadController extends Controller
         return view('upload');
     }
     public function upload(Request $request){
-        $this->validate($request,[
-            'title'=>'required',
-            'author'=>'required',
-            'info'=>'required',
-            'copies'=>'required',
-            'image'=>'required|image',
-            'book'=>'required|mimes:pdf'
 
-               ]);
                if ($request->hasFile('image')) {
                    $imageExt=$request->file('image')->getClientOriginalExtension();
                   $imageName=time().'thumbnails'.$imageExt;
@@ -84,6 +76,7 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'ISBN'=>'required',
             'title'=>'required',
             'author'=>'required',
             'info'=>'required',
@@ -155,6 +148,16 @@ class UploadController extends Controller
     public function update(Request $request, Book $book)
 
     {
+        $this->validate($request,[
+            'ISBN'=>'required',
+            'title'=>'required',
+            'author'=>'required',
+            'info'=>'required',
+            'copies'=>'required',
+            'image'=>'required|image',
+            'book'=>'required|mimes:pdf'
+
+               ]);
 
                if ($request->hasFile('image')) {
                    $imageExt=$request->file('image')->getClientOriginalExtension();

@@ -8,7 +8,6 @@
                 <div class="card-header">Upload File</div>
 
                 <div class="card-body">
-                    @include('partials.alerts')
                    <form action="{{route('upload.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
