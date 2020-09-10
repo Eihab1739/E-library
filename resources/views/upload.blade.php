@@ -3,37 +3,57 @@
 @section('title')
 
 @section('content')
-
-            <div class="card">
-                <div class="card-header">Upload File</div>
-
-                <div class="card-body">
-                    @include('partials.alerts')
-                   <form action="{{route('upload.store')}}" method="POST" enctype="multipart/form-data">
+    <div class="container pb-4" style="max-width: 800px">
+        <div class="card" style="border-top: 5px solid var(--indigo)">
+            <div class="card-header h5"><i class="fa fa-book"></i> Book Upload</div>
+            <div class="card-body">
+                @include('partials.alerts')
+                <form action="{{route('upload.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
-                        <label for="ISBN">Enter ISBN </label>
-                        <input type="number" name="ISBN" id="ISBN"
-                        class="form-control">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="border px-4 py-2 mb-3 rounded">
+                                <div class="form-group">
+                                    <label for="image">Book Cover</label>
+                                    <input type="file" name="image" id="image"
+                                    class="form-control border-0 pl-0">
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-sm-12 col-md-6">
+                            <div class="border px-4 py-2 mb-3 rounded">
+                                <div class="form-group">
+                                    <label for="book">Add Book (pdf)</label>
+                                    <input type="file" name="book" id="book"
+                                    class="form-control border-0 pl-0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    </div>
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title" placeholder="Enter Title"
-                        class="form-control">
+                        <input type="number" name="ISBN" id="ISBN" class="form-control" placeholder="Book ISBN">
                     </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">                        
+                                <input type="text" name="title" id="title" placeholder="Book Title"
+                                class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="author" id="author" placeholder="Book Author"
+                                class="form-control">
+                            </div>
+                        </div>
+                    </div>    
                     <div class="form-group">
-                        <label for="author">author</label>
-                        <input type="text" name="author" id="author" placeholder="Enter the name of author"
-                        class="form-control">
+                        <textarea name="info" id="info" class="form-control" placeholder="Book Description"></textarea>
                     </div>
-
+                    
                     <div class="form-group">
-                        <label for="info">information</label>
-                        <textarea name="info" id="info" placeholder="Enter some information"
-                        class="form-control"> </textarea>
-                    </div>
-                    <div class="form-group">
+                        <label>Book Category</label>
                         <select name="category" id="category" class="form-control">
                             @if (count($allcategories)>0)
                             @foreach ($allcategories as $category)
@@ -44,24 +64,16 @@
                             @endif
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="image">Image</label>
-                        <input type="file" name="image" id="image"
-                        class="form-control">
-
-                    </div>
-                    <div class="form-group">
-                        <label for="book">Add Book </label>
-                        <input type="file" name="book" id="book"
-                        class="form-control">
-
-                    </div>
-                    <div class="form-group">
-                        <label for="copies">Copies </label>
+                    
+                    
+                    <div class="form-group">                        
                         <input type="number" name="copies" id="copies" min="1" max="100"
-                        class="form-control">
-
+                        class="form-control" placeholder="Number of Copies">
                     </div>
+                    <!--    
+                        avilability should not be here it shold have a defualt value of avilable 
+                        and then it will be calculated from a function    
+                    -->
                     <div class="form-group">
                         <label for="available">Availability </label>
                         <select  name="available" id="available"
@@ -69,19 +81,12 @@
                         <option value="available">Available</option>
                         <option value="unavailable">Un Available</option>
                         </select>
-
-
-
                     </div>
 
-                    <button type="submit" name="upload" class="btn btn-block">Upload Book</button>
-
-
-
-
-                </div>
-            </form>
+                    <button type="submit" name="upload" class="btn bg-indigo btn-block">Upload Book</button>
+                </form>
             </div>
-
+        </div>
+    </div>
 
 @endsection

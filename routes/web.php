@@ -29,11 +29,10 @@ Route::resource('/upload','UploadController');
 
 });
 
-
-
 Route::group(['prefix' => 'admin','middleware'=>'roles','roles'=>'admins'], function () {
     Route::resource('users','AdminUsersController');
     Route::resource('categories','AdminCategoryController');
-
-
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
