@@ -24,7 +24,7 @@ class examsController extends Controller
     public function viewexam(exam $exam)
     {
 
-       return view('exams\single_exam')->with('exam',$exam);
+       return view('exams.single_exam')->with('exam',$exam);
     }
 
 
@@ -91,7 +91,7 @@ class examsController extends Controller
     public function show($id)
     {
         $exam= exam::find($id);
-        return view('exams\single_exam')->with('exam',$exam);
+        return view('exams.single_exam')->with('exam',$exam);
     }
 
     /**
