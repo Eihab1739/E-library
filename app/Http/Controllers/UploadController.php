@@ -17,53 +17,6 @@ class UploadController extends Controller
     {
         return view('upload');
     }
-    public function upload(Request $request){
-        $this->validate($request,[
-            'title'=>'required',
-            'author'=>'required',
-            'info'=>'required',
-            'copies'=>'required',
-            'image'=>'required|image',
-            'book'=>'required|mimes:pdf'
-
-               ]);
-               if ($request->hasFile('image')) {
-                   $imageExt=$request->file('image')->getClientOriginalExtension();
-                  $imageName=time().'thumbnails'.$imageExt;
-                  $request->file('image')->storeAs('thumbnails',$imageName);
-               }
-               if ($request->hasFile('book')) {
-                $bookExt=$request->file('book')->getClientOriginalExtension();
-               $bookName=time().'book.'.$bookExt;
-               $request->file('book')->storeAs('books',$bookName);
-
-            }
-            $book = new Book();
-            $book->title=$request->input('title');
-            $book->author=$request->input('author');
-            $book->info=$request->input('info');
-            $book->copies=$request->input('copies');
-
-            $book->image=$imageName;
-            $book->bookfile=$bookName;
-            $book->user_id=Auth::user()->id ;
-            $book->category_id=$request->input('category') ;
-
-
-            $book->save();
-            return redirect(route('upload'));
-
-
-
-
-
-
-
-
-
-
-
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -84,6 +37,7 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'ISBN'=>'required',
             'title'=>'required',
             'author'=>'required',
             'info'=>'required',
@@ -139,9 +93,10 @@ class UploadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit(Book $book )
     {
         return view('updatebook')->with('book',$book);
+
 
     }
 
@@ -152,9 +107,22 @@ class UploadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request,  $book)
 
     {
+        $this->validate($request,[
+            'ISBN'=>'required',
+            'title'=>'required',
+            'author'=>'required',
+            'info'=>'required',
+            'copies'=>'required',
+            'image'=>'required|image',
+            'book'=>'required|mimes:pdf'
+
+               ]);
+               $book=Book::find($book);
+
+
 
                if ($request->hasFile('image')) {
                    $imageExt=$request->file('image')->getClientOriginalExtension();

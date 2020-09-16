@@ -19,19 +19,19 @@
     <div class="uk-background-primary uk-light">
         <nav class="uk-navbar-container uk-navbar-transparent">
             <div class="uk-container">
-                <div class="uk-navbar" data-uk-navbar>                    
-                    <a class="uk-navbar-item uk-logo" href="/">                                                
-                        <i class="fas fa-book-reader uk-margin-small-right"></i> 
-                        Library 
+                <div class="uk-navbar" data-uk-navbar>
+                    <a class="uk-navbar-item uk-logo" href="/">
+                        <i class="fas fa-book-reader uk-margin-small-right"></i>
+                        Library
                     </a>
-                    <div class="uk-navbar-center uk-visible@m">                        
+                    <div class="uk-navbar-center uk-visible@m">
                         <ul class="uk-navbar-nav">
                             <li><a href="/">Home</a></li>
-                            <li><a href="#">Books</a></li>                            
+                            <li><a href="#">Books</a></li>
                         </ul>
                     </div>
-                    <a class="uk-navbar-toggle uk-navbar-right uk-hidden@m" uk-navbar-toggle-icon href="#offcanvas" uk-toggle></a>                                                
-                    <div class="uk-navbar-right uk-visible@m">                                                
+                    <a class="uk-navbar-toggle uk-navbar-right uk-hidden@m" uk-navbar-toggle-icon href="#offcanvas" uk-toggle></a>
+                    <div class="uk-navbar-right uk-visible@m">
                         <ul class="uk-navbar-nav">
                             <!-- Authentication Links -->
                             @guest
@@ -72,34 +72,34 @@
                             <li>
 								<a href="#"><i class="fa fa-flag mx-1"></i> Language</a>
 								<div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" uk-dropdown="offset: 10;pos: bottom-left">
-									<ul class="uk-nav uk-navbar-dropdown-nav">										
+									<ul class="uk-nav uk-navbar-dropdown-nav">
 										<li><a href="#"> English</a></li>
-										<li><a href="#"> Arabic</a></li>																				
+										<li><a href="#"> Arabic</a></li>
 									</ul>
 								</div>
 							</li>
                         </ul>
-                        
+
                     </div>
                 </div>
             </div>
-        </nav>        
+        </nav>
     </div>
 
-    <div class="uk-offcanvas-content">                    
+    <div class="uk-offcanvas-content">
         <!-- This is the off-canvas -->
         <div id="offcanvas" uk-offcanvas="mode: slide;">
             <div class="uk-offcanvas-bar">
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <div class="uk-flex uk-flex-column">                    
-                    <a class="uk-navbar-item uk-logo" href="/">                                                
-                        <i class="fas fa-book-reader uk-margin-small-right"></i> 
-                        Library 
+                <div class="uk-flex uk-flex-column">
+                    <a class="uk-navbar-item uk-logo" href="/">
+                        <i class="fas fa-book-reader uk-margin-small-right"></i>
+                        Library
                     </a>
-                
+
                     <ul class="uk-nav uk-flex uk-flex-column">
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Books</a></li>                                                                                        
+                        <li><a href="#">Books</a></li>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -120,8 +120,8 @@
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         <li>
-                                            <a class="uk-rounded" href="{{ route('logout') }}"                                            
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">                                                                                                
+                                            <a class="uk-rounded" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                 {{ __('Log Out') }}
                                             </a>
 
@@ -134,16 +134,16 @@
                                 </div>
                             </li>
                         @endguest
-                        <br>    
+                        <br>
                         <li class="uk-parent">
                                 <a href="#"><i class="fa fa-flag"></i> Language</a>
                                 <ul class="uk-nav-sub">
                                     <li><a href="#">English</a></li>
                                     <li><a href="#">Arabic</a></li>
-                                </ul>                            
+                                </ul>
                         </li>
                     </ul>
-                        
+
                 </div>
             </div>
         </div>
@@ -163,7 +163,7 @@
                     <a target="_blank" href="https://facebook.com/omer.mahdi.90"
                        class="uk-icon-button uk-margin-small-right" data-uk-icon="facebook"></a>
                     <a target="_blank" href="https://github.com/Torrix"
-                       class="uk-icon-button uk-margin-small-right" data-uk-icon="github"></a>                    
+                       class="uk-icon-button uk-margin-small-right" data-uk-icon="github"></a>
                     <a target="_blank" href="https://twitter.com/mattfletcher"
                         class="uk-icon-button uk-margin-small-right" data-uk-icon="twitter"></a>
                     <a target="_blank" href="https://github.com/Torrix"
