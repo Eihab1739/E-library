@@ -3,21 +3,12 @@
 @section('title')
 
 @section('content')
-<<<<<<< HEAD
-
-            <div class="card">
-                <div class="card-header">Upload File</div>
-
-                <div class="card-body">
-                   <form action="{{route('upload.store')}}" method="POST" enctype="multipart/form-data">
-=======
     <div class="container pb-4" style="max-width: 800px">
         <div class="card" style="border-top: 5px solid var(--indigo)">
             <div class="card-header h5"><i class="fa fa-book"></i> Book Upload</div>
             <div class="card-body">
                 @include('partials.alerts')
                 <form action="{{route('upload.store')}}" method="POST" enctype="multipart/form-data">
->>>>>>> 3ce2d7c75e8d3a4c8ce7ef37af3e5e0f5881ee6d
                     @csrf
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
@@ -28,7 +19,7 @@
                                     class="form-control border-0 pl-0">
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="border px-4 py-2 mb-3 rounded">
                                 <div class="form-group">
@@ -45,7 +36,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group">                        
+                            <div class="form-group">
                                 <input type="text" name="title" id="title" placeholder="Book Title"
                                 class="form-control">
                             </div>
@@ -56,11 +47,11 @@
                                 class="form-control">
                             </div>
                         </div>
-                    </div>    
+                    </div>
                     <div class="form-group">
                         <textarea name="info" id="info" class="form-control" placeholder="Book Description"></textarea>
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Book Category</label>
                         <select name="category" id="category" class="form-control">
@@ -73,15 +64,15 @@
                             @endif
                         </select>
                     </div>
-                    
-                    
-                    <div class="form-group">                        
+
+
+                    <div class="form-group">
                         <input type="number" name="copies" id="copies" min="1" max="100"
                         class="form-control" placeholder="Number of Copies">
                     </div>
-                    <!--    
-                        avilability should not be here it shold have a defualt value of avilable 
-                        and then it will be calculated from a function    
+                    <!--
+                        avilability should not be here it shold have a defualt value of avilable
+                        and then it will be calculated from a function
                     -->
                     <div class="form-group">
                         <label for="available">Availability </label>

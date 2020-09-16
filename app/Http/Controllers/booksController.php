@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use Illuminate\Support\Facades\Auth;
+use App\Category;
+
+
 
 class booksController extends Controller
 {
@@ -117,7 +121,7 @@ class booksController extends Controller
 
 
             $book->save();
-            return redirect(route('upload'))->with('msg','Upload Done');
+            return redirect(route('upload'))->with('msg','Update Done');
 
         return redirect(route('books'));
 

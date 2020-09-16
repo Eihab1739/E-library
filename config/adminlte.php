@@ -50,7 +50,7 @@ return [
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => '',    
+    'logo_img_alt' => '',
     /*
     |--------------------------------------------------------------------------
     | User Menu
@@ -274,12 +274,12 @@ return [
             'submenu' =>[
                 [
                     'text' => 'Upload Exam',
-                    'url'  => '',
+                    'url'  => 'admin/exams/create',
                     'icon' => 'fa fa-upload mr-1'
                 ],
                 [
                     'text' => 'View Exams',
-                    'url'  => '/exams',
+                    'url'  => 'admin/exams',
                     'icon' => 'fa fa-eye mr-1'
                     ]
                 ]
@@ -290,12 +290,12 @@ return [
             'submenu' =>[
                 [
                     'text' => 'Upload Project',
-                    'url'  => '',
+                    'url'  => 'admin/projects/create',
                     'icon' => 'fa fa-upload mr-1'
                 ],
                 [
                     'text' => 'View Projects',
-                    'url'  => '/projects',
+                    'url'  => 'admin/projects',
                     'icon' => 'fa fa-eye mr-1'
                     ]
                 ]

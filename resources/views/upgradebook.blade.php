@@ -10,9 +10,9 @@
 
                 <div class="card-body">
                         <form action="{{route('upload.update',$book->id)}}" method="Post" enctype="multipart/form-data">
-                    @csrf
-                    @method('put')
 
+                       @method('put')
+                    @csrf
                     <div class="form-group">
                         <label for="ISBN">ISBN </label>
                         <input type="number" name="ISBN" id="ISBN" min="1" max="100" value="{{$book->ISBN}}"

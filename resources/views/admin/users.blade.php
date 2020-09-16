@@ -7,11 +7,11 @@
       <h3 class="card-header"><i class="fa fa-user mr-1"></i> Users</h3>
 
       <div class="card-body">
-          <a href="#" class="btn bg-indigo">Add User</a>          
+          <a href="{{route('createuser.create')}}" class="btn bg-indigo">Add User</a>
           <div class="table-responsive">
             <h5 class="my-4"><i class="fa fa-users mr-1"></i>All Users</h5>
             <table class="table table-hover mt-4">
-              <thead class="thead bg-indigo">              
+              <thead class="thead bg-indigo">
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Name</th>
@@ -27,7 +27,7 @@
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
                       <td><button class="btn btn-danger rounded-0" onclick="confirm('Do you really want to delete this ?')">Delete</button></td>
-                    </tr>              
+                    </tr>
                   @endforeach
                 @endif
               </tbody>
@@ -35,10 +35,10 @@
         </div>
       </div>
     </div>
-        
+
         {{-- @if (count($users)>0)
           @foreach ($users as $user )
-        
+
             {{$user->id}}
             {{$user->name}}
             {{$user->email}}

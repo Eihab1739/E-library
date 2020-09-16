@@ -3,11 +3,11 @@
 @section('content')
     <div class="container">
         <div class="card rounded-0" style="border-top: 5px solid var(--indigo)">
-            <h4 class="card-header"><i class="fa fa-book mr-1"></i> All Books</h4>
+            <h4 class="card-header"><i class="fa fa-book mr-1"></i> All Projects</h4>
             <div class="card-body">
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-indigo">
-                        <tr>
+                  {{--      <tr>
                             <th>Cover</th>
                             <th>ISBN</th>
                             <th>Title</th>
@@ -18,25 +18,24 @@
                             <th>Delete</th>
                             <th>Go To</th>
                         </tr>
-                        </thead>
+                        </thead>--}}
                         <tbody>
                             {{-- loop throw the books table to view all the books  --}}
-                            @foreach ($books as $book )
+                            @foreach ($projects as $project)
                                 <tr>
-                                    <td scope="row"><img src="{{asset('storage/thumbnails/'.$book->image)}}" width="50px" height="50px" /></td>
-                                    <td>{{$book->ISBN}}</td>
-                                    <td>{{$book->title}}</td>
-                                    <td>{{$book->author}}</td>
-                                    <td>{{$book->copies}}</td>
+
+                                    <td>{{$project->title}}</td>
+                                    <td>{{$project->maker}}</td>
+                                    <td>{{$project->examyear}}</td>
                                     <td>-</td>
                                     {{-- <td>{{$book->avilability}}</td> will be added later \|\(^_^)/|/ --}}
-                                    <form class="" action="{{route('books.destroy',$book->id)}}" method="POST">
+                                    <form class="" action="{{route('projects.destroy',$project->id)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <td><a href="{{route('books.edit',$book->id)}}" class="btn btn-warning text-white rounded-0">Edit</a></td>
+                                        <td><a href="{{route('projects.edit',$project->id)}}" class="btn btn-warning text-white rounded-0">Edit</a></td>
                                         <td><button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?')">Delete</button></td>
                                     </form>
-                                    <td><a href="{{route('book',$book->id)}}" class="btn bg-success rounded-0">More</a></td>
+                                    <td><a href="{{route('projects.show',$project->id)}}" class="btn bg-success rounded-0">More</a></td>
                                 </tr>
                             @endforeach
                         </tbody>
