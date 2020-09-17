@@ -7,28 +7,20 @@
             <div class="card-body">
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-indigo">
-                  {{--      <tr>
-                            <th>Cover</th>
-                            <th>ISBN</th>
+                       <tr>                                                       
                             <th>Title</th>
-                            <th>Author</th>
-                            <th>Copies</th>
-                            <th>Avilability</th>
+                            <th>Maker</th>                                                        
                             <th>Edit</th>
                             <th>Delete</th>
                             <th>Go To</th>
                         </tr>
-                        </thead>--}}
+                        </thead>
                         <tbody>
                             {{-- loop throw the books table to view all the books  --}}
                             @foreach ($projects as $project)
                                 <tr>
-
                                     <td>{{$project->title}}</td>
-                                    <td>{{$project->maker}}</td>
-                                    <td>{{$project->examyear}}</td>
-                                    <td>-</td>
-                                    {{-- <td>{{$book->avilability}}</td> will be added later \|\(^_^)/|/ --}}
+                                    <td>{{$project->maker}}</td>                                    
                                     <form class="" action="{{route('projects.destroy',$project->id)}}" method="post">
                                         @csrf
                                         @method('delete')

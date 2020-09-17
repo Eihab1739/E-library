@@ -1,30 +1,23 @@
 @extends('layouts.app')
 @section('content')
-<div class="uk-container">
-    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin-medium-bottom uk-margin-medium-top" uk-grid>
-        <div class="uk-card-media-left uk-cover-container">
-        <canvas width="600" height="400"></canvas>
-    </div>
-    <div>
-        <div class="uk-card-body">
-            <h3 class="uk-card-title">Project Title : {{$project->title}}</h3>
-            <h5 class="uk-card-subtitle">Project Makers : {{$project->maker}}</h5>
-            <p class="uk-margin-small-left"> Project Description :{{$project->info}}</p>
-            <p class="uk-margin-small-left"> Project Year :{{$project->projectyear}}</p>
-
-
-            </div>
-            <div class="uk-card-footer">
-                <a href="{{asset('storage/books/'.$project->projectfile)}}" class="uk-button uk-button-primary uk-margin-small-bottom">Read Online <i class="fa fa-laptop ml-1"></i></a>
-                <a href="{{asset('storage/books/'.$project->projectfile)}}" class="uk-button uk-button-primary  uk-margin-small-bottom">Download <i class="fa fa-download ml-1"></i></a>
-            </div>
+<div class="container py-5">    
+    <div class="card my-5 w-75 mx-auto shadow-sm">
+        <div class="row no-gutters">
+            <div class="card-header">
+                <img height="150px" class="w-100 card-img-top" src="{{asset('images/icons/flat/Certificate.svg')}}" alt="project cover">        
+            </div>            
+            <div class="card-body spacer">
+                <h3 class="card-title text-uppercase mb-5">{{$project->title}}</h3>
+                <h5 class="card-subtitle lead my-2 ">
+                <h5 class="card-subtitle">Project Makers : <small> {{$project->maker}} </small></h5>
+                <p class="card-text  lead"><b>Date:</b> {{$project->projectyear}}</p>                
+                <p class="lead mt-5"><strong>Description :- </strong><br> {{$project->info}}</p>
+                <div class="link mt-5 d-flex flex-wrap justify-content-start">
+                    <a href="{{asset('storage/projects/'.$project-> projectfile)}}" class="m-1 btn btn-outline-primary">Read Online <i class="ion-md-laptop ml-1"></i></a>                
+                    <a href="{{asset('storage/projects/'.$project-> projectfile)}}" class="m-1 btn btn-outline-success">Download <i class="ion-md-download ml-1"></i></a>                    
+                </div>
+            </div>            
         </div>
-    </div>
-    <div class="uk-card uk-card-default uk-margin-medium-bottom">
-        <div class="uk-card-header">
-        </div>
-        <div class="uk-card-body">
-        </div>
-    </div>
+    </div>    
 </div>
 @endsection

@@ -1,0 +1,38 @@
+// border top
+.bt {
+    border-top: 4px solid var(--primary)
+}
+// border bottom
+.bb {
+    border-bottom: 2px solid var(--primary);    
+}
+
+// make some space between elements
+.spacer > * + * {
+    margin-top: 1rem;
+}
+
+// scroll bar 
+::-webkit-scrollbar {
+    background: #333;
+}
+
+::-webkit-scrollbar-button {
+
+}
+
+::-webkit-scrollbar-thumb {
+    color: $primary;
+}
+
+::-webkit-scrollbar-track {
+    background: #333;
+}
+
+::-webkit-scrollbar-track-piece {
+
+}
+
+::-webkit-resizer {
+
+}

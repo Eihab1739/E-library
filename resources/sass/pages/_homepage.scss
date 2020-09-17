@@ -1,0 +1,30 @@
+.showcase {    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    // margin-top: 80px;
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 150px;
+        width: 100%;
+    }
+}
+
+
+.contact {
+    position: relative;
+    .contact-header {
+        position: relative;
+        background: url('images/contact-2.jpg') left bottom/cover;        
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .card {
+        margin-top: -3.5rem;
+    }
+}

@@ -21,7 +21,7 @@
                         </thead>
                         <tbody>
                             {{-- loop throw the books table to view all the books  --}}
-                            @foreach ($books as $book )
+                            @foreach($books as $book )
                                 <tr>
                                     <td scope="row"><img src="{{asset('storage/thumbnails/'.$book->image)}}" width="50px" height="50px" /></td>
                                     <td>{{$book->ISBN}}</td>

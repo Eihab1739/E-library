@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 use App\Category ;
+use App\Book ;
+use App\Project ;
+use App\exam ;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -26,8 +29,15 @@ class AppServiceProvider extends ServiceProvider
     {
 
         $categories = Category::all();
-        view()->share('allcategories',$categories);
+        view()->share('allCategories',$categories);
 
+        $books = Book::all();
+        view()->share('allBooks',$books);
 
+        $exams = Exam::all();
+        view()->share('allExams',$exams);
+
+        $projects = Project::all();
+        view()->share('allProjects',$projects);
     }
 }

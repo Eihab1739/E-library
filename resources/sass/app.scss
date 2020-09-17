@@ -1,65 +1,11 @@
-// This is how you might override UIkit default variables
-$global-primary-background: #3f51b5;
+// Variables
+@import 'variables';
 
-@import "~uikit/src/scss/variables-theme.scss";
-@import "~uikit/src/scss/mixins-theme.scss";
-@import "~uikit/src/scss/uikit-theme.scss";
+// config
+@import 'config';
 
+// import pages
+@import 'pages/homepage';
 
-$spaces: (1,2,3,4,5);
-@each $space in $spaces {
-    .m-#{$space} {
-        margin: #{$space}rem;
-    }
-    .mt-#{$space} {
-        margin-top: #{$space}rem;
-    }
-    .ml-#{$space} {
-        margin-left: #{$space}rem;
-    }
-    .mr-#{$space} {
-        margin-right: #{$space}rem;
-    }
-    .mb-#{$space} {
-        margin-bottom: #{$space}rem;
-    }
-    .mx-#{$space} {
-        margin: 0 #{$space}rem;
-    }
-    .my-#{$space} {
-        margin: #{$space}rem 0;
-    }
-    .mx-auto {
-        margin: 0 auto;
-    }
-    .my-auto {
-        margin: auto 0;
-    }
-    .p-#{$space} {
-        padding: #{$space}rem;
-    }
-    .pt-#{$space} {
-        padding-top: #{$space}rem;
-    }
-    .pl-#{$space} {
-        padding-left: #{$space}rem;
-    }
-    .pr-#{$space} {
-        padding-right: #{$space}rem;
-    }
-    .pb-#{$space} {
-        padding-bottom: #{$space}rem;
-    }
-    .px-#{$space} {
-        padding: 0 #{$space}rem;
-    }
-    .py-#{$space} {
-        padding: #{$space}rem 0;
-    }
-    .px-auto {
-        padding: 0 auto;
-    }
-    .py-auto {
-        padding: auto 0;
-    }
-}
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
