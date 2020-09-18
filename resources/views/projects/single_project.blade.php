@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container py-5">    
-    <div class="card my-5 w-75 mx-auto shadow-sm">
-        <div class="row no-gutters">
+    <div class="card my-5 w-75 mx-auto shadow-sm">        
             <div class="card-header">
                 <img height="150px" class="w-100 card-img-top" src="{{asset('images/icons/flat/Certificate.svg')}}" alt="project cover">        
             </div>            
@@ -16,8 +15,7 @@
                     <a href="{{asset('storage/projects/'.$project-> projectfile)}}" class="m-1 btn btn-outline-primary">Read Online <i class="ion-md-laptop ml-1"></i></a>                
                     <a href="{{asset('storage/projects/'.$project-> projectfile)}}" class="m-1 btn btn-outline-success">Download <i class="ion-md-download ml-1"></i></a>                    
                 </div>
-            </div>            
-        </div>
+            </div>                    
     </div>    
 </div>
 @endsection

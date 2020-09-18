@@ -4,25 +4,35 @@
     <!-------------------------------------------- 
         show case section  
     --------------------------------------------->    
-    <section  id="particles-js" class="showcase text-center d-flex align-items-center justify-content-center" style="background: url('images/showcase-2.jpg');background-position:left">                                            
-            <div>
-                <h2 class="mt-2 animated fadeInDownBig">
-                    Welcome To The <b class="text-primary"> Library </b> Home of Books                
-                </h2>
-                <p class="px-2 lead animated fadeInUp">Get Access To Hundreds of Books Online</p>
-                <div class="mt-6 w-full mb-4 animated zoomIn">
-                    <button class="btn btn-primary shadow rounded-0"> Browse Now !</button>             
-                </div>
-            </div>                
+    <section class="showcase text-center d-flex align-items-center justify-content-center" style="background: url('images/showcase-2.jpg');background-position: left">
+        <div class="text">
+            <h2 class="mt-2 animated fadeInDownBig">
+                Welcome To The <b class="text-primary"> Library </b> Home of Books                
+            </h2>
+            <p class="px-2 lead animated fadeInUp">Get Access To Hundreds of Books Online</p>
+            <div class="mt-6 w-full mb-4 animated zoomIn">
+                <a href="/books" class="btn btn-primary shadow rounded-0"> Browse Now !</a>             
+            </div>
+        </div>                
+        <div class="animation-area">
+            <ul class="box-area">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
         <img src="images/shapes/shape-a3.png" alt="">
     </section>
     <!-------------------------------------------- 
         section services  
     --------------------------------------------->
     <section class="services bg-white text-center py-5">    
-        <h4 class="mb-5 d-inline-block bb">Services </h4>    
-        <div class="row container mx-auto mb-5">            
-            <div class="col-sm-12 col-md-4 col-lg-3">
+        <h4 class="mb-5 d-inline-block bb" >Services </h4>    
+        <div class="row container mx-auto mb-5 spacer">            
+            <div class="col-sm-12 col-md-4 col-lg-3 mt-3">
                 <div class="card card-outline shadow-sm">                    
                     <div class="card-header bt bg-white text-center">
                         <img src="images/icons/Book pen.svg" alt="" width="40px">
@@ -74,7 +84,7 @@
     <section class="request py-5 text-center">
         <div class="container my-5">
             <h4 class="d-inline-block bb mb-4">Request a Book</h4>
-            <div class="card p-5 rounded-0 w-50 mx-auto shadow-sm">
+            <div class="card p-5 rounded-0  mx-auto shadow-sm col-sm-12 col-md-8">
                 <form action="" class="spacer">                                        
                     <div class="form-group d-flex">
                         <i class="ion-md-mail mr-3"></i>
@@ -156,5 +166,5 @@
                 </div>
             </div>  
         </div>
-    </section>
+    </section>    
 @endsection

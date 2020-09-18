@@ -9,11 +9,11 @@
 }
 
 .swatch-purple {
-  color: color-yiq(#9561e2);
+  color: color-yiq(#7873f5);
 }
 
 .swatch-pink {
-  color: color-yiq(#f66d9b);
+  color: color-yiq(#ff6ec4);
 }
 
 .swatch-red {
@@ -44,6 +44,10 @@
   color: color-yiq(#6574cd);
 }
 
+.indigo-gradient {
+  background: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+}
+
 .bg-gradient-blue {
   background: linear-gradient(40deg, #3490dc, #2176bd) !important;
 }
@@ -53,11 +57,11 @@
 }
 
 .bg-gradient-purple {
-  background: linear-gradient(40deg, #9561e2, #7836da) !important;
+  background: linear-gradient(40deg, #7873f5, #4a43f2) !important;
 }
 
 .bg-gradient-pink {
-  background: linear-gradient(40deg, #f66d9b, #f33d7a) !important;
+  background: linear-gradient(40deg, #ff6ec4, #ff3baf) !important;
 }
 
 .bg-gradient-red {
@@ -100,6 +104,18 @@
   margin-top: 1rem;
 }
 
+::-webkit-scrollbar {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  color: #6574cd;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
 .showcase {
   background-size: cover;
   background-repeat: no-repeat;
@@ -107,6 +123,87 @@
   position: relative;
   z-index: 1;
   height: 100vh;
+}
+
+.showcase .text,
+.showcase img {
+  position: relative;
+  z-index: 5;
+}
+
+.showcase .box-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.showcase .box-area li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 5%;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-animation: roll 20s linear infinite;
+          animation: roll 20s linear infinite;
+  bottom: -120px;
+}
+
+.showcase .box-area li:nth-child(1) {
+  left: 86%;
+  width: 80px;
+  height: 80px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase .box-area li:nth-child(2) {
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+.showcase .box-area li:nth-child(3) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  -webkit-animation-delay: 5.5s;
+          animation-delay: 5.5s;
+}
+
+.showcase .box-area li:nth-child(4) {
+  left: 42%;
+  width: 150px;
+  height: 150px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+}
+
+.showcase .box-area li:nth-child(5) {
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase .box-area li:nth-child(6) {
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
 }
 
 .showcase img {
@@ -132,6 +229,36 @@
   margin-top: -3.5rem;
 }
 
+@media screen and (max-width: 991px) {
+  .contact .card {
+    margin-top: 1rem;
+  }
+}
+
+@-webkit-keyframes roll {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -142,8 +269,8 @@
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
-  --purple: #9561e2;
-  --pink: #f66d9b;
+  --purple: #7873f5;
+  --pink: #ff6ec4;
   --red: #e3342f;
   --orange: #f6993f;
   --yellow: #ffed4a;
@@ -666,7 +793,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #f66d9b;
+  color: #ff6ec4;
   word-wrap: break-word;
 }
 
