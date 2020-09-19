@@ -5,6 +5,8 @@
         <div class="card rounded-0" style="border-top: 5px solid var(--indigo)">
             <h4 class="card-header"><i class="fa fa-book mr-1"></i> All Projects</h4>
             <div class="card-body">
+                <a href="/admin/projects/create" class="btn btn-block bg-indigo mb-4">Add a Project</a>
+                <hr>
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-indigo">
                        <tr>                                                       

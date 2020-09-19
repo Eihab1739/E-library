@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">        
-            <div class="card w-50 my-5 shadow-sm">
+        <div class="col-sm-12 col-md-8">
+            <div class="card my-5 shadow-sm">
                 <div class="card-header bt">{{ __('Confirm Password') }}</div>
 
                 <div class="card-body">
@@ -41,6 +42,7 @@
                     </form>
                 </div>
             </div>        
+        </div>
     </div>
 </div>
 @endsection

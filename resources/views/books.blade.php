@@ -3,8 +3,14 @@
 @section('content')
     <div class="container">
         <div class="card rounded-0" style="border-top: 5px solid var(--indigo)">
-            <h4 class="card-header"><i class="fa fa-book mr-1"></i> All Books</h4>
+            <div class="card-header">
+                <h4><i class="fa fa-book mr-1"></i>Books</h4>
+            </div>            
+                        
             <div class="card-body">
+                <a href="/upload" class="btn btn-block bg-indigo mb-4 shadow-sm">Add a Book</a>                                
+                <hr>
+                <h4 class="my-4"><i class="fa fa-book"></i> All Books</h4>
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-indigo">
                         <tr>

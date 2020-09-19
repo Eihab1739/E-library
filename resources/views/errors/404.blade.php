@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container text-center">            
-        <div class="card w-50 my-5 shadow-sm mx-auto">                    
+    <div class="container py-md-5 text-center">            
+        <div class="card my-5 shadow-sm mx-auto">                    
             <div class="bt">
                 <div class="card-body">                            
                     <div class="">                                

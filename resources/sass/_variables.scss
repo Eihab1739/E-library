@@ -22,7 +22,10 @@ $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
 // change the primary color
-$primary: #6574cd;
+$primary: $indigo;
+$secondary: $cyan;
+
+
 
 $colors: (
   "blue": $blue,
@@ -39,21 +42,44 @@ $colors: (
 );
 
 
-// color contrast
+// text color 
 @each $color, $value in $colors {
-    .swatch-#{$color} {
-      color: color-yiq($value);
+    .text-#{$color} {
+      color: ($value);
     }
 }
-
-.indigo-gradient {
-  background: linear-gradient(40deg, $pink, $purple) !important;
+// background color 
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background: ($value);
+  }
 }
-// bg Gradient
-//linear-gradient(40deg,#ff6ec4,#7873f5)
-//linear-gradient(40deg,#ff6ec4,#7873f5) !important;
+
+// primary gradient
+.primary-gradient {
+  background: linear-gradient(40deg, $primary, $secondary) !important;
+  color: #fff;
+}
+
+// primary text gradient
+.primary-text-gradient {
+  background: linear-gradient(to right, $primary 0%, $secondary 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;	
+}
+
+// background gradient
 @each $color, $value in $colors {
   .bg-gradient-#{$color} {
-    background: linear-gradient(40deg, $value , darken($value,10%)) !important;
+    background: linear-gradient(40deg, $value , darken($value,10%) , darken($value,15%)) !important;
+    color: #fff;
+  }
+}
+// text gradient
+@each $color, $value in $colors {
+  .text-gradient-#{$color} {	
+    background: linear-gradient(to right, $value 0%, darken($value,15%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;	
   }
 }

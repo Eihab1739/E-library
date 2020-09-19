@@ -1,0 +1,11 @@
+#category {
+    .breadcrumb {
+        position: relative;
+        .card {
+            position: absolute;
+            width: 80%;
+            bottom: -3rem;
+            left: 10%;
+        }
+    }
+}

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container text-center">            
-        <div class="card w-50 shadow-sm my-5 mx-auto">                    
+    <div class="container py-md-5 text-center">            
+        <div class="card shadow-sm my-5 mx-auto">                    
             <div class="bt">
                 <div class="card-body">
                     <div class="wow fadeInDown" tabindex="0">                                

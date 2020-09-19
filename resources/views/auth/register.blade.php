@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">        
-            <div class="card w-50 my-5 shadow-sm">
-                <div class="card-header bt">{{ __('Register') }}</div>
+    <div class="row justify-content-center pt-md-4">        
+        <div class="col-sm-12 col-md-8">
+            <div class="card my-5 shadow-sm">
+                <div class="card-header primary-gradient"><i class="ion-md-person-add"></i> {{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -56,13 +57,14 @@
                         </div>
 
                         <div class="form-group">                        
-                            <button type="submit" class="btn btn-block btn-primary">
+                            <button type="submit" class="btn btn-block primary-gradient text-white">
                                 {{ __('Register') }}
                             </button>                            
                         </div>
                     </form>
                 </div>
             </div>        
+        </div>
     </div>
 </div>
 @endsection
