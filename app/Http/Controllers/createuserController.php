@@ -100,6 +100,10 @@ class createuserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::find($id);
+        $user->delete();
+        $user->save();
+
+        return redirect(route('users.index'))->with('msg','Delete Done');
     }
 }

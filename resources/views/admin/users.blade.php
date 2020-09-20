@@ -26,7 +26,12 @@
                       <th scope="row">{{$user->id}}</th>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
-                      <td><button class="btn btn-danger rounded-0" onclick="confirm('Do you really want to delete this ?')">Delete</button></td>
+                      <td>          <form class="" action="{{route('createuser.destroy',$user->id)}}" method="post">
+                        @csrf
+                        @method('delete')
+                        <td><button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?')">Delete</button></td>
+                    </form>
+                      </td>
                     </tr>
                   @endforeach
                 @endif

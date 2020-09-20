@@ -32,11 +32,12 @@ Route::resource('/upload','UploadController');
 Route::group(['prefix' => 'admin','middleware'=>'roles','roles'=>'admins'], function () {
     Route::resource('users','AdminUsersController');
     Route::resource('categories','AdminCategoryController');
-    Route::resource('createuser','createuserController');
+
     Route::resource('exams','examsController');
 Route::resource('projects','projectController');
 
 });
+Route::resource('createuser','createuserController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
