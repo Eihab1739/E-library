@@ -55,7 +55,7 @@ class projectController extends Controller
          }
 
          $project = new Project();
-         $project->projectfile=$projectName;
+        $project->projectfile=$projectName;
 
          $project->title=$request->input('title');
          $project->maker=$request->input('maker');
@@ -118,7 +118,7 @@ class projectController extends Controller
             $request->file('projectfile')->storeAs('books',$projectName);
 
          }
-         $project->projectfile=$projectName;
+         //$project->projectfile=$projectName;
 
          $project->title=$request->input('title');
          $project->maker=$request->input('maker');
