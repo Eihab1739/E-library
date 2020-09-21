@@ -20,7 +20,7 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
-
+$gray: #ececec;
 // change the primary color
 $primary: $indigo;
 $secondary: $cyan;
@@ -38,6 +38,7 @@ $colors: (
   "green": $green,
   "teal": $teal,
   "cyan": $cyan,  
+  "gray": $gray,
   "primary": $primary,
 );
 
@@ -51,7 +52,7 @@ $colors: (
 // background color 
 @each $color, $value in $colors {
   .bg-#{$color} {
-    background: ($value);
+    background-color: ($value) !important;
   }
 }
 

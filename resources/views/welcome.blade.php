@@ -36,7 +36,7 @@
                 </li>
             </ul>
         </div>
-        <img src="images/shapes/shape-a3.png" alt="">
+        <img src="{{asset('images/shapes/shape-a3.png')}}" alt="">
     </section>
     <!-------------------------------------------- 
         section services  
@@ -99,19 +99,19 @@
             <div class="card py-4 px-sm-5 rounded-0  mx-auto shadow-sm col-sm-12 col-md-8">
                 <form action="" class="spacer">                                        
                     <div class="form-group d-flex">
-                        <i class="ion-md-mail mr-3 d-none d-sm-inline-block"></i>
+                        <i class="ion-md-mail mx-3 d-none d-sm-inline-block"></i>
                         <input class="form-control" id="email" type="email" placeholder="E-Mail Address">                                        
                     </div>
                     <div class="form-group d-flex">
-                        <i class="ion-md-text mr-3 d-none d-sm-inline-block"></i>
+                        <i class="ion-md-text mx-3 d-none d-sm-inline-block"></i>
                         <input class="form-control" type="text" placeholder="Name">
                     </div>
                     <div class="form-group d-flex">
-                        <i class="ion-md-document mr-3 d-none d-sm-inline-block"></i>
+                        <i class="ion-md-document mx-3 d-none d-sm-inline-block"></i>
                         <input class="form-control" type="text" placeholder="Book Name">
                     </div>
                     <div class="form-group d-flex">
-                        <i class="ion-md-create mr-3 d-none d-sm-inline-block"></i>
+                        <i class="ion-md-create mx-3 d-none d-sm-inline-block"></i>
                         <input class="form-control" type="text" placeholder="Author Name">
                     </div>
                     <button class="btn btn-block primary-gradient text-white rounded-0 shadow-sm">REQUEST <i class="ion-md-send"></i></button>
@@ -133,19 +133,19 @@
                     <p>Feel free to send us a message fill the form below</p>
                     <form action="" class="spacer">
                         <div class="form-group d-flex">
-                            <i class="ion-md-person mr-3 d-none d-sm-inline-block"></i>
+                            <i class="ion-md-person mx-3 d-none d-sm-inline-block"></i>
                             <input class="form-control" type="text" placeholder="Enter Your Name">
                         </div>
                         <div class="form-group d-flex">
-                            <i class="ion-md-mail mr-3 d-none d-sm-inline-block"></i>
+                            <i class="ion-md-mail mx-3 d-none d-sm-inline-block"></i>
                             <input class="form-control" id="email" type="email" placeholder="E-Mail Address">                                        
                         </div>                            
                         <div class="form-group d-flex">
-                            <i class="ion-md-text mr-3 d-none d-sm-inline-block"></i>
+                            <i class="ion-md-text mx-3 d-none d-sm-inline-block"></i>
                             <input class="form-control" type="text" placeholder="Subject">
                         </div>
                         <div class="form-group d-flex">
-                            <i class="ion-md-text mr-3 d-none d-sm-inline-block"></i>
+                            <i class="ion-md-text mx-3 d-none d-sm-inline-block"></i>
                             <textarea class="form-control" type="text" placeholder="Message"></textarea>
                         </div>
                         <button class="btn btn-block primary-gradient text-white rounded-0 shadow-sm">SEND <i class="ion-md-send"></i></button>

@@ -5,7 +5,9 @@
     -webkit-text-fill-color: #fff;
 }
 
-
+.fixed-top {
+    z-index: 1024 !important;
+}
 
 // border top
 .bt {
@@ -23,29 +25,28 @@
 
 // scroll bar 
 ::-webkit-scrollbar {
-    
+    width: .4rem;    
 }
 
-::-webkit-scrollbar-button {
-
-}
-
-::-webkit-scrollbar-thumb {
-    
-}
-
-::-webkit-scrollbar-track {
-    
+::-webkit-scrollbar-thumb {        
+    background: $primary;
 }
 
 ::-webkit-scrollbar-track-piece {
-
+    width: 1rem;
+    color: white;
+    background: white;
 }
 
 ::-webkit-resizer {
-
+    color: $primary;
+    background: $primary;
 }
 
+footer {
+    position: relative;
+    z-index: 1 !important;
+}
 
 @media screen and (max-width: 768px) {
     .card-img, .card-img-top {
@@ -58,7 +59,7 @@
     }
 }
 
-@media screen and (max-height: 420px) {
+@media screen and (max-height: 500px) {
     .showcase img {
         display: none;
     }
