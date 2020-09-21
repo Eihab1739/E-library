@@ -102,7 +102,7 @@ class createuserController extends Controller
     {
         $user=User::find($id);
         $user->delete();
-        $user->save();
+
 
         return redirect(route('users.index'))->with('msg','Delete Done');
     }

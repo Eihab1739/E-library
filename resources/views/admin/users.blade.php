@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'Users')    
+@section('title', 'Users')
 
 @section('content')
 <div class="container">
@@ -29,7 +29,7 @@
                       <td>          <form class="" action="{{route('createuser.destroy',$user->id)}}" method="post">
                         @csrf
                         @method('delete')
-                        <td><button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?')">Delete</button></td>
+                        <td ><button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?') ">Delete</button></td>
                     </form>
                       </td>
                     </tr>
