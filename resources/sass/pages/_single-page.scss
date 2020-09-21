@@ -4,7 +4,27 @@
 }
 
 .single-book {
-    .card {
+    color: #333;
+    .header {
+        padding-top: 5rem;
+        position: relative;
+        img.shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 1;
+        }
+        .card-body {
+            position: relative;
+            z-index: 2;
+        }
+        .card-img {
+            position: relative;
+            transform: translateY(1rem);
+            z-index: 2;
+        }
         .card-subtitle {
             font-weight: normal;
         }
@@ -13,5 +33,20 @@
                 padding-right: .5rem;
             }
         }
-    }            
+        
+    }   
+    
+    .avatar {
+        position: relative;
+        transform: translateY(-1.5rem);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .single-book {
+        .card-img {
+            transform: translateY(-1rem) !important;
+        }   
+    }   
 }
