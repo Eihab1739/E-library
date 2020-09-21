@@ -1,0 +1,65 @@
+// this file contains utility classes and responsive design
+
+// navbar text color 
+.navbar-white {
+    -webkit-text-fill-color: #fff;
+}
+
+
+
+// border top
+.bt {
+    border-top: 4px solid var(--primary)
+}
+// border bottom
+.bb {
+    border-bottom: 2px solid var(--primary);            
+}
+
+// make some space between elements
+.spacer > * + * {
+    margin-top: 1rem;
+}
+
+// scroll bar 
+::-webkit-scrollbar {
+    
+}
+
+::-webkit-scrollbar-button {
+
+}
+
+::-webkit-scrollbar-thumb {
+    
+}
+
+::-webkit-scrollbar-track {
+    
+}
+
+::-webkit-scrollbar-track-piece {
+
+}
+
+::-webkit-resizer {
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .card-img, .card-img-top {
+        height: 40vh !important;
+    }
+
+    .categories {
+        height: 40vh !important;
+        overflow: scroll;
+    }
+}
+
+@media screen and (max-height: 420px) {
+    .showcase img {
+        display: none;
+    }
+}

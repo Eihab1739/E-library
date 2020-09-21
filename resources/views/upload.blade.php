@@ -55,8 +55,8 @@
                     <div class="form-group">
                         <label>Book Category</label>
                         <select name="category" id="category" class="form-control">
-                            @if (count($allcategories)>0)
-                            @foreach ($allcategories as $category)
+                            @if (count($allCategories)>0)
+                            @foreach ($allCategories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
 
                             @endforeach

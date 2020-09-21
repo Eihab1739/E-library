@@ -1,43 +1,41 @@
-
 @extends('layouts.app')
 
 @section('content')
+<div id="category">
+    <nav class="breadcrumb mt-4 px-1 px-sm-4 py-5 navbar-white primary-gradient">
+        <a class="breadcrumb-item nav-link" href="/">Home</a>
+        <a class="breadcrumb-item nav-link" href="/books">Categoreis</a>
+        <span class="breadcrumb-item active nav-link">{{$category->name}}</span>
+        {{-- search form  --}}
+        <div class="card mb-4 p-2 shadow-sm">
+            <form action="">
+                <div class="input-group">
+                    <input class="form-control d-inline-block" type="search" placeholder="Search ..."> <a href="" class="btn primary-gradient mx-2 text-white"><i class="ion-md-search"></i></a>
+                </div>                
+            </form>
+        </div>        
+    </nav>
 
-            <div class="card">
-                <div class="card-header text-center">{{$category->name}}</div>
+    <div class="container pt-5">                 
 
-                <div class="card-body">
-                    @if (count($books)>0)
-                    @foreach ($books as$book )
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="{{asset('storage/thumbnails/'.$book->image)}}" class=" img-responsive" width="300px" height="200px"/>
-
-                        </div>
-                        <div class="col-md-9 text-center">
-                            <h2>{{$book->title}}</h2>
-                            <p>{{$book->info}}</p>
-                            <br/>
-                            Author : {{$book->author}}  <br/>
-                            <a href="{{asset('storage/books/'.$book->bookfile)}}" class="btn btn-primary">Download </a>
-                            <a href="{{route('book',$book->id)}}" class="btn btn-info">More info</a> <br/>
-                            COPIES:{{$book->copies}}
-
+        <div class="row">            
+            @if (count($books)>0)
+                @foreach ($books as$book)
+                    <div class="col-sm-6 col-md-4 col-lg-3">                        
+                        <div class="card shadow-sm mb-4">                            
+                            <img class="card-img-top" height="200px" src="{{asset('storage/thumbnails/'.$book->image)}}" alt="">                            
+                            <div class="card-body">
+                                <h5 class="card-title">{{$book->title}}</h5>
+                                <h6 class="card-subtitle text-muted">Teacher: {{$book->author}}</h6>                                                        
+                            </div>                                                                                                                                            
+                            <div class="card-footer bg-white">
+                                <a class="btn primary-gradient text-white mt-2" href="{{route('book',$book->id)}}">More Details</a>                                                
+                            </div>
                         </div>
                     </div>
-                    <hr>
-
-                    @endforeach
-
-                    @endif
-
-
-
-
-
-                </div>
-
-            </div>
-
-
+                @endforeach                
+            @endif
+        </div>                                                                                
+    </div>
+</div>
 @endsection

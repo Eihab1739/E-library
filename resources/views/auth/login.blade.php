@@ -1,59 +1,64 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="uk-section uk-section-small uk-section-muted uk-flex uk-flex-center">
-        <div class="uk-card uk-card-default uk-card-body uk-width-large">
-            <h2 class="uk-card-title">Log In</h2>
-            <form method="POST" action="{{ route('login') }}" class="uk-form-stacked">
-                @csrf
-                <div class="uk-margin">
-                    <label for="email" class="uk-form-label">
-                        {{ __('E-Mail Address') }}
-                    </label>
-                    <div class="uk-form-control">
-                        <input class="uk-input @error('email') uk-form-danger @enderror" name="email" id="email" type="email"
-                               value="{{ old('email') }}" required autocomplete="email" autofocus>
-                        @error('email')
-                        <span class="uk-text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="uk-margin">
-                    <label for="password" class="uk-form-label">
-                        {{ __('Password') }}
-                    </label>
-                    <div class="uk-form-control">
-                        <input id="password" type="password"
-                               class="uk-input @error('password') uk-form-danger @enderror" name="password" required
-                               autocomplete="current-password">
-                        @error('password')
-                        <span class="uk-text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="uk-margin">
-                    <div class="uk-form-control">
-                        <input class="uk-checkbox" type="checkbox" name="remember"
-                               id="remember" {{ old('remember') ? 'checked' : '' }}>
-                        <label for="remember">
-                            {{ __('Remember Me') }}
-                        </label>
-                    </div>
-                </div>
-                <div class="uk-margin">
-                    <div class="uk-form-control">
-                        <button type="submit" class="uk-button uk-button-primary">
-                            {{ __('Log In') }}
-                        </button>
+<div class="container">
+<div class="row justify-content-center pt-md-5">        
+    <div class="col-sm-12 col-md-8">
+        <div class="card my-5 shadow-sm">
+            <div class="card-header primary-gradient"><i class="ion-md-log-in"></i> {{ __('Login') }}</div>
+            
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
-                        @if (Route::has('password.request'))
-                            <a class="uk-button uk-button-link uk-margin-left" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        @endif
-                    </div>
-                </div>
-            </form>
+                        <div class="form-group">
+                            <label for="email" class=" col-form-label text-md-right"><i class="ion-md-mail"></i> {{ __('E-Mail Address') }}</label>                            
+                                
+                            <input placeholder="user@example.com" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class=" col-form-label text-md-right"><i class="ion-md-lock"></i> {{ __('Password') }}</label>
+                            
+                            <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror                            
+                        </div>
+
+                        <div class="form-group">                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="form-check-label" for="remember">
+                                    {{ __('Remember Me') }}
+                                </label>
+                            </div>                            
+                        </div>
+
+                        <div class="form-group">                            
+                            <button type="submit" class="btn btn-block primary-gradient text-white mb-2">
+                                {{ __('Login') }}
+                            </button>                        
+                            @if (Route::has('password.request'))
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                            @endif
+                        </div>
+                    </form>                
+                </div>                        
+            </div>        
         </div>
     </div>
+</div>
 @endsection
