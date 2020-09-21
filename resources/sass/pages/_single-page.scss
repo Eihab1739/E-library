@@ -1,0 +1,17 @@
+.single-exam , .single-project {
+    max-width: 650px;
+    margin: 2rem auto;
+}
+
+.single-book {
+    .card {
+        .card-subtitle {
+            font-weight: normal;
+        }
+        .rating {
+            i {
+                padding-right: .5rem;
+            }
+        }
+    }            
+}

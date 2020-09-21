@@ -6,14 +6,80 @@ $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
+// enable background gradient 
+$enable-gradients: true;
+
 // Colors
 $blue: #3490dc;
 $indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
+$purple: #7873f5;
+$pink: #ff6ec4;
 $red: #e3342f;
 $orange: #f6993f;
 $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+// change the primary color
+$primary: $indigo;
+$secondary: $cyan;
+
+
+
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,  
+  "primary": $primary,
+);
+
+
+// text color 
+@each $color, $value in $colors {
+    .text-#{$color} {
+      color: ($value);
+    }
+}
+// background color 
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background: ($value);
+  }
+}
+
+// primary gradient
+.primary-gradient {
+  background: linear-gradient(40deg, $primary, $secondary) !important;
+  color: #fff;
+}
+
+// primary text gradient
+.primary-text-gradient {
+  background: linear-gradient(to right, $primary 0%, $secondary 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;	
+}
+
+// background gradient
+@each $color, $value in $colors {
+  .bg-gradient-#{$color} {
+    background: linear-gradient(40deg, $value , darken($value,10%) , darken($value,15%)) !important;
+    color: #fff;
+  }
+}
+// text gradient
+@each $color, $value in $colors {
+  .text-gradient-#{$color} {	
+    background: linear-gradient(to right, $value 0%, darken($value,15%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;	
+  }
+}

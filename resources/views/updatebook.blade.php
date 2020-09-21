@@ -3,9 +3,9 @@
 @section('title')
 
 @section('content')
-
-            <div class="card">
-                <div class="card-header">UpdateFile</div>
+<div class="container">
+            <div class="card my-3 mx-md-5 mx-auto" style="border-top: 4px solid var(--indigo)">
+                <div class="card-header">Update Book</div>
 
 
                 <div class="card-body">
@@ -40,8 +40,8 @@
                     </div>
                     <div class="form-group">
                         <select name="category" id="category" class="form-control">
-                            @if (count($allcategories)>0)
-                            @foreach ($allcategories as $category)
+                            @if (count($allCategories)>0)
+                            @foreach ($allCategories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
 
                             @endforeach
@@ -79,7 +79,7 @@
 
                     </div>
 
-                    <button type="submit" name="upload" class="btn btn-block">Update Book</button>
+                    <button type="submit" name="upload" class="btn bg-indigo btn-block">Update Book</button>
 
 
 
@@ -88,5 +88,5 @@
             </form>
             </div>
 
-
+        </div>
 @endsection
