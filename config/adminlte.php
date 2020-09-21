@@ -44,10 +44,10 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/#63-logo
     |
     */
-
-    'logo' => '<b>Admin Panel</b>',
-    'logo_img' => '',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+        
+    'logo' => '<i class="fa fa-cogs mx-2"></i> <b>Admin Panel</b>',
+    'logo_img' => 'images/icons/Upgrade.svg',    
+    'logo_img_class' => 'brand-image d-none',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => '',
@@ -65,7 +65,7 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
+    'usermenu_header_class' => 'bg-indigo',
     'usermenu_image' => false,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
@@ -125,7 +125,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-purple elevation-4',
+    'classes_sidebar' => 'sidebar-light-indigo elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -144,7 +144,7 @@ return [
     */
 
     'sidebar_mini' => true,
-    'sidebar_collapse' => true,
+    'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
@@ -187,7 +187,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin/users',
 
     'logout_url' => 'logout',
 
@@ -255,62 +255,29 @@ return [
         [
             'text'    => 'Books',
             'icon'    => 'fa fa-book mr-1',
-            'submenu' =>[
-                [
-                    'text' => 'Upload Book',
-                    'url'  => '/upload',
-                    'icon' => 'fa fa-upload mr-1'
-                ],
-                [
-                    'text' => 'View Books',
-                    'url'  => '/books',
-                    'icon' => 'fa fa-eye mr-1'
-                    ]
-                ]
+            'url'  => '/admin/books'
         ],
         [
             'text'    => 'Exams',
             'icon'    => 'fa fa-file-alt mr-1',
-            'submenu' =>[
-                [
-                    'text' => 'Upload Exam',
-                    'url'  => 'admin/exams/create',
-                    'icon' => 'fa fa-upload mr-1'
-                ],
-                [
-                    'text' => 'View Exams',
-                    'url'  => 'admin/exams',
-                    'icon' => 'fa fa-eye mr-1'
-                    ]
-                ]
+            'url'  => 'admin/exams',
         ],
         [
             'text'    => 'Projects',
-            'icon'    => 'fa fa-box-open mr-1',
-            'submenu' =>[
-                [
-                    'text' => 'Upload Project',
-                    'url'  => 'admin/projects/create',
-                    'icon' => 'fa fa-upload mr-1'
-                ],
-                [
-                    'text' => 'View Projects',
-                    'url'  => 'admin/projects',
-                    'icon' => 'fa fa-eye mr-1'
-                    ]
-                ]
+            'icon'    => 'fa fa-box-open mr-1',                        
+            'url'  => 'admin/projects',
         ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user-edit mr-1',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock mr-1',
-        ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user-edit mr-1',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock mr-1',
+        // ],
         [
             // 'text'    => 'multilevel',
             // 'icon'    => 'fas fa-fw fa-share mr-1',

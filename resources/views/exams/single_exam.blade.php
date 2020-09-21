@@ -1,30 +1,24 @@
 @extends('layouts.app')
 @section('content')
-<div class="uk-container">
-    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin-medium-bottom uk-margin-medium-top" uk-grid>
-        <div class="uk-card-media-left uk-cover-container">
-        <canvas width="600" height="400"></canvas>
-    </div>
-    <div>
-        <div class="uk-card-body">
-            <h3 class="uk-card-title">Exam Title : {{$exam->title}}</h3>
-            <h5 class="uk-card-subtitle">Exam Author : {{$exam->author}}</h5>
-            <p class="uk-margin-small-left"> Exam Description :{{$exam->info}}</p>
-            <p class="uk-margin-small-left"> Exam Year :{{$exam->examyear}}</p> 
-
-
-            </div>
-            <div class="uk-card-footer">
-                <a href="{{asset('storage/books/'.$exam->examfile)}}" class="uk-button uk-button-primary uk-margin-small-bottom">Read Online <i class="fa fa-laptop ml-1"></i></a>
-                <a href="{{asset('storage/books/'.$exam->examfile)}}" class="uk-button uk-button-primary  uk-margin-small-bottom">Download <i class="fa fa-download ml-1"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="uk-card uk-card-default uk-margin-medium-bottom">
-        <div class="uk-card-header">
-        </div>
-        <div class="uk-card-body">
-        </div>
+<div class="single-exam">
+    <div class="container d-flex justify-content-center">        
+        <div class="card w-100 my-5 mx-auto shadow">        
+            <div class="card-header primary-gradient">
+                <img class="card-img-top" width="100px" height="150px" src="{{asset('images/icons/flat/Test.svg')}}" alt="book cover">        
+            </div>            
+            <div class="card-body spacer">
+                <h3 class="card-title text-uppercase mb-4">{{$exam->title}}</h3>
+                <h5 class="card-subtitle lead my-2 ">
+                <b>Teacher:</b> 
+                {{$exam->author}}</h5>                  
+                <p class="card-text  lead"><b>Date:</b> {{$exam->examyear}}</p>                
+                <p class="lead mt-4"><strong>Description :- </strong><br> {{$exam->info}}</p>
+                <div class="link mt-4 d-flex flex-wrap justify-content-start">
+                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="m-1 btn primary-gradient text-white border-0 shadow">Read Online <i class="ion-md-laptop ml-1"></i></a>                
+                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="m-1 btn bg-gradient-green text-white border-0 shadow">Download <i class="ion-md-download ml-1"></i></a>                    
+                </div>
+            </div>            
+        </div>         
     </div>
 </div>
 @endsection

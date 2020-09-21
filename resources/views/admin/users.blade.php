@@ -1,10 +1,10 @@
 @extends('adminlte::page')
-@section('title')
+@section('title', 'Users')    
 
 @section('content')
 <div class="container">
     <div class="card">
-      <h3 class="card-header"><i class="fa fa-user mr-1"></i> Users</h3>
+      <h3 class="card-header"><i class="fa fa-users mr-1"></i> Users</h3>
 
       <div class="card-body">
           <a href="{{route('createuser.create')}}" class="btn bg-indigo">Add User</a>

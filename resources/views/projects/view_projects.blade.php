@@ -5,30 +5,24 @@
         <div class="card rounded-0" style="border-top: 5px solid var(--indigo)">
             <h4 class="card-header"><i class="fa fa-book mr-1"></i> All Projects</h4>
             <div class="card-body">
+                <a href="/admin/projects/create" class="btn btn-block bg-indigo mb-4">Add a Project</a>
+                <hr>
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-indigo">
-                  {{--      <tr>
-                            <th>Cover</th>
-                            <th>ISBN</th>
+                       <tr>                                                       
                             <th>Title</th>
-                            <th>Author</th>
-                            <th>Copies</th>
-                            <th>Avilability</th>
+                            <th>Maker</th>                                                        
                             <th>Edit</th>
                             <th>Delete</th>
                             <th>Go To</th>
                         </tr>
-                        </thead>--}}
+                        </thead>
                         <tbody>
                             {{-- loop throw the books table to view all the books  --}}
                             @foreach ($projects as $project)
                                 <tr>
-
                                     <td>{{$project->title}}</td>
-                                    <td>{{$project->maker}}</td>
-                                    <td>{{$project->examyear}}</td>
-                                    <td>-</td>
-                                    {{-- <td>{{$book->avilability}}</td> will be added later \|\(^_^)/|/ --}}
+                                    <td>{{$project->maker}}</td>                                    
                                     <form class="" action="{{route('projects.destroy',$project->id)}}" method="post">
                                         @csrf
                                         @method('delete')

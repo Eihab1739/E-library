@@ -18,12 +18,8 @@ Route::get('/','PagesController@index')->name('index');
 Route::get('/category/{id}','PagesController@viewcategory')->name('category');
 Route::get('/book/{id}','PagesController@viewbook')->name('book');
 Route::post('/comment/{id}',['uses'=>'PagesController@addcomment','middleware'=>'auth'])->name('comment');
-Route::resource('books','booksController');
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 
-Auth::routes();
 Route::group(['middleware'=>'roles','roles'=>'admins'],function(){
 Route::resource('/upload','UploadController');
 
@@ -34,14 +30,10 @@ Route::group(['prefix' => 'admin','middleware'=>'roles','roles'=>'admins'], func
     Route::resource('categories','AdminCategoryController');
 
     Route::resource('exams','examsController');
-Route::resource('projects','projectController');
-
+    Route::resource('books','booksController');
+    Route::resource('projects','projectController');
 });
 Route::resource('createuser','createuserController');
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
 
 Route::prefix('profile/{user:username}/portfolios')->group(function () {
     /*
@@ -51,4 +43,20 @@ Route::prefix('profile/{user:username}/portfolios')->group(function () {
      */
     Route::post('/', 'HomeController@index')
         ->name('profile.portfolios.store');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/books', function () {
+    return view('browse-books');
+});
+
+Route::get('/projects', function () {
+    return view('browse-projects');
+});
+
+Route::get('/exams', function () {
+    return view('browse-exams');
 });
