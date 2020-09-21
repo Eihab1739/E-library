@@ -14,8 +14,7 @@
                 <p class="card-text  lead"><b>Date:</b> {{$exam->examyear}}</p>                
                 <p class="lead mt-4"><strong>Description :- </strong><br> {{$exam->info}}</p>
                 <div class="link mt-4 d-flex flex-wrap justify-content-start">
-                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="m-1 btn primary-gradient text-white border-0 shadow">Read Online <i class="ion-md-laptop ml-1"></i></a>                
-                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="m-1 btn bg-gradient-green text-white border-0 shadow">Download <i class="ion-md-download ml-1"></i></a>                    
+                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="mx-1 btn bg-green rounded-pill text-white border-0 shadow">Download <i class="ion-md-download ml-1"></i></a>                    
                 </div>
             </div>            
         </div>         
