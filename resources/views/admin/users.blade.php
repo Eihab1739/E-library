@@ -7,7 +7,10 @@
       <h3 class="card-header"><i class="fa fa-users mr-1"></i> Users</h3>
 
       <div class="card-body">
-          <a href="{{route('createuser.create')}}" class="btn bg-indigo">Add User</a>
+          <div class="row justify-content-between">
+            <a href="{{route('createuser.create')}}" class="btn bg-indigo">Add User</a>
+            <a href="{{route('createAdmin')}}" class="btn bg-indigo">Add Admin</a>
+          </div>
           <div class="table-responsive">
             <h5 class="my-4"><i class="fa fa-users mr-1"></i>All Users</h5>
             <table class="table table-hover mt-4">

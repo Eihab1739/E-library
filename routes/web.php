@@ -27,6 +27,7 @@ Route::resource('/upload','UploadController');
 
 Route::group(['prefix' => 'admin','middleware'=>'roles','roles'=>'admins'], function () {
     Route::resource('users','AdminUsersController');
+
     Route::resource('categories','AdminCategoryController');
 
     Route::resource('exams','examsController');
@@ -34,6 +35,10 @@ Route::group(['prefix' => 'admin','middleware'=>'roles','roles'=>'admins'], func
     Route::resource('projects','projectController');
 });
 Route::resource('createuser','createuserController');
+Route::get('createAdmin','createuserController@showAddAdmin')->name('createAdmin');
+Route::post('storeAdmin','createuserController@storeAdmin')->name('storeAdmin');
+
+
 
 Route::prefix('profile/{user:username}/portfolios')->group(function () {
     /*
@@ -59,4 +64,21 @@ Route::get('/projects', function () {
 
 Route::get('/exams', function () {
     return view('browse-exams');
+});
+
+Route::get('/results', function () {
+    $exams= App\exam::where('title','like','%'.request('examsearch').'%')->get();
+    $exams= App\exam::where('author','like','%'.request('examsearch').'%')->get();
+    $exams= App\exam::where('info','like','%'.request('examsearch').'%')->get();
+    $exams= App\exam::where('examyear','like','%'.request('examsearch').'%')->get();
+
+
+
+    return view('examsSearchResults')
+    ->with('exams',$exams)
+    ->with('title','Result: '.request('examsearch'))
+    ->with('author','Result: '.request('examsearch'))
+    ->with('info','Result: '.request('examsearch'))
+    ->with('examyear','Result: '.request('examsearch'))
+    ->with('query', request('examsearch'));
 });

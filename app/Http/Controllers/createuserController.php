@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User ;
+use App\Role;
 
 class createuserController extends Controller
 {
@@ -18,6 +19,33 @@ class createuserController extends Controller
         //
     }
 
+    public function showAddAdmin()
+    {
+        $roles= Role::where('name', '!=', 'users')->get();
+        // dd('here');
+       return view('admin.add_Admin')->with('roles',$roles);
+    }
+
+    public function storeAdmin(Request $request)
+    {
+
+
+        $role = Role::find($request->role);
+        $admin = new User();
+        // dd($request->input('name'));
+
+        $admin->name=$request->input('name');
+
+        $admin->email=$request->input('email');
+        $admin->password=Hash::make($request->input('password'));
+        $admin->save();
+
+
+        $admin->roles()->attach($request->role);
+
+        return redirect(route('users.index'))->with('msg','Admin Added Successfully');
+
+    }
     /**
      * Show the form for creating a new resource.
      *
