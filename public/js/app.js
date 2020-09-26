@@ -37269,27 +37269,18 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //window.Vue = require('vue');
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // showcase background move
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-// const app = new Vue({
-//     el: '#app',
-// });
+document.addEventListener('mousemove', function (e) {
+  var effectOne = document.querySelector('.effect-1');
+  var effectTwo = document.querySelector('.effect-2');
+  var bg = document.querySelector('.showcase');
+  effectOne.style.left = 10 + e.pageX / 20 + "px";
+  effectOne.style.bottom = e.pageX / 20 + "px";
+  effectTwo.style.right = 10 + e.pageX / 25 + "px";
+  effectTwo.style.bottom = e.pageX / 20 + "px";
+});
 
 /***/ }),
 

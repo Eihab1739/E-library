@@ -2,13 +2,13 @@
 @section('title')
 @section('content')
     <div class="container">
-        <div class="card rounded-0" style="border-top: 5px solid var(--indigo)">
+        <div class="card bg-dark rounded-0" style="border-top: 5px solid var(--danger)">
             <h4 class="card-header"><i class="fa fa-book mr-1"></i> All Exams</h4>
             <div class="card-body">
-                <a href="/admin/exams/create" class="btn btn-block bg-indigo mb-4">Add an Exam</a>
-                <hr>
+                <a href="/admin/exams/create" class="btn btn-block bg-danger mb-4">Add an Exam</a>
+                <hr class="bg-white">
                 <table class="table table-default table-responsive text-center">
-                    <thead class="thead-default bg-indigo">
+                    <thead class="thead-default bg-danger">
                        <tr>
                             <th>Title</th>
                             <th>Teacher</th>

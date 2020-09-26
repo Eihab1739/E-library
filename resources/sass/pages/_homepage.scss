@@ -1,118 +1,156 @@
-.showcase {    
+/*/------------------------ SHOWCASE SECTION ----------------------------/*/
+.showcase {
+    background: url('images/library.jpg');    
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
     z-index: 1;
-    height: 100vh;
-    
-    .text , img{
-        position: relative;
-        z-index: 5;
-    }
-
-    .box-area {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 1;
+    height: 100vh;    
+    overflow: hidden;  
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 95%);
+    .text {      
+      position: relative;      
+      color: #fff;      
+      z-index: 2; 
+      h1 {
+        font-size: clamp(1.5em,5vw,3.5em);
+      }     
+      h5 {
+        font-size: clamp(.7em,5vw,1.8em);        
       }
-      
-      .box-area li {
-        position: absolute;
-        display: block;
-        list-style: none;
-        width: 25px;
-        height: 25px;
-        border-radius: 5%;
-        background: rgba(0, 0, 0, 0);
-        animation: roll 20s linear infinite;
-        bottom: -120px;
+      h5:nth-of-type(1) {
+        text-align-last: left;
       }
-      
-      .box-area li:nth-child(1){
-        left: 86%;
-        width: 80px;
-        height: 80px;
-        animation-delay: 0s;
+      h5:nth-of-type(2) {
+        text-align: right;
       }
-      
-      .box-area li:nth-child(2){
-        left: 12%;
-        width: 30px;
-        height: 30px;
-        animation-delay: 1.5s;
-        animation-duration: 10s;
-      }
-      
-      .box-area li:nth-child(3){
-        left: 70%;
-        width: 100px;
-        height: 100px;
-        animation-delay: 5.5s;
-      }
-      
-      .box-area li:nth-child(4){
-        left: 42%;
-        width: 150px;
-        height: 150px;
-        animation-delay: 0s;
-        animation-duration: 15s;
-      }
-      
-      .box-area li:nth-child(5){
-        left: 65%;
-        width: 40px;
-        height: 40px;
-        animation-delay: 0s;
-      }
-      
-      .box-area li:nth-child(6){
-        left: 15%;
-        width: 110px;
-        height: 110px;
-        animation-delay: 3.5s;
-      }
-    
+    }  
     img {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 150px;
-        width: 100%;
+      position: absolute;
+      z-index: 1;
+    }    
+    .shape {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;      
     }
 }
+@media screen and (max-width: 768px) {
+  .showcase {
+    height: 70vh;
+    padding: .8em;
+    h5 {
+      text-align: center !important;
+    }    
+    .shape {
+      height: 100px;
+      bottom: -2px;
+    }
+  }
+}
+@media screen and (max-height: 360px) {
+  .showcase {
+    height: 100vh;
+    padding: .8em;
+  }
+}
 
+/*/------------------------ SERVICES SECTION ----------------------------/*/
+.services {
+  .card {
+    position: relative;
+    border: 0;
+    background: var(--secondary);
+    &:hover:before{
+      margin-top: 0;
+      opacity: 1;
+    }
+    .card-header {
+      background: var(--secondary);
+      color: #fff;
+      i {
+        color: var(--primary)
+      }
+    }
+    .card-body {
+      color: var(--gray);
+    }  
+    &:before {
+      content: '';
+      position: absolute;
+      width: 95%;
+      height: 95%;
+      left: 50%;
+      top: 50%;
+      opacity: 0;
+      margin-top: 40px;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      border: 7px solid var(--primary);
+      transition: .4s ease-in-out;
+      pointer-events: none;
+    }
+  }
+}
+/*/------------------------ REQUEST SECTION ----------------------------/*/
+.request {
+  background-color: var(--black);
+  color: #fff;
+  .card {
+    background-color: var(--secondary);
+  }
+}
+/*/------------------------ CONTACT SECTION ----------------------------/*/
+.form-control {
+  background-color: var(--secondary) !important;
+  border: 2px solid var(--secondary) !important;
+  border-bottom: 2px solid var(--primary) !important;
+  border-radius: 0px !important;
+  transition: all .4s ease-in-out;
+  &:focus {
+    border-color: var(--yellow) !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
 .contact {
     position: relative;
+    color: #fff;
     .contact-header {
         position: relative;
-        background: url('images/contact-2.jpg') left bottom/cover;        
+        background: url('images/yellow-books.jpg') left bottom/cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        h3 {
+          position: relative;
+          z-index: 2;
+        }
     }
     .card {
-        margin-top: -3.5rem;                
-    }
+        margin-top: -3.5rem;
+    }    
 }
 
 @media screen and (max-width: 991px){
-    .contact .card {
-        margin-top: 1rem;
-    }
+  .contact .card {
+      margin-top: 1rem;
+  }
+}
+/*/------------------------ Footer ----------------------------/*/
+
+footer {
+  background: #000;
+  position: relative;
+  z-index: 1 !important;
 }
 
-
-@keyframes roll {
-    0% {
-        transform: translateY(0) rotate(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-800px) rotate(360deg);
-        opacity: 0;
-    }
+.social {
+  a {
+    font-size: 20px;
+    padding: 0rem 1rem
+  }
 }
+
