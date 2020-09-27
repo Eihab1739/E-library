@@ -1,13 +1,17 @@
+/*/-------------------- single exam and project -------------------------/*/
 .single-exam , .single-project {
     max-width: 650px;
     margin: 2rem auto;
 }
-
+/*/------------------single book -------------------------------------/*/
 .single-book {
     color: #333;
-    .header {
+    .header {        
+        background-size: cover !important;
+        background-color: var(--primary);
         padding-top: 5rem;
-        position: relative;
+        position: relative;        
+        height: 95vh;
         img.shape {
             position: absolute;
             bottom: 0;
@@ -15,14 +19,15 @@
             width: 100%;
             height: 150px;
             z-index: 1;
-        }
-        .card-body {
+        }        
+        .card-body {            
             position: relative;
             z-index: 2;
         }
         .card-img {
             position: relative;
             transform: translateY(1rem);
+            border: 3px solid #fff;
             z-index: 2;
         }
         .card-subtitle {
@@ -32,17 +37,26 @@
             i {
                 padding-right: .5rem;
             }
-        }
-        
+        }                
     }   
-    
+
+    .rateing-box {
+        background-color: $secondary;
+        color: #fff;
+        border: 3px solid $primary;
+    }
+    /*---------------- Comments ---------------*/
+    .comments-box {
+        border: 3px solid $primary;
+    }
+    /*----- comment avatar ------------*/
     .avatar {
         position: relative;
         transform: translateY(-1.5rem);
     }
 }
 
-
+/*-------------- single book media -----------------------*/
 @media screen and (max-width: 768px) {
     .single-book {
         .card-img {

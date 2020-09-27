@@ -1,4 +1,4 @@
-// browse books page style
+/*----------------------- browse books page style ------------------------*/
 #books {
     .card-deck {
         display: grid;
@@ -6,7 +6,7 @@
         grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
     }
 }
-// the book card style
+/*/------------------------ the book card style --------------------------------/*/
 .card#book {
     position: relative;
     border: none;
@@ -52,7 +52,7 @@
         overflow: hidden;
     }
 }
-
+/*/ ----------------- book card media ---------------------------------/ */ 
 @media screen and (max-width: 500px) {
     .card#book {
         width: 70%;

@@ -1,10 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 // Body
 $body-bg: #222;
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+/*------------------ Typography -------------*/
+$font-family-sans-serif: 'Montserrat', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+body {
+  font-family:  'Montserrat', sans-serif;
+}
+body:lang(ar) {
+  font-family: 'Tajawal', serif;
+}
+
+h1,h2,h3,h4,h5,h6,.btn {
+  font-family: 'Righteous', cursive;
+}
 
 // enable background gradient
 $enable-gradients: true;

@@ -2,9 +2,9 @@
 @section('content')
 <div class="single-project">
     <div class="container py-5">    
-        <div class="card mx-auto shadow">        
-            <div class="card-header primary-gradient">
-                <img height="150px" class="w-100 card-img-top" src="{{asset('images/icons/flat/Certificate.svg')}}" alt="project cover">        
+        <div class="card bg-secondary text-white mx-auto shadow">        
+            <div class="card-header bg-primary">
+                <img height="150px" class="w-100 card-img-top" src="{{asset('images/icons/strategy.svg')}}" alt="project cover">        
             </div>            
             <div class="card-body spacer">
                 <h3 class="card-title text-uppercase mb-4">{{$project->title}}</h3>
@@ -13,7 +13,7 @@
                 <p class="card-text  lead"><b>Date:</b> {{$project->projectyear}}</p>                
                 <p class="lead mt-3"><strong>Description :- </strong><br> {{$project->info}}</p>
                 <div class="link mt-4 d-flex flex-wrap justify-content-start">                    
-                    <a href="{{asset('storage/books/'.$project-> projectfile)}}" class="mx-1 rounded-pill btn bg-green text-white border-0 shadow">Download <i class="ion-md-download ml-1"></i></a>                    
+                    <a href="{{asset('storage/books/'.$project-> projectfile)}}" class="mx-1 btn btn-success text-white border-0 shadow">Download <i class="ion-md-download ml-1"></i></a>                    
                 </div>
             </div>                    
         </div>    

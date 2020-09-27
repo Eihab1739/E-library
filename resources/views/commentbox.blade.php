@@ -1,5 +1,5 @@
-<div class="card  p-2 p-sm-5">
-    <h4 class="mb-4"><i class="ion-md-text"></i> Reviews</h4>
+<div class="card bg-black text-white comments-box p-2 p-sm-5">
+    <h3 class="mb-4"><i class="ion-md-text"></i> Reviews</h3>
     @include('partials.alerts')
     <form action="{{route('comment',$book->id)}}" method="POST">
         @csrf
@@ -16,24 +16,24 @@
     <ul class="navbar-nav">
         @foreach ($book->comments as $comment )
         <li class="mt-4">
-            <div class="card my-2 px-2">              
-                <div class="card-header bg-white d-flex p-2 align-items-center">
+            <div class="card bg-secondary my-2 px-2">              
+                <div class="card-header bg-secondary d-flex p-2 align-items-center">
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
-                            <div class="avatar w-50 mx-auto py-4 px-5 bg-primary">
-                                {{-- <img class="avatar" src=""> --}}
-                                <i class="ion-md-contact"></i>
+                            <div class="avatar py-4 px-5 bg-primary rounded">
+                            <img class="avatar" src="" alt="">                                
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-8">
                             <div class="ml-3">
                                 <h5 class="">{{$comment->user->name}}</h5>
-                                <p class="text-muted">{{$comment->created_at}}</p>
+                                <p class=""><i class="ion-md-calendar text-primary mx-1 fa-lg"></i> {{$comment->created_at}}</p>
                             </div>
                         </div>                
                     </div>
                 </div>
-                <div class="card-body">
+                <hr class="bg-white m-0">
+                <div class="card-body bg-secondary">
                     <p class="card-text">{{$comment->comment}}</p>
                 </div>
             </div>

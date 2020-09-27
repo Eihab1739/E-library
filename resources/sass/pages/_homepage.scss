@@ -107,6 +107,7 @@
 .form-control {
   background-color: var(--secondary) !important;
   border: 2px solid var(--secondary) !important;
+  color: #fff !important;
   border-bottom: 2px solid var(--primary) !important;
   border-radius: 0px !important;
   transition: all .4s ease-in-out;
@@ -114,6 +115,9 @@
     border-color: var(--yellow) !important;
     box-shadow: none !important;
     outline: none !important;
+  }
+  &::placeholder {
+    color: #fff !important;
   }
 }
 .contact {

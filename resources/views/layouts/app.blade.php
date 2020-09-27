@@ -9,10 +9,7 @@
 
     {{-- <title>{{ config('app.name', 'Library') }}</title> --}}
     <title>{{__('Library')}}</title>
-
-    <!-- Fonts -->
-    <link href="{{ asset('webfonts/Nunito-Regular.ttf') }}" rel="stylesheet">
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
@@ -20,7 +17,7 @@
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="">
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-md fixed-top bg-black" style="border-bottom: 2px solid #333;z-index: 2">
             <div class="container-fluid">

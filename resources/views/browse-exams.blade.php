@@ -22,8 +22,8 @@
                             <h4 class="card-title text-uppercase">{{$exam->title}}</h4>
                             <h5 class="card-subtitle"><i class="ion-md-person fa-lg text-primary mx-1"></i> {{$exam->author}}</h5>
                             <br>
-                            <h5 class="card-subtitle"><i class="ion-md-calendar fa-lg text-primary mx-1"></i>  {{$exam->examyear}}</h5>
-                            <a class="btn rounded-0 btn-primary text-white mt-4" href="{{route('exams.show',$exam->id)}}">More Details</a> 
+                            <h5 class="card-subtitle mt-2"><i class="ion-md-calendar fa-lg text-primary mx-1"></i>  {{$exam->examyear}}</h5>                            
+                            <a class="btn rounded-0 btn-primary text-white d-block mt-4" href="{{route('exams.show',$exam->id)}}">More Details</a> 
                         </div>
                     </div>
                 </div>
