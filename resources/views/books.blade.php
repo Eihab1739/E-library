@@ -5,22 +5,21 @@
         <div class="card rounded-0" style="border-top: 5px solid var(--indigo)">
             <div class="card-header">
                 <h4><i class="fa fa-book mr-1"></i>Books</h4>
-            </div>            
-                        
+            </div>
+
             <div class="card-body">
-                <a href="/upload" class="btn btn-block bg-indigo mb-4 shadow-sm">Add a Book</a>                                
+                <a href="/upload" class="btn btn-block bg-indigo mb-4 shadow-sm">Add a Book</a>
                 <hr>
                 <h4 class="my-4"><i class="fa fa-book"></i> All Books</h4>
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-indigo">
-                        <tr>
+                        <tr><th>Edit</th>
                             <th>Cover</th>
                             <th>ISBN</th>
                             <th>Title</th>
                             <th>Author</th>
                             <th>Copies</th>
                             <th>Avilability</th>
-                            <th>Edit</th>
                             <th>Delete</th>
                             <th>Go To</th>
                         </tr>
@@ -34,6 +33,8 @@
                                     <td>{{$book->title}}</td>
                                     <td>{{$book->author}}</td>
                                     <td>{{$book->copies}}</td>
+                                    
+
                                     <td>-</td>
                                     {{-- <td>{{$book->avilability}}</td> will be added later \|\(^_^)/|/ --}}
                                     <form class="" action="{{route('books.destroy',$book->id)}}" method="POST">

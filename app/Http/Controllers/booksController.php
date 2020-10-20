@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Book;
 use Illuminate\Support\Facades\Auth;
 use App\Category;
-
+use Illuminate\Support\Facades\DB;
 
 
 class booksController extends Controller
@@ -25,7 +25,20 @@ class booksController extends Controller
     }
 
 
+public function search(Request $request)
 
+{
+    $search = $request->get('search');
+    $books= DB::table('books')->where('title','like','%'.$search.'%')
+        ->orWhere('id','like','%'.$search.'%')
+        ->orWhere('ISBN','like','%'.$search.'%')
+        ->orWhere('author','like','%'.$search.'%')
+        ->paginate(10);
+
+    return view('browse-books' , compact('books'));
+
+
+}
 
 
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Book;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +34,8 @@ Route::group(['prefix' => 'admin','middleware'=>'roles','roles'=>'admins'], func
     Route::resource('projects','projectController');
 });
 
+Route::get('/search','booksController@search')->name('search');
+
 Route::prefix('profile/{user:username}/portfolios')->group(function () {
     /*
      |===============================================
@@ -49,7 +51,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/books', function () {
-    return view('browse-books');
+    $books = Book::all();
+    return view('browse-books',compact('books'));
 });
 
 Route::get('/projects', function () {
