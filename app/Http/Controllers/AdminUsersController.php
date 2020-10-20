@@ -18,6 +18,8 @@ class AdminUsersController extends Controller
        return view('admin.users')->with('users',$users);
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *

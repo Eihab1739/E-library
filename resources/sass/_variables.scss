@@ -1,12 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 // Body
-$body-bg: #f8fafc;
+$body-bg: #222;
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+/*------------------ Typography -------------*/
+$font-family-sans-serif: 'Montserrat', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+body {
+  font-family:  'Montserrat', sans-serif;
+}
+body:lang(ar) {
+  font-family: 'Tajawal', serif;
+}
 
-// enable background gradient 
+h1,h2,h3,h4,h5,h6,.btn {
+  font-family: 'Righteous', cursive;
+}
+
+// enable background gradient
 $enable-gradients: true;
 
 // Colors
@@ -14,18 +26,17 @@ $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #7873f5;
 $pink: #ff6ec4;
-$red: #e3342f;
+$red: #f23849;
 $orange: #f6993f;
-$yellow: #ffed4a;
+$yellow: #FCBD56;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
-
+$gray: #ececec;
+$black: #222;
+$secondary: #272a31;
 // change the primary color
-$primary: $indigo;
-$secondary: $cyan;
-
-
+$primary: $red;
 
 $colors: (
   "blue": $blue,
@@ -37,49 +48,22 @@ $colors: (
   "yellow": $yellow,
   "green": $green,
   "teal": $teal,
-  "cyan": $cyan,  
+  "cyan": $cyan,
+  "gray": $gray,
   "primary": $primary,
+  "black": $black,
+  "secondary": $secondary
 );
 
-
-// text color 
+// text color
 @each $color, $value in $colors {
     .text-#{$color} {
       color: ($value);
     }
 }
-// background color 
+// background color
 @each $color, $value in $colors {
   .bg-#{$color} {
-    background: ($value);
-  }
-}
-
-// primary gradient
-.primary-gradient {
-  background: linear-gradient(40deg, $primary, $secondary) !important;
-  color: #fff;
-}
-
-// primary text gradient
-.primary-text-gradient {
-  background: linear-gradient(to right, $primary 0%, $secondary 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;	
-}
-
-// background gradient
-@each $color, $value in $colors {
-  .bg-gradient-#{$color} {
-    background: linear-gradient(40deg, $value , darken($value,10%) , darken($value,15%)) !important;
-    color: #fff;
-  }
-}
-// text gradient
-@each $color, $value in $colors {
-  .text-gradient-#{$color} {	
-    background: linear-gradient(to right, $value 0%, darken($value,15%) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;	
+    background-color: ($value) !important;
   }
 }

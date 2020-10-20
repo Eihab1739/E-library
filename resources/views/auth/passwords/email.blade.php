@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-8 mt-5">
-            <div class="card my-5 shadow-sm">
-                <div class="card-header primary-gradient"><i class="ion-md-refresh"></i> {{ __('Reset Password') }}</div>
+            <div class="card bg-scondary border-0 text-white my-5 shadow-sm">
+                <div class="card-header bg-primary"><i class="ion-md-refresh"></i> {{ __('Reset Password') }}</div>
 
-                <div class="card-body">
+                <div class="card-body bg-secondary">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -32,7 +32,7 @@
 
                         <div class="form-group">
                             <div class="">
-                                <button type="submit" class="btn btn-block text-white primary-gradient">
+                                <button type="submit" class="btn btn-block text-white btn-primary">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>

@@ -5,8 +5,8 @@
 @section('content')
 
     <div class="container">
-        <div class="card w-75 mx-auto">
-          <div class="card-header" style="border-top: 4px solid var(--indigo) ">
+        <div class="card bg-dark w-75 mx-auto">
+          <div class="card-header" style="border-top: 4px solid var(--danger) ">
             <h3>Add a new user</h3>
             <p>Please fill the form below to add a new user</p>
           </div>
@@ -14,7 +14,7 @@
             <form  method="POST" action="{{route('createuser.store')}}" >
               @csrf
               <div class="form-group">
-                <label for="name"><b>your Name</b></label>
+                <label for="name"><b>User Name</b></label>
                 <input class="form-control" type="text" placeholder="Enter your name" name="name" id="name" required>
               </div>
               <div class="form-group">
@@ -30,7 +30,7 @@
                 <input class="form-control" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>                  
               </div>
     
-              <button type="submit" class="registerbtn btn btn-block bg-indigo">Register</button>
+              <button type="submit" class="registerbtn btn btn-block bg-danger">Register</button>
             </form>            
           </div>          
         </div>

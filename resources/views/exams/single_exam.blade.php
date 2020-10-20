@@ -2,8 +2,8 @@
 @section('content')
 <div class="single-exam">
     <div class="container d-flex justify-content-center">        
-        <div class="card w-100 my-5 mx-auto shadow">        
-            <div class="card-header primary-gradient">
+        <div class="card w-100 my-5 bg-secondary text-white mx-auto shadow">        
+            <div class="card-header bg-primary">
                 <img class="card-img-top" width="100px" height="150px" src="{{asset('images/icons/flat/Test.svg')}}" alt="book cover">        
             </div>            
             <div class="card-body spacer">
@@ -14,8 +14,7 @@
                 <p class="card-text  lead"><b>Date:</b> {{$exam->examyear}}</p>                
                 <p class="lead mt-4"><strong>Description :- </strong><br> {{$exam->info}}</p>
                 <div class="link mt-4 d-flex flex-wrap justify-content-start">
-                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="m-1 btn primary-gradient text-white border-0 shadow">Read Online <i class="ion-md-laptop ml-1"></i></a>                
-                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="m-1 btn bg-gradient-green text-white border-0 shadow">Download <i class="ion-md-download ml-1"></i></a>                    
+                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="mx-1 btn btn-success text-white border-0 shadow">Download <i class="ion-md-download ml-1"></i></a>                    
                 </div>
             </div>            
         </div>         

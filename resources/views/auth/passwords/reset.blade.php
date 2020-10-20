@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         
-            <div class="card my-5 w-50 shadow-sm">
+            <div class="card bg-secondary my-5 w-50 shadow-sm">
                 <div class="card-header bt"><i class="ion-md-lock"></i> {{ __('Reset Password') }}</div>
 
                 <div class="card-body">

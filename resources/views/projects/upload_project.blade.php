@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container pb-4" style="max-width: 800px">
-        <div class="card" style="border-top: 5px solid var(--indigo)">
+        <div class="card bg-dark" style="border-top: 5px solid var(--danger)">
             <div class="card-header h5"><i class="fa fa-file-alt"></i> Project Upload</div>
             <div class="card-body">
                 @include('partials.alerts')
@@ -60,7 +60,7 @@
 
                     </div>
 
-                    <button type="submit" name="upload" class="btn bg-indigo btn-block">Upload Project</button>
+                    <button type="submit" name="upload" class="btn bg-danger btn-block">Upload Project</button>
                  </form>
             </div>
         </div>

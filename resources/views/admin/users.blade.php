@@ -1,17 +1,21 @@
 @extends('adminlte::page')
-@section('title', 'Users')    
+@section('title', 'Users')
 
 @section('content')
 <div class="container">
-    <div class="card">
+    <div class="card bg-dark">
       <h3 class="card-header"><i class="fa fa-users mr-1"></i> Users</h3>
 
       <div class="card-body">
-          <a href="{{route('createuser.create')}}" class="btn bg-indigo">Add User</a>
+          <div class="row">
+            <a href="{{route('createuser.create')}}" class="btn bg-danger">Add A User</a>
+            <a href="{{route('createAdmin')}}" class="btn bg-danger mx-4">Add An Admin</a>
+          </div>
+          <hr class="bg-white">
           <div class="table-responsive">
             <h5 class="my-4"><i class="fa fa-users mr-1"></i>All Users</h5>
             <table class="table table-hover mt-4">
-              <thead class="thead bg-indigo">
+              <thead class="thead bg-danger">
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Name</th>
@@ -26,7 +30,13 @@
                       <th scope="row">{{$user->id}}</th>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
-                      <td><button class="btn btn-danger rounded-0" onclick="confirm('Do you really want to delete this ?')">Delete</button></td>
+                      <td><form class="" action="{{route('createuser.destroy',$user->id)}}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?') ">Delete</button>
+                      </td>
+                    </form>
+                      </td>
                     </tr>
                   @endforeach
                 @endif

@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-            <div class="card my-3 mx-md-5 mx-auto" style="border-top: 4px solid var(--indigo)">
+            <div class="card bg-dark my-3 mx-md-5 mx-auto" style="border-top: 4px solid var(--danger)">
                 <div class="card-header">Update Book</div>
 
 
@@ -79,7 +79,7 @@
 
                     </div>
 
-                    <button type="submit" name="upload" class="btn bg-indigo btn-block">Update Book</button>
+                    <button type="submit" name="upload" class="btn bg-danger btn-block">Update Book</button>
 
 
 
