@@ -34,7 +34,6 @@ public function search(Request $request)
         ->orWhere('ISBN','like','%'.$search.'%')
         ->orWhere('author','like','%'.$search.'%')
         ->paginate(10);
-
     return view('browse-books' , compact('books'));
 
 

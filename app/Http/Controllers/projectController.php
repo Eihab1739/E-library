@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Project ;
+use Illuminate\Support\Facades\DB;
 
 class projectController extends Controller
 {
@@ -16,8 +17,8 @@ class projectController extends Controller
      */
     public function index()
     {
-        $projects=Project::latest()->get();
-       return view('projects.view_projects')->with('projects',$projects);
+        $projects = Project::latest()->get();
+        return view('projects.view_projects')->with('projects', $projects);
     }
 
     /**
@@ -33,116 +34,131 @@ class projectController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
 
-            'title'=>'required',
-            'maker'=>'required',
-            'info'=>'required',
-
-
-               ]);
-
-            if ($request->hasFile('projectfile')) {
-             $projectExt=$request->file('projectfile')->getClientOriginalExtension();
-            $projectName=time().'books.'.$projectExt;
-            $request->file('projectfile')->storeAs('books',$projectName);
-
-         }
-
-         $project = new Project();
-        $project->projectfile=$projectName;
-
-         $project->title=$request->input('title');
-         $project->maker=$request->input('maker');
-
-         $project->info=$request->input('info');
-
-         $project->projectyear=$request->input('year');
+            'title' => 'required',
+            'maker' => 'required',
+            'info' => 'required',
 
 
-         $project->user_id=Auth::user()->id ;
+        ]);
+
+        if ($request->hasFile('projectfile')) {
+            $projectExt = $request->file('projectfile')->getClientOriginalExtension();
+            $projectName = time() . 'books.' . $projectExt;
+            $request->file('projectfile')->storeAs('books', $projectName);
+
+        }
+
+        $project = new Project();
+        $project->projectfile = $projectName;
+
+        $project->title = $request->input('title');
+        $project->maker = $request->input('maker');
+
+        $project->info = $request->input('info');
+
+        $project->projectyear = $request->input('year');
 
 
-         $project->save();
-         return redirect(route('projects.index'))->with('msg','Upload Done');    }
+        $project->user_id = Auth::user()->id;
+
+
+        $project->save();
+        return redirect(route('projects.index'))->with('msg', 'Upload Done');
+    }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $project= Project::find($id);
-        return view('projects.single_project')->with('project',$project);    }
+        $project = Project::find($id);
+        return view('projects.single_project')->with('project', $project);
+    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Project $project)
     {
-        return view('projects.edit_project')->with('project',$project);
+        return view('projects.edit_project')->with('project', $project);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $Pro)
     {
-        $this->validate($request,[
+        $this->validate($request, [
 
-            'title'=>'required',
-            'maker'=>'required',
-            'info'=>'required',
-
-
-               ]);
-            $project= Project::find($Pro);
-
-            if ($request->hasFile('projectfile')) {
-             $projectExt=$request->file('projectfile')->getClientOriginalExtension();
-            $projectName=time().'books.'.$projectExt;
-            $request->file('projectfile')->storeAs('books',$projectName);
-
-         }
-         //$project->projectfile=$projectName;
-
-         $project->title=$request->input('title');
-         $project->maker=$request->input('maker');
-
-         $project->info=$request->input('info');
-
-         $project->projectyear=$request->input('year');
+            'title' => 'required',
+            'maker' => 'required',
+            'info' => 'required',
 
 
-         $project->user_id=Auth::user()->id ;
+        ]);
+        $project = Project::find($Pro);
+
+        if ($request->hasFile('projectfile')) {
+            $projectExt = $request->file('projectfile')->getClientOriginalExtension();
+            $projectName = time() . 'books.' . $projectExt;
+            $request->file('projectfile')->storeAs('books', $projectName);
+
+        }
+        //$project->projectfile=$projectName;
+
+        $project->title = $request->input('title');
+        $project->maker = $request->input('maker');
+
+        $project->info = $request->input('info');
+
+        $project->projectyear = $request->input('year');
 
 
-         $project->save();
-         return redirect(route('projects.index'))->with('msg','Update Done');    }
+        $project->user_id = Auth::user()->id;
+
+
+        $project->save();
+        return redirect(route('projects.index'))->with('msg', 'Update Done');
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect(route('projects.index'))->with('msg','Delete Done');    }
+        return redirect(route('projects.index'))->with('msg', 'Delete Done');
+    }
 
+    public function searchproject(Request $request)
+
+    {
+        $search = $request->get('search');
+        $projects = DB::table('projects')->where('title', 'like', '%' . $search . '%')
+            ->orWhere('id', 'like', '%' . $search . '%')
+            ->orWhere('projectyear', 'like', '%' . $search . '%')
+            ->paginate(10);
+        return view('browse-projects', compact('projects'));
+
+    }
 }

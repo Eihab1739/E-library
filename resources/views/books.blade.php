@@ -5,12 +5,27 @@
         <div class="card bg-dark rounded-0" style="border-top: 5px solid var(--danger)">
             <div class="card-header">
                 <h4><i class="fa fa-book mr-1"></i>Books</h4>
-            </div>            
-                        
+
+                {{-- search form  --}}
+                <div class="col-md-4">
+                    <form action="{{route('search')}}" method="get">
+                        @csrf
+                        <div class="input-group">
+                            <input type="search"  name="search" placeholder="Search book" class="form-control">
+                            <span class="input-group-prepend">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                        </span>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
             <div class="card-body">
-                <a href="/upload" class="btn btn-block bg-danger mb-4 shadow-sm">Add a Book</a>                                
+                <a href="/upload" class="btn btn-block bg-danger mb-4 shadow-sm">Add a Book</a>
                 <hr class="bg-white">
                 <h4 class="my-4"><i class="fa fa-book"></i> All Books</h4>
+
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-danger">
                         <tr>
@@ -48,7 +63,7 @@
                         </tbody>
                 </table>
             </div>
-        </div>    
+        </div>
 </div>
 
 

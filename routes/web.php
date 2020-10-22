@@ -1,5 +1,7 @@
 <?php
 
+use App\exam;
+use App\Project;
 use Illuminate\Support\Facades\Route;
 use App\Book;
 /*
@@ -42,6 +44,10 @@ Route::post('storeAdmin','createuserController@storeAdmin')->name('storeAdmin');
 
 Route::get('/search','booksController@search')->name('search');
 
+Route::get('/searchexams','examsController@searchexams')->name('searchexams');
+
+Route::get('/searchproject','projectController@searchproject')->name('searchproject');
+
 Route::prefix('profile/{user:username}/portfolios')->group(function () {
     /*
      |===============================================
@@ -56,17 +62,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/books', function () {
+    Route::get('/books', function () {
     $books = Book::all();
     return view('browse-books',compact('books'));
 });
 
 Route::get('/projects', function () {
-    return view('browse-projects');
+    $projects=Project::all();
+    return view('browse-projects' , compact('projects'));
 });
 
 Route::get('/exams', function () {
-    return view('browse-exams');
+    $exams =exam::all();
+    return view('browse-exams' ,compact('exams'));
 });
 
 Route::get('/results', function () {
