@@ -23,7 +23,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <i class="text-primary ion-ios-book"></i>
-                    <b class="text-white">{{__('Library')}}</b>
+                    <b class="text-white">{{__('web.library')}}</b>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <i class="ion-md-menu text-white"></i>
@@ -33,14 +33,14 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link text-white" href="/">
-                            {{__('HOME')}}
+                            {{__('web.home')}}
                         </a></li>
                         <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="/books"> {{__('BOOKS')}}</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/books"> {{trans_choice('web.book',10)}}</a></li>
                         <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="/exams"> {{__('EXAMS')}}</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/exams"> {{trans_choice('web.exam',10)}}</a></li>
                         <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="/projects"> {{__('PROJECTS')}}</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/projects"> {{trans_choice('web.project',10)}}</a></li>
 
                     </ul>
 
@@ -49,11 +49,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('login') }}"><i class="ion-md-person"></i> {{ __('Login') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}"><i class="ion-md-person"></i> {{ __('web.login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('register') }}"><i class="ion-md-person-add"></i> {{ __('Register') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}"><i class="ion-md-person-add"></i> {{ __('web.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -64,9 +64,9 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <i class="ion-md-log-out"></i> {{ __('Logout') }}
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        <i class="ion-md-log-out"></i> {{ __('web.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -75,6 +75,21 @@
                                 </div>
                             </li>
                         @endguest
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a class="nav-link text-white dropdown-toggle" href="#" role="button" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-flag"></i> {{__('web.lang')}}
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="lang">
+                                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                            {{ $properties['native'] }}
+                                        </a>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -86,7 +101,7 @@
 
         <footer class="pt-4 pb-2 px-3 mt-0 text-white ">
             <div class="container text-center">
-                <p>Copy Rights &copy; 2020 <i class="ion-ios-book text-primary"></i> Library | All Rights Reserved</p>
+                <p> <i class="ion-ios-book text-primary"></i> {{__('web.copyright')}}</p>
             </div>
         </footer>
     </div>

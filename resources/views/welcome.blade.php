@@ -6,13 +6,13 @@
     --------------------------------------------->
     <section class="showcase text-center d-flex flex-column align-items-center justify-content-center">                        
         <div class="text d-flex align-items-center justify-content-center flex-column">
-            <h5 class="my-2 animated fadeInLeft w-100">Better Education For A Better Future</h5>
+        <h5 class="my-2 animated fadeInLeft w-100">{{__('web.better')}}</h5>
             <h1 class="mt-2 animated fadeInDown">
-                Welcome To The <b class="text-yellow"> Library </b> Home of Books
+                {{__('web.welcome')}} <b class="text-yellow"> {{__('web.library')}} </b> {{__('web.hob')}}
             </h1>
-            <h5 class="my-2 animated fadeInRight w-100">Get Access To Hundreds of Books Online</h5>
+            <h5 class="my-2 animated fadeInRight w-100">{{__('web.access')}}</h5>
             <div class="animated zoomIn my-4">
-                <a href="/books" class="btn btn-primary text-white"> Browse Books Now !</a>
+            <a href="/books" class="btn btn-primary text-white"> {{__('web.browse')}}</a>
             </div>                
         </div>
         <img class="effect-1" width="100%" src="images/shapes/effect-1.svg" alt="">
