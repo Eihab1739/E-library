@@ -5,6 +5,7 @@ use App\Category ;
 use App\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UploadController extends Controller
 {
@@ -163,4 +164,6 @@ class UploadController extends Controller
         $book->delete();
         return redirect(route('books.index'))->with('msg','Delete Done');
     }
+
+
 }

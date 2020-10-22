@@ -47,6 +47,7 @@ Route::get('/search','booksController@search')->name('search');
 Route::get('/searchexams','examsController@searchexams')->name('searchexams');
 
 Route::get('/searchproject','projectController@searchproject')->name('searchproject');
+Route::get('/searchbook','booksController@searchbook')->name('searchbook');
 
 Route::prefix('profile/{user:username}/portfolios')->group(function () {
     /*
@@ -71,6 +72,12 @@ Route::get('/projects', function () {
     $projects=Project::all();
     return view('browse-projects' , compact('projects'));
 });
+
+Route::get('/books', function () {
+    $m=Book::all();
+    return view('books' , compact('m'));
+});
+
 
 Route::get('/exams', function () {
     $exams =exam::all();

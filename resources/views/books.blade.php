@@ -6,9 +6,9 @@
             <div class="card-header">
                 <h4><i class="fa fa-book mr-1"></i>Books</h4>
 
-                {{-- search form  --}}
+{{--                 search form --}}
                 <div class="col-md-4">
-                    <form action="{{route('search')}}" method="get">
+                    <form action="{{route('searchbook')}}" method="get">
                         @csrf
                         <div class="input-group">
                             <input type="search"  name="search" placeholder="Search book" class="form-control">
