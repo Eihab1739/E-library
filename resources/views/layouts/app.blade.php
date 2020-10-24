@@ -8,14 +8,39 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'Library') }}</title> --}}
-    <title>{{__('Library')}}</title>
+    <title>{{__('web.library')}}</title>
     
-    <!-- Styles -->
+
+    @if ( app()->getLocale() == 'ar') 
+        <!-- Font  -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"> 
+        <!-- Styles -->
+        <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <style>
+            *:not(i) {
+                font-family: 'Cairo' !important;
+            }
+            
+        </style>
+    @else
+        <!-- Styles -->
+        <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @endif 
+    {{-- <!-- Styles -->
     <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 </head>
 <body>
     <div id="app">
