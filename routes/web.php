@@ -4,6 +4,8 @@ use App\exam;
 use App\Project;
 use Illuminate\Support\Facades\Route;
 use App\Book;
+use App\Mail\NotifyUser;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,16 +75,35 @@ Route::get('/projects', function () {
     return view('browse-projects' , compact('projects'));
 });
 
-Route::get('/books', function () {
-    $m=Book::all();
-    return view('books' , compact('m'));
-});
+// Route::get('/books', function () {
+//     $m=Book::all();
+//     return view('books' , compact('m'));
+// });
 
 
 Route::get('/exams', function () {
     $exams =exam::all();
     return view('browse-exams' ,compact('exams'));
 });
+
+
+
+Route::get('/email', function () {
+   // Mail::to('emails.notify@gmail.com')->send(new NotifyUser());
+    return new NotifyUser();
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/results', function () {
     $exams= App\exam::where('title','like','%'.request('examsearch').'%')->get();

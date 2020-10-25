@@ -161,7 +161,7 @@ public function search(Request $request)
 
     {
         $search = $request->get('search');
-        $books= DB::table('books')->where('id','like','%'.$search.'%')
+        $books= DB::table('books')->where('title','like','%'.$search.'%')
             ->orWhere('ISBN','like','%'.$search.'%')
             ->orWhere('author','like','%'.$search.'%')
             ->paginate(10);
