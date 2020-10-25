@@ -1,28 +1,27 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 @section('title')
 @section('content')
-    <div class="container">
+    <div class="container" id="view-books">
         <div class="card bg-dark rounded-0" style="border-top: 5px solid var(--danger)">
             <div class="card-header">
-                <h4><i class="fa fa-book mr-1"></i>Books</h4>
+                <h4><i class="fa fa-book mr-1"></i> {{trans_choice('web.book',10)}}</h4>
             </div>            
                         
             <div class="card-body">
-                <a href="/upload" class="btn btn-block bg-danger mb-4 shadow-sm">Add a Book</a>                                
+                <a href="/upload" class="btn btn-block bg-danger mb-4 shadow-sm"> {{__('web.add_book')}}</a>                                
                 <hr class="bg-white">
-                <h4 class="my-4"><i class="fa fa-book"></i> All Books</h4>
+                
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-danger">
                         <tr>
-                            <th>Cover</th>
-                            <th>ISBN</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Copies</th>
-                            <th>Avilability</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                            <th>Go To</th>
+                            <th>{{__('web.cover')}}</th>
+                            <th>{{__('web.isbn')}}</th>
+                            <th>{{__('web.title')}}</th>
+                            <th>{{__('web.author')}}</th>
+                            <th>{{__('web.copies')}}</th>
+                            <th>{{__('web.edit')}}</th>
+                            <th>{{__('web.delete')}}</th>
+                            <th>{{__('web.goto')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,15 +33,13 @@
                                     <td>{{$book->title}}</td>
                                     <td>{{$book->author}}</td>
                                     <td>{{$book->copies}}</td>
-                                    <td>-</td>
-                                    {{-- <td>{{$book->avilability}}</td> will be added later \|\(^_^)/|/ --}}
                                     <form class="" action="{{route('books.destroy',$book->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <td><a href="{{route('books.edit',$book->id)}}" class="btn btn-warning text-white rounded-0">Edit</a></td>
-                                        <td><button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?')">Delete</button></td>
+                                        <td><a href="{{route('books.edit',$book->id)}}" class="btn btn-warning text-white rounded-0"><i class="fa fa-edit"></i></a></td>
+                                        <td><button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?')"><i class="fa fa-trash"></i></button></td>
                                     </form>
-                                    <td><a href="{{route('book',$book->id)}}" class="btn bg-success rounded-0">More</a></td>
+                                    <td><a href="{{route('book',$book->id)}}" class="btn bg-success rounded-0"><i class="fa fa-sign-out-alt"></i></a></td>
                                 </tr>
                             @endforeach
                         </tbody>

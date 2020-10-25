@@ -145,7 +145,17 @@ h6,
 }
 
 .bb {
-  border-bottom: 2px solid var(--primary);
+  position: relative;
+}
+
+.bb::before {
+  content: "";
+  position: absolute;
+  bottom: 0rem;
+  width: 3rem;
+  height: 3px;
+  border-radius: 0 50rem;
+  background: var(--primary);
 }
 
 .btn {
@@ -572,6 +582,55 @@ footer {
   width: 80%;
   bottom: -3rem;
   left: 10%;
+}
+
+#view-exams,
+#view-projects,
+#view-books,
+#view-users {
+  min-height: 70vh;
+  margin: 5rem auto;
+}
+
+#view-exams .card-header,
+#view-exams .btn,
+#view-exams tr,
+#view-exams h4,
+#view-projects .card-header,
+#view-projects .btn,
+#view-projects tr,
+#view-projects h4,
+#view-books .card-header,
+#view-books .btn,
+#view-books tr,
+#view-books h4,
+#view-users .card-header,
+#view-users .btn,
+#view-users tr,
+#view-users h4 {
+  color: var(--white);
+}
+
+#view-exams table,
+#view-projects table,
+#view-books table,
+#view-users table {
+  display: grid;
+  place-content: center;
+}
+
+#view-exams table tr,
+#view-projects table tr,
+#view-books table tr,
+#view-users table tr {
+  border: none;
+}
+
+#view-exams table th,
+#view-projects table th,
+#view-books table th,
+#view-users table th {
+  border: none;
 }
 
 /*!

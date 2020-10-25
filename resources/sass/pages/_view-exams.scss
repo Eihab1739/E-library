@@ -1,0 +1,20 @@
+#view-exams , #view-projects , #view-books , #view-users {
+    min-height: 70vh;
+    margin: 5rem auto;
+    .card-header , .btn , tr , h4 {
+        color: var(--white);
+    }
+
+    table {
+        display: grid;
+        place-content: center;
+        tr {
+            border: none
+        }
+        th {
+            border: none
+        }
+    }
+
+    
+}

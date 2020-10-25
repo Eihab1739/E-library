@@ -29,7 +29,7 @@
                 <div class="card shadow-sm p-4 mt-4">
                     <div class="card-header text-center">                       
                         <i class="fa fa-book fa-4x"></i>
-                        <h5 class="mt-2">{{__('web.read_books')}}</h5>
+                        <h5 class="mt-2 text-center">{{__('web.read_books')}}</h5>
                     </div>
                     <div class="card-body text-justify">
                         <p>{{__('web.read_books_text')}}</p>                        
@@ -41,7 +41,7 @@
                 <div class="card shadow-sm p-4">
                     <div class="card-header text-center">
                         <i class="fa fa-file-alt fa-4x"></i>
-                        <h5 class="mt-2">{{__('web.old_exams')}}</h5>
+                        <h5 class="mt-2 text-center">{{__('web.old_exams')}}</h5>
                     </div>
                     <div class="card-body text-justify">
                         <p>{{__('web.old_exams_text')}}</p>                        
@@ -53,7 +53,7 @@
                 <div class="card shadow-sm p-4">
                     <div class="card-header text-center">
                         <i class="fa fa-graduation-cap fa-4x"></i>
-                        <h5 class="mt-2">{{trans_choice('web.project',10)}}</h5>
+                        <h5 class="mt-2 text-center">{{trans_choice('web.project',10)}}</h5>
                     </div>
                     <div class="card-body text-justify">
                         <p>{{__('web.projects_text')}}</p>                        
@@ -65,7 +65,7 @@
                 <div class="card shadow-sm p-4 mt-4">
                     <div class="card-header text-center">
                         <i class="fa fa-suitcase fa-4x"></i>
-                    <h5 class="mt-2">{{__('web.borrow_books')}}</h5>
+                    <h5 class="mt-2 text-center">{{__('web.borrow_books')}}</h5>
                     </div>
                     <div class="card-body text-justify">
                     <p>{{__('web.borrow_books_text')}}</p>                        
@@ -82,7 +82,8 @@
     --------------------------------------------->
     <section class="request py-sm-5 text-center">
         <div class="container my-5">
-            <h4 class="d-inline-block text-white py-2 bb mb-4">{{__('web.request_books')}}</h4>
+            <h4 class="text-center bb text-white py-2 mb-4">{{__('web.request_books')}}</h4>
+            
             <div class="card py-4 px-sm-5 rounded-0  mx-auto shadow col-sm-12 col-md-8">
                 <form action="" class="spacer">
                     <div class="form-group d-flex">
@@ -107,7 +108,7 @@
     --------------------------------------------->
     <section id="contact" class="contact mb-5">        
         <div class="contact-header text-center py-5 bg-dark">
-            <h3 class="my-sm-5 text-white font-weight-bold">{{__('web.get_in_touch')}}</h3>
+            <h3 class="my-sm-5 text-white bb pb-2 text-center font-weight-bold">{{__('web.get_in_touch')}}</h3>
             <div class="overlay"></div>
         </div>
         <div class="contact-content">

@@ -1,26 +1,26 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 @section('title', 'Users')
 
 @section('content')
-<div class="container">
-    <div class="card bg-dark">
-      <h3 class="card-header"><i class="fa fa-users mr-1"></i> Users</h3>
+<div class="container" id="view-users">
+    <div class="card bg-dark rounded-0 border-0">
+      <h3 class="card-header bt rounded-0"><i class="fa fa-users mr-1"></i> {{__('web.users')}}</h3>
 
       <div class="card-body">
-          <div class="row">
-            <a href="{{route('createuser.create')}}" class="btn bg-danger">Add A User</a>
-            <a href="{{route('createAdmin')}}" class="btn bg-danger mx-4">Add An Admin</a>
+          <div class="row d-flex justify-content-center">
+            <a href="{{route('createuser.create')}}" class="btn bg-danger mb-2">{{__('web.add_user')}}</a>
+            <a href="{{route('createAdmin')}}" class="btn bg-danger mx-4 mb-2">{{__('web.add_admin')}}</a>
           </div>
           <hr class="bg-white">
           <div class="table-responsive">
-            <h5 class="my-4"><i class="fa fa-users mr-1"></i>All Users</h5>
-            <table class="table table-hover mt-4">
+            
+            <table class="table mt-4">
               <thead class="thead bg-danger">
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Delete</th>
+                      <th scope="col">{{__('web.name')}}</th>
+                      <th scope="col">{{__('web.email')}}</th>
+                      <th scope="col">{{__('web.delete')}}</th>
                     </tr>
               </thead>
               <tbody>
@@ -33,7 +33,7 @@
                       <td><form class="" action="{{route('createuser.destroy',$user->id)}}" method="post">
                         @csrf
                         @method('delete')
-                        <button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?') ">Delete</button>
+                        <button class="btn btn-danger rounded-0"><i class="fa fa-trash"></i></button>
                       </td>
                     </form>
                       </td>

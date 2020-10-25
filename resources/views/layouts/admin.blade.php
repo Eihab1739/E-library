@@ -52,9 +52,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md fixed-top bg-black" style="border-bottom: 2px solid #333;z-index: 2">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <i class="text-primary ion-ios-book"></i>
-                    <b class="text-white">{{__('web.library')}}</b>
+                <a class="navbar-brand" href="{{ url('/admin/users') }}">
+                    <i class="text-primary ion-md-cog"></i>
+                    <b class="text-white">{{__('web.dashboard')}}</b>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <i class="ion-md-menu text-white"></i>
@@ -63,15 +63,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ">
-                        <li class="nav-item"><a class="nav-link text-white" href="/">
-                            {{__('web.home')}}
+                        <li class="nav-item"><a class="nav-link text-white" href="/admin/users">
+                            {{__('web.users')}}
                         </a></li>
                         <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="/books"> {{trans_choice('web.book',10)}}</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/admin/books"> {{trans_choice('web.book',10)}}</a></li>
                         <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="/exams"> {{trans_choice('web.exam',10)}}</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/admin/exams"> {{trans_choice('web.exam',10)}}</a></li>
                         <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="/projects"> {{trans_choice('web.project',10)}}</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/admin/projects"> {{trans_choice('web.project',10)}}</a></li>
 
                     </ul>
 
@@ -126,7 +126,7 @@
             </div>
         </nav>
 
-        <main class="pt-4">
+        <main class="py-5" style="background: #f2f2f2">
             @yield('content')
         </main>
 

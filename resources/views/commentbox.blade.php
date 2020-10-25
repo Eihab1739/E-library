@@ -1,13 +1,13 @@
 <div class="card bg-black text-white comments-box p-2 p-sm-5">
-    <h3 class="mb-4"><i class="ion-md-text"></i> Reviews</h3>
+    <h3 class="mb-4"><i class="ion-md-text"></i> {{__('web.reviews')}}</h3>
     @include('partials.alerts')
     <form action="{{route('comment',$book->id)}}" method="POST">
         @csrf
         <div class="">
-            <h5 class="text-bold">Leave a Review <i class="ion-md-text ml-1"></i></h5>            
-            <textarea name="comment" class="form-control mb-3" id="form-stacked-text" type="text" placeholder="Enter your review ..."></textarea>            
+            <h5 class="text-bold">{{__('web.lr')}} <i class="ion-md-text ml-1"></i></h5>            
+            <textarea name="comment" class="form-control mb-3" id="form-stacked-text" type="text" placeholder="{{__('web.enter_review')}}"></textarea>            
         </div>
-        <button type="submit" name="addcomment" class="btn btn-outline-primary">Submit</button>
+        <button type="submit" name="addcomment" class="btn btn-outline-primary">{{__('web.submit')}}</button>
     </form>
 
     <hr class="d-block my-3">
