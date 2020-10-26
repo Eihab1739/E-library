@@ -6,13 +6,13 @@
     --------------------------------------------->
     <section class="showcase text-center d-flex flex-column align-items-center justify-content-center">                        
         <div class="text d-flex align-items-center justify-content-center flex-column">
-            <h5 class="my-2 animated fadeInLeft w-100">Better Education For A Better Future</h5>
+        <h5 class="my-2 animated fadeInLeft w-100">{{__('web.better')}}</h5>
             <h1 class="mt-2 animated fadeInDown">
-                Welcome To The <b class="text-yellow"> Library </b> Home of Books
+                {{__('web.welcome')}} <b class="text-yellow"> {{__('web.library')}} </b> {{__('web.hob')}}
             </h1>
-            <h5 class="my-2 animated fadeInRight w-100">Get Access To Hundreds of Books Online</h5>
+            <h5 class="my-2 animated fadeInRight w-100">{{__('web.access')}}</h5>
             <div class="animated zoomIn my-4">
-                <a href="/books" class="btn btn-primary text-white"> Browse Books Now !</a>
+            <a href="/books" class="btn btn-primary text-white"> {{__('web.browse')}}</a>
             </div>                
         </div>
         <img class="effect-1" width="100%" src="images/shapes/effect-1.svg" alt="">
@@ -24,54 +24,54 @@
         section services
     --------------------------------------------->
     <section class="services text-center py-5">
-        <h3 class="mb-5 d-inline-block text-white py-1 bb" >Services </h3>
+        <h3 class="mb-5 d-inline-block text-white py-1 bb" >{{__('web.services')}} </h3>
             <div class="card-deck container-fluid mx-auto">        
                 <div class="card shadow-sm p-4 mt-4">
                     <div class="card-header text-center">                       
                         <i class="fa fa-book fa-4x"></i>
-                        <h5 class="mt-2">Read Books</h5>
+                        <h5 class="mt-2 text-center">{{__('web.read_books')}}</h5>
                     </div>
                     <div class="card-body text-justify">
-                        <p>You can access hundreds of books online without going to the library</p>                        
+                        <p>{{__('web.read_books_text')}}</p>                        
                     </div>
                     <div class="card-footer">
-                        <a href="/books" class="btn btn-block btn-primary">More</a>
+                        <a href="/books" class="btn btn-block btn-primary">{{__('web.more')}}</a>
                     </div>                    
                 </div>
                 <div class="card shadow-sm p-4">
                     <div class="card-header text-center">
                         <i class="fa fa-file-alt fa-4x"></i>
-                        <h5 class="mt-2">Old Exams</h5>
+                        <h5 class="mt-2 text-center">{{__('web.old_exams')}}</h5>
                     </div>
                     <div class="card-body text-justify">
-                        <p>You can now get access to old exams in the library website</p>                        
+                        <p>{{__('web.old_exams_text')}}</p>                        
                     </div>
                     <div class="card-footer">
-                        <a href="/exams" class="btn btn-block btn-primary">More</a>
+                        <a href="/exams" class="btn btn-block btn-primary">{{__('web.more')}}</a>
                     </div>
                 </div>
                 <div class="card shadow-sm p-4">
                     <div class="card-header text-center">
                         <i class="fa fa-graduation-cap fa-4x"></i>
-                        <h5 class="mt-2">Projects</h5>
+                        <h5 class="mt-2 text-center">{{trans_choice('web.project',10)}}</h5>
                     </div>
                     <div class="card-body text-justify">
-                        <p>Get access to other student graduation projects online </p>                        
+                        <p>{{__('web.projects_text')}}</p>                        
                     </div>
                     <div class="card-footer">
-                        <a href="/projects" class="btn btn-block btn-primary">More</a>
+                        <a href="/projects" class="btn btn-block btn-primary">{{__('web.more')}}</a>
                     </div>
                 </div>
                 <div class="card shadow-sm p-4 mt-4">
                     <div class="card-header text-center">
                         <i class="fa fa-suitcase fa-4x"></i>
-                        <h5 class="mt-2">Borrow Books</h5>
+                    <h5 class="mt-2 text-center">{{__('web.borrow_books')}}</h5>
                     </div>
                     <div class="card-body text-justify">
-                        <p>You found an interesting book you can come to the library and borrow it</p>                        
+                    <p>{{__('web.borrow_books_text')}}</p>                        
                     </div>
                     <div class="card-footer">
-                        <a href="/books" class="btn btn-block btn-primary">More</a>
+                        <a href="/books" class="btn btn-block btn-primary">{{__('web.more')}}</a>
                     </div>
                 </div>
             </div>
@@ -82,22 +82,23 @@
     --------------------------------------------->
     <section class="request py-sm-5 text-center">
         <div class="container my-5">
-            <h4 class="d-inline-block text-white py-2 bb mb-4">Request a Book</h4>
+            <h4 class="text-center bb text-white py-2 mb-4">{{__('web.request_books')}}</h4>
+            
             <div class="card py-4 px-sm-5 rounded-0  mx-auto shadow col-sm-12 col-md-8">
                 <form action="" class="spacer">
                     <div class="form-group d-flex">
-                        <input class="form-control form-control-lg form-control-lg" id="email" type="email" placeholder="E-Mail Address">
+                    <input class="form-control form-control-lg form-control-lg" id="email" type="email" placeholder="{{__('web.email')}}">
                     </div>
                     <div class="form-group d-flex">
-                        <input class="form-control form-control-lg" type="text" placeholder="Name">
+                        <input class="form-control form-control-lg" type="text" placeholder="{{__('web.name')}}">
                     </div>
                     <div class="form-group d-flex">
-                        <input class="form-control form-control-lg" type="text" placeholder="Book Name">
+                        <input class="form-control form-control-lg" type="text" placeholder="{{__('web.book_name')}}">
                     </div>
                     <div class="form-group d-flex">
-                        <input class="form-control form-control-lg" type="text" placeholder="Author Name">
+                        <input class="form-control form-control-lg" type="text" placeholder="{{__('web.author_name')}}">
                     </div>
-                    <button class="btn btn-block btn-primary text-white">REQUEST <i class="ion-md-send"></i></button>
+                    <button class="btn btn-block btn-primary text-white">{{__('web.request')}} <i class="ion-md-send"></i></button>
                 </form>
             </div>
         </div>
@@ -107,48 +108,48 @@
     --------------------------------------------->
     <section id="contact" class="contact mb-5">        
         <div class="contact-header text-center py-5 bg-dark">
-            <h3 class="my-sm-5 text-white font-weight-bold">Get In Touch</h3>
+            <h3 class="my-sm-5 text-white bb pb-2 text-center font-weight-bold">{{__('web.get_in_touch')}}</h3>
             <div class="overlay"></div>
         </div>
         <div class="contact-content">
             <div class="card-deck container-fluid mx-auto">
                 <div class="card bg-secondary py-4 px-4 shadow">
-                    <h5>Send Us a Message</h5>
-                    <p>Feel free to send us a message fill the form below</p>
+                    <h5>{{__('web.send_message')}}</h5>
+                    <p>{{__('web.feel_free')}}</p>
                     <form action="" class="spacer">
                         <div class="form-group d-flex">
-                            <input class="form-control form-control-lg" type="text" placeholder="Enter Your Name">
+                            <input class="form-control form-control-lg" type="text" placeholder="{{__('web.name')}}">
                         </div>
                         <div class="form-group d-flex">
-                            <input class="form-control form-control-lg" id="email" type="email" placeholder="E-Mail Address">
+                            <input class="form-control form-control-lg" id="email" type="email" placeholder="{{__('web.email')}}">
                         </div>
                         <div class="form-group d-flex">
-                            <input class="form-control form-control-lg" type="text" placeholder="Subject">
+                            <input class="form-control form-control-lg" type="text" placeholder="{{__('web.subject')}}">
                         </div>
                         <div class="form-group d-flex">
-                            <textarea class="form-control form-control-lg" type="text" placeholder="Message"></textarea>
+                            <textarea class="form-control form-control-lg" type="text" placeholder="{{__('web.message')}}"></textarea>
                         </div>
-                        <button class="btn btn-block btn-primary text-white">SEND <i class="ion-md-send"></i></button>
+                        <button class="btn btn-block btn-primary text-white">{{__('web.send')}} <i class="ion-md-send"></i></button>
                     </form>
                 </div>
                 <div class="card bg-primary p-3 p-sm-5 text-white shadow">
-                    <h5>Contact Info</h5>
-                    <p class="lead mb-2">Useful information about our workflow and location</p>
+                    <h5>{{__('web.contact_info')}}</h5>
+                    <p class="lead mb-2">{{__('web.useful_info')}}</p>
                     <ul class="navbar-nav mt-3">
                         <li class="d-flex">
-                            <p class="lead"><i class="ion-md-map"></i> <b> Address :</b> Khartoum north  </p>
+                            <p class="lead"><i class="ion-md-map"></i> <b> {{__('web.address')}} :</b> {{__('web.address_text')}}  </p>
                         </li>
                         <li class="d-flex">
-                            <p class="lead"><i class="ion-md-mail"></i> <b> Email :</b>: info@library.com</p>
+                            <p class="lead"><i class="ion-md-mail"></i> <b> {{__('web.email')}} :</b> info@library.com</p>
                         </li>
                         <li class="d-flex">
-                            <p class="lead"><i class="ion-md-call"></i> <b> Phone :</b> 100 -1020 -21221</p>
+                            <p class="lead"><i class="ion-md-call"></i> <b> {{__('web.phone')}} :</b> 100 -1020 -21221</p>
                         </li>
                         <li class="d-flex">
-                            <p class="lead"><i class="ion-md-clock"></i> <b> Working Hours :</b> 7:00 am -- 3:00 pm</p>
+                        <p class="lead"><i class="ion-md-clock"></i> <b> {{__('web.working_hours')}} :</b> {{__('web.hours_text')}}</p>
                         </li>
                         <li class="d-flex">
-                            <p class="lead"><i class="ion-md-calendar"></i> <b> Working Days :</b> Sunday -- Tuseday</p>
+                            <p class="lead"><i class="ion-md-calendar"></i> <b> {{__('web.working_days')}} :</b> {{__('web.days_text')}}</p>
                         </li>
                     </ul>
                 </div>

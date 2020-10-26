@@ -19,8 +19,8 @@
 
                     <hr class="bg-white">
                         <div class="details text-white d-flex justify-content-between flex-wrap">
-                            <span class="lead my-1"><b class="text-white">{{__('web.isbn')}} :</b> {{$book->ISBN}}</span>
-                            <span class="lead my-1"><b class="text-white">{{__('web.available_copies')}} :</b> {{$book->copies}}</span>
+                            <span class="lead my-1"><b class="text-white">ISBN:</b> {{$book ->ISBN}}</span>
+                            <span class="lead my-1"><b class="text-white">Avilable Copies:</b> {{$book ->copies}}</span>
                             <span class="rating d-inline-block">
                                 <div class="text-yellow my-1">
                                     <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i>
@@ -28,14 +28,14 @@
                             </span>
                         </div>
                     <hr class="bg-white">
-                    <h5 class="text-white">{{__('web.desc')}} :- </h5>
-                    <p class="my-4 lead text-white"> {{$book->info}}</p>
-                    
+                    <h5 class="text-white">Description :- </h5>
+                    <p class="my-4 lead text-white"> {{$book ->info}}</p>
+
                     <hr class="bg-white">
 
                     <div class="link mt-4 d-flex flex-wrap justify-content-start">
-                        <a href="{{asset('storage/books/'.$book->bookfile)}}" class="m-1 btn btn-lg btn-success text-white border-0 rounded-0">{{__('web.download')}} <i class="ion-md-download mx-1"></i></a>
-                        <a href="#!" class="m-1 btn btn-lg bg-blue text-white rounded-0">{{__('web.borrow')}} <i class="ion-md-log-out mx-1"></i></a>                    
+                        <a href="{{asset('storage/books/'.$book ->bookfile)}}" class="m-1 btn btn-lg btn-success text-white border-0 rounded-0">Download <i class="ion-md-download mx-1"></i></a>
+                        <a href="#!" class="m-1 btn btn-lg bg-blue text-white rounded-0">Borrow <i class="ion-md-log-out mx-1"></i></a>
                     </div>
                 </div>
                 </div>
@@ -45,9 +45,9 @@
     <br>
     <div class="container">
         <div class="card rateing-box p-4">
-            <h4><i class="ion-md-star"></i> {{__('web.rating')}} :-</h4>            
+            <h4><i class="ion-md-star"></i> Rateing :-</h4>
             <hr class="bg-white">
-            <h4 class=""> {{__('web.rtb')}}</h4>
+            <h4 class=""> Rate This Book</h4>
             <br>
             <span class="rating d-inline-block">
                 <div class="text-yellow">

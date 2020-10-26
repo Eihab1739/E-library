@@ -232,13 +232,11 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
-            'text' => 'search',
-            'search' => true,
             'topnav' => true,
         ],
 
         [
-            'text'        => 'Users',
+            'text'        => 'Userss',
             'url'         => 'admin/users',
             'icon'        => 'fa fa-user mr-1',
 
@@ -420,7 +418,7 @@ return [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => 'cdn.jsdelivr.net/npm/sweetalert2@8',
                 ],
             ],
         ],

@@ -9,12 +9,12 @@
             <div class="card-body spacer">
                 <h3 class="card-title text-uppercase mb-4">{{$exam->title}}</h3>
                 <h5 class="card-subtitle lead my-2 ">
-                <b>Teacher:</b> 
+                <b>{{__('web.teacher')}} :</b> 
                 {{$exam->author}}</h5>                  
-                <p class="card-text  lead"><b>Date:</b> {{$exam->examyear}}</p>                
-                <p class="lead mt-4"><strong>Description :- </strong><br> {{$exam->info}}</p>
+                <p class="card-text  lead"><b>{{__('web.date')}} :</b> {{$exam->examyear}}</p>                
+                <p class="lead mt-4"><strong>{{__('web.desc')}} :- </strong><br> {{$exam->info}}</p>
                 <div class="link mt-4 d-flex flex-wrap justify-content-start">
-                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="mx-1 btn btn-success text-white border-0 shadow">Download <i class="ion-md-download ml-1"></i></a>                    
+                    <a href="{{asset('storage/books/'.$exam->examfile)}}" class="mx-1 btn btn-success text-white border-0 shadow">{{__('web.download')}} <i class="ion-md-download ml-1"></i></a>                    
                 </div>
             </div>            
         </div>         

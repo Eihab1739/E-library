@@ -1,22 +1,22 @@
 @extends('layouts.app')
 @section('content')
-<div class="single-book py-1 py-md-4 bg-black">
-    <div class="header bg-transparent border-0 mb-5" style="background: url({{asset('storage/thumbnails/'.$book ->image)}})">
+<div class="single-book py-1 py-md-4 bg-black">        
+    <div class="header bg-transparent border-0 mb-5" style="background: url({{asset('storage/thumbnails/'.$book->image)}})">
         <div class="overlay-dark"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img class="card-img shadow" src="{{asset('storage/thumbnails/'.$book ->image)}}" alt="book cover">
+                    <img class="card-img shadow" src="{{asset('storage/thumbnails/'.$book->image)}}" alt="book cover">        
                 </div>
                 <div class="col-md-8">
-                <div class="card-body spacer">
+                <div class="card-body spacer">                                        
                     <h3 class="card-title text-white text-uppercase mb-3">
-                        <b>{{$book ->title}}</b>
-                    </h3>
-                    <h4 class="card-subtitle text-white d-inline-block text-uppercase">
-                        {{$book ->author}}
-                    </h4>
-
+                        <b>{{$book->title}}</b>
+                    </h3>                    
+                    <h4 class="card-subtitle text-white d-inline-block text-uppercase">                
+                        {{$book->author}}
+                    </h4>                  
+                                            
                     <hr class="bg-white">
                         <div class="details text-white d-flex justify-content-between flex-wrap">
                             <span class="lead my-1"><b class="text-white">{{__('web.isbn')}} :</b> {{$book->ISBN}}</span>
@@ -24,7 +24,7 @@
                             <span class="rating d-inline-block">
                                 <div class="text-yellow my-1">
                                     <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i>
-                                </div>
+                                </div>            
                             </span>
                         </div>
                     <hr class="bg-white">
@@ -40,8 +40,8 @@
                 </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>        
+    </div>    
     <br>
     <div class="container">
         <div class="card rateing-box p-4">
@@ -52,16 +52,16 @@
             <span class="rating d-inline-block">
                 <div class="text-yellow">
                     <i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i>
-                </div>
+                </div>            
             </span>
         </div>
 
         <div class="mt-4 mt-md-5 pt-md-4">
             @include('commentbox')
-        </div>
-
-
-    </div>
+        </div>        
+            
+        
+    </div>    
 </div>
 
 @endsection

@@ -5,12 +5,12 @@
   <div class="container pb-4">
       <div class="card bg-dark" style="border-top: 4px solid var(--danger)">          
           <div class="card-header mb-4">
-            <h4><i class="mr-1 fa fa-list"></i> Categories</h4>
+            <h4><i class="mr-1 fa fa-list"></i> {{__('web.categories')}}</h4>
           </div>
-          <a href="{{route('categories.create')}}" class="btn bg-danger shadow-sm mx-5">Add Category</a>          
+          <a href="{{route('categories.create')}}" class="btn bg-danger shadow-sm mx-5">{{__('web.add_category')}}</a>          
           <hr>    
           <div class="card-body">                                  
-            <h5 class="mb-4"><i class="mr-1 fa fa-list"></i> All Categoreis</h5>          
+            <h5 class="mb-4"><i class="mr-1 fa fa-list"></i> {{__('web.all_categories')}}</h5>          
             @if (count($categories)>0)            
               <div class="row">
                 @foreach ($categories as $category )
