@@ -584,52 +584,29 @@ footer {
   left: 10%;
 }
 
-#view-exams,
-#view-projects,
-#view-books,
-#view-users {
+.dashboard-container {
   min-height: 70vh;
   margin: 5rem auto;
 }
 
-#view-exams .card-header,
-#view-exams .btn,
-#view-exams tr,
-#view-exams h4,
-#view-projects .card-header,
-#view-projects .btn,
-#view-projects tr,
-#view-projects h4,
-#view-books .card-header,
-#view-books .btn,
-#view-books tr,
-#view-books h4,
-#view-users .card-header,
-#view-users .btn,
-#view-users tr,
-#view-users h4 {
+.dashboard-container .card-header,
+.dashboard-container .btn,
+.dashboard-container tr,
+.dashboard-container h4,
+.dashboard-container label {
   color: var(--white);
 }
 
-#view-exams table,
-#view-projects table,
-#view-books table,
-#view-users table {
+.dashboard-container table {
   display: grid;
   place-content: center;
 }
 
-#view-exams table tr,
-#view-projects table tr,
-#view-books table tr,
-#view-users table tr {
+.dashboard-container table tr {
   border: none;
 }
 
-#view-exams table th,
-#view-projects table th,
-#view-books table th,
-#view-users table th {
+.dashboard-container table th {
   border: none;
 }
 

@@ -72,7 +72,9 @@
                         <li class="nav-item"><a class="nav-link text-white" href="/admin/exams"> {{trans_choice('web.exam',10)}}</a></li>
                         <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
                         <li class="nav-item"><a class="nav-link text-white" href="/admin/projects"> {{trans_choice('web.project',10)}}</a></li>
-
+                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/admin/categories"> {{trans_choice('web.categories',10)}}</a></li>
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->

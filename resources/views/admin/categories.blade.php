@@ -1,16 +1,15 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 @section('title')
 
 @section('content')
-  <div class="container pb-4">
-      <div class="card bg-dark" style="border-top: 4px solid var(--danger)">          
-          <div class="card-header mb-4">
+  <div class="container pb-4 dashboard-container">
+      <div class="card bg-dark rounded-0 border-0">          
+          <div class="card-header mb-4 bt rounded-0">
             <h4><i class="mr-1 fa fa-list"></i> {{__('web.categories')}}</h4>
           </div>
           <a href="{{route('categories.create')}}" class="btn bg-danger shadow-sm mx-5">{{__('web.add_category')}}</a>          
           <hr>    
           <div class="card-body">                                  
-            <h5 class="mb-4"><i class="mr-1 fa fa-list"></i> {{__('web.all_categories')}}</h5>          
             @if (count($categories)>0)            
               <div class="row">
                 @foreach ($categories as $category )

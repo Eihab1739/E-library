@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title')
 @section('content')
-    <div class="container" id="view-exams">
+    <div class="container dashboard-container">
         <div class="card bg-dark rounded-0" style="border-top: 5px solid var(--danger)">
             <h4 class="card-header"><i clas="fa fa-book mr-1"></i> {{trans_choice('web.exam',10)}}</h4>
             

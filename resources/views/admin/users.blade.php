@@ -2,7 +2,7 @@
 @section('title', 'Users')
 
 @section('content')
-<div class="container" id="view-users">
+<div class="container dashboard-container">
     <div class="card bg-dark rounded-0 border-0">
       <h3 class="card-header bt rounded-0"><i class="fa fa-users mr-1"></i> {{__('web.users')}}</h3>
 

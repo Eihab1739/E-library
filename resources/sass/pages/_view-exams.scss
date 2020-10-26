@@ -1,7 +1,7 @@
-#view-exams , #view-projects , #view-books , #view-users {
+.dashboard-container {
     min-height: 70vh;
     margin: 5rem auto;
-    .card-header , .btn , tr , h4 {
+    .card-header , .btn , tr , h4 , label {
         color: var(--white);
     }
 

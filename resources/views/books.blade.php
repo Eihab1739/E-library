@@ -1,30 +1,27 @@
 @extends('layouts.admin')
 @section('title')
 @section('content')
-    <div class="container" id="view-books">
+    <div class="container dashboard-container">
         <div class="card bg-dark rounded-0" style="border-top: 5px solid var(--danger)">
             <div class="card-header">
                 <h4><i class="fa fa-book mr-1"></i> {{trans_choice('web.book',10)}}</h4>
+            </div>
 
-{{--                 search form --}}
-                <div class="col-md-4">
+            <div class="card-body">
+                <a href="/upload" class="btn btn-block bg-danger mb-4 shadow-sm">{{__('web.add_book')}}</a>
+                <hr class="bg-white">
+
+                {{-- search form --}}
+                <div class="col mb-4">
                     <form action="{{route('searchbook')}}" method="get">
                         @csrf
                         <div class="input-group">
-                            <input type="search"  name="search" placeholder="Search book" class="form-control">
-                            <span class="input-group-prepend">
-                    <button class="btn btn-primary" type="submit">{{__('web.search')}}</button>
+                            <input type="search"  name="search" placeholder="{{__('web.search')}}" class="form-control">
+                            <button class="btn btn-primary input-group-prepend" type="submit"><i class="ion-md-search"></i></button>
                         </span>
                         </div>
                     </form>
                 </div>
-
-
-            </div>
-            <div class="card-body">
-                <a href="/upload" class="btn btn-block bg-danger mb-4 shadow-sm">{{__('web.add_book')}}</a>
-                <hr class="bg-white">
-                <h4 class="my-4"><i class="fa fa-book"></i> All Books</h4>
 
                 <table class="table table-default table-responsive text-center">
                     <thead class="thead-default bg-danger">

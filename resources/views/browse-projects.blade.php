@@ -7,9 +7,9 @@
             <form action="{{route('searchproject')}}" method="get">
                 @csrf
                 <div class="input-group">
-                    <input type="search"  name="search" placeholder="Search exam" class="form-control">
+                    <input type="search"  name="search" placeholder="{{__('web.search')}}" class="form-control">
                     <span class="input-group-prepend">
-                    <button class="btn btn-primary" type="submit">Search</button>
+                    <button class="btn btn-primary" type="submit"><i class="ion-md-search"></i></button>
                         </span>
                 </div>
             </form>

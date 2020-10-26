@@ -1,36 +1,36 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 
 @section('title')
 
 @section('content')
 
-    <div class="container">
-        <div class="card bg-dark w-75 mx-auto">
-          <div class="card-header" style="border-top: 4px solid var(--danger) ">
-            <h3>Add a new user</h3>
-            <p>Please fill the form below to add a new user</p>
+    <div class="container dashboard-container">
+        <div class="card bg-dark w-75 rounded-0 border-0 mx-auto">
+          <div class="card-header rounded-0" style="border-top: 4px solid var(--danger) ">
+            <h3>{{__('web.add_user')}}</h3>
+            <p>{{__('web.add_user_text')}}</p>
           </div>
           <div class="card-body">
             <form  method="POST" action="{{route('createuser.store')}}" >
               @csrf
               <div class="form-group">
-                <label for="name"><b>User Name</b></label>
-                <input class="form-control" type="text" placeholder="Enter your name" name="name" id="name" required>
+                <label for="name">{{__('web.name')}}</label>
+                <input class="form-control" type="text" name="name" id="name" required>
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" type="text" placeholder="Enter Email" name="email" id="email" required>
+                <label for="email">{{__('web.email')}}</label>
+                <input class="form-control" type="text" name="email" id="email" required>
               </div>
               <div class="form-group">
-                <label for="psw">Password</label>
-                <input class="form-control" type="password" placeholder="Enter Password" name="password" id="password" required>
+                <label for="psw">{{__('web.password')}}</label>
+                <input class="form-control" type="password" name="password" id="password" required>
               </div>
               <div class="form-group">
-                <label for="psw-repeat">Repeat Password</label>
-                <input class="form-control" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>                  
+                <label for="psw-repeat">{{__('web.cpassword')}}</label>
+                <input class="form-control" type="password" name="psw-repeat" id="psw-repeat" required>                  
               </div>
     
-              <button type="submit" class="registerbtn btn btn-block bg-danger">Register</button>
+              <button type="submit" class="registerbtn btn btn-block bg-danger">{{__('web.register')}}</button>
             </form>            
           </div>          
         </div>
