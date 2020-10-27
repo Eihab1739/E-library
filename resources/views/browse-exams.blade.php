@@ -3,13 +3,13 @@
 @section('content')
     <div class="container pt-5">
         {{-- search form  --}}
-        <div class="col-md-4">
+        <div class="col">
             <form action="{{route('searchexams')}}" method="get">
                 @csrf
                 <div class="input-group">
                     <input type="search"  name="search" placeholder="Search exam" class="form-control">
                     <span class="input-group-prepend">
-                    <button class="btn btn-primary" type="submit">Search</button>
+                    <button class="btn btn-primary" type="submit"><i class="ion-md-search"></i></button>
                         </span>
                 </div>
             </form>

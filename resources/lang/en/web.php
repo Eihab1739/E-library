@@ -122,4 +122,8 @@ return [
     'role' => 'Role',
     'add' => 'Add',
     'book_file' => 'Book File',
+    'edit_exam' => 'Edit Exam',
+    'edit_book' => 'Edit Book',
+    'edit_project' => 'Edit Project',
+    'submit' => 'submit',
 ];

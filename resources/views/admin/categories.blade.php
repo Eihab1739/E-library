@@ -3,10 +3,24 @@
 
 @section('content')
   <div class="container pb-4 dashboard-container">
-      <div class="card bg-dark rounded-0 border-0">          
-          <div class="card-header mb-4 bt rounded-0">
-            <h4><i class="mr-1 fa fa-list"></i> {{__('web.categories')}}</h4>
+    <div class="card bg-dark rounded-0 border-0">          
+      <div class="card-header mb-4 bt rounded-0">
+        <h4><i class="mr-1 fa fa-list"></i> {{__('web.categories')}}</h4>
+      </div>
+
+                            
+      {{-- search form  --}}
+      <div class="col-md-4">
+        <form action="{{route('searchforcategories')}}" method="get">
+          @csrf
+          <div class="input-group">
+            <input type="search"  name="search" placeholder="{{__('web.search')}}" class="form-control">
+            <span class="input-group-prepend">
+              <button class="btn btn-primary" type="submit"><i class="ion-md-search"></i></button>
+            </span>
           </div>
+        </form>
+      </div>
           <a href="{{route('categories.create')}}" class="btn bg-danger shadow-sm mx-5">{{__('web.add_category')}}</a>          
           <hr>    
           <div class="card-body">                                  

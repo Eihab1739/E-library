@@ -37281,6 +37281,7 @@ document.addEventListener('mousemove', function (e) {
   effectTwo.style.right = 10 + e.pageX / 25 + "px";
   effectTwo.style.bottom = e.pageX / 20 + "px";
 });
+$("#stars").rating();
 
 /***/ }),
 

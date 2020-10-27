@@ -3,7 +3,7 @@
 @section('title')
 
 @section('content')
-    <div class="container pb-4 dashboard-container" style="max-width: 800px">
+    <div class="container pb-4 dashboard-container">
         <div class="card bg-dark rounded-0 border-0">
             <div class="card-header h5 bt rounded-0"><i class="fa fa-book"></i> {{__('web.add_book')}}</div>
             <div class="card-body">
@@ -75,7 +75,7 @@
                         and then it will be calculated from a function
                     -->
 
-                    <button type="submit" name="upload" class="btn bg-danger btn-block">{{__('web.add_book')}}</button>
+                    <button type="submit" name="upload" class="btn bg-primary btn-block">{{__('web.add_book')}}</button>
                 </form>
             </div>
         </div>

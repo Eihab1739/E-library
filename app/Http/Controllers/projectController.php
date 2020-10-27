@@ -161,4 +161,16 @@ class projectController extends Controller
         return view('browse-projects', compact('projects'));
 
     }
+
+    public function searchprojectinadmin(Request $request)
+
+    {
+        $search = $request->get('search');
+        $projects = DB::table('projects')->where('title', 'like', '%' . $search . '%')
+            ->orWhere('id', 'like', '%' . $search . '%')
+            ->orWhere('maker', 'like', '%' . $search . '%')
+            ->paginate(10);
+        return view('projects/view_projects', compact('projects'));
+
+    }
 }

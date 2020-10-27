@@ -3,9 +3,9 @@
 @section('title')
 
 @section('content')
-    <div class="container pb-4 dashboard-container" style="max-width: 800px">
-        <div class="card bg-dark" style="border-top: 5px solid var(--danger)">
-            <div class="card-header h5"><i class="fa fa-file-alt"></i> {{__('web.add_exam')}}</div>
+    <div class="container pb-4 dashboard-container">
+        <div class="card bg-dark rounded-0 border-0">
+            <div class="card-header bt rounded-0 h5"><i class="fa fa-file-alt"></i> {{__('web.add_exam')}}</div>
             <div class="card-body">
                 @include('partials.alerts')
                  <form action="{{route('exams.store')}}" method="POST" enctype="multipart/form-data">
@@ -45,7 +45,7 @@
 
                     </div>
 
-                    <button type="submit" name="upload" class="btn bg-danger btn-block">{{__('web.add')}}</button>
+                    <button type="submit" name="upload" class="btn bg-primary btn-block">{{__('web.add')}}</button>
                 </form>
             </div>
         </div>

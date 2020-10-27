@@ -2,15 +2,27 @@
 @section('title')
 @section('content')
     <div class="container dashboard-container">
-        <div class="card bg-dark rounded-0" style="border-top: 5px solid var(--danger)">
+        <div class="card bg-dark rounded-0" style="border-top: 5px solid var(--primary)">
             <h4 class="card-header"><i clas="fa fa-book mr-1"></i> {{trans_choice('web.exam',10)}}</h4>
             
             <div class="card-body">
-                <a href="/admin/exams/create" class="btn btn-block bg-danger mb-4">{{__('web.add_exam')}}</a>
-                <hr class="bg-white">
-                <div class="">
-                    <table class="table table-default table-responsive text-center">
-                        <thead class="thead-default bg-danger border-0">
+                <a href="/admin/exams/create" class="btn btn-block bg-primary mb-4">{{__('web.add_exam')}}</a>
+                
+                <div class="table-responsive">
+                    <table class="table table-default text-center">
+                        <thead class="thead-default bg-primary border-0">
+                            {{-- search form  --}}
+                            <div class="col mb-4">
+                                <form action="{{route('searchexamsinadmin')}}" method="get">
+                                    @csrf
+                                    <div class="input-group">
+                                        <input type="search"  name="search" placeholder="Search exam" class="form-control">
+                                        <span class="input-group-prepend">
+                                            <button class="btn btn-primary" type="submit"><i class="ion-md-search"></i></button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
                             <tr>
                                 <th>{{__('web.title')}}</th>
                                 <th>{{__('web.teacher')}}</th>

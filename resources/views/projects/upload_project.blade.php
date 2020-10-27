@@ -3,7 +3,7 @@
 @section('title')
 
 @section('content')
-    <div class="container pb-4 dashboard-container" style="max-width: 800px">
+    <div class="container pb-4 dashboard-container">
         <div class="card bg-dark rounded-0 border-0">
             <div class="card-header h5 rounded-0 bt"><i class="fa fa-file-alt"></i> {{__('web.add_project')}}</div>
             <div class="card-body">
@@ -59,7 +59,7 @@
 
                     </div>
 
-                    <button type="submit" name="upload" class="btn bg-danger btn-block">{{__('web.add')}}</button>
+                    <button type="submit" name="upload" class="btn bg-primary btn-block">{{__('web.add')}}</button>
                  </form>
             </div>
         </div>

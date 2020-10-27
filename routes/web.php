@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Book;
 use App\Mail\NotifyUser;
 use Illuminate\Support\Facades\Mail;
+use App\Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,10 +51,16 @@ Route::group(
 
 
     Route::get('/search','booksController@search')->name('search');
+     Route::get('/searchexams','examsController@searchexams')->name('searchexams');
+     Route::get('/searchexamsinadmin','examsController@searchexamsinadmin')->name('searchexamsinadmin');
+
+     Route::get('/searchforcategories','AdminCategoryController@searchforcategories')->name('searchforcategories');
+
 
     Route::get('/searchexams','examsController@searchexams')->name('searchexams');
 
     Route::get('/searchproject','projectController@searchproject')->name('searchproject');
+    Route::get('/searchprojectinadmin','projectController@searchprojectinadmin')->name('searchprojectinadmin');
     Route::get('/searchbook','booksController@searchbook')->name('searchbook');
 
     Route::prefix('profile/{user:username}/portfolios')->group(function () {
@@ -98,6 +105,26 @@ Route::group(
         $exams =exam::all();
         return view('browse-exams' ,compact('exams'));
     });
+
+    Route::get('admin/projects', function () {
+        $projects =Project::all();
+        return view('projects/view_projects' ,compact('projects'));
+    });
+
+    Route::get('admin/exams', function () {
+        $exams =exam::all();
+        return view('exams/view_exams' ,compact('exams'));
+    });
+
+
+    Route::get('admin/categories', function () {
+        $category =Category::all();
+        return view('admin/categories' ,compact('category'));
+    });
+
+
+
+
 
 
 

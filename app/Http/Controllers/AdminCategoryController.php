@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Category;
 
@@ -89,5 +89,15 @@ class AdminCategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function searchforcategories(Request $request)
+
+    {
+        $search = $request->get('search');
+        $category = DB::table('cateogries')->where('name', 'like', '%' . $search . '%')
+            ->orWhere('id', 'like', '%' . $search . '%')
+            ->paginate(10);
+        return view('admin/categories', compact('category'));
     }
 }

@@ -5,8 +5,8 @@
 @section('content')
 
     <div class="container dashboard-container">
-        <div class="card w-75 mx-auto bg-dark">
-          <div class="card-header" style="border-top: 4px solid var(--danger) ">
+        <div class="card rounded-0 border-0 mx-auto bg-dark">
+          <div class="card-header bt rounded-0">
             <h3>{{__('web.add_admin')}}</h3>
             <p>{{__('web.add_admin_text')}}</p>
           </div>
@@ -42,7 +42,7 @@
 
               </div>
 
-              <button type="submit" class="registerbtn btn btn-block bg-danger">{{__('web.register')}}</button>
+              <button type="submit" class="registerbtn btn btn-block bg-primary">{{__('web.register')}}</button>
             </form>
           </div>
         </div>

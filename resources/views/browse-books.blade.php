@@ -34,14 +34,14 @@
                 </div>
 
                 {{-- search form  --}}
-                <div class="col-md-4">
+                <div class="col">
                     <form action="{{route('search')}}" method="get">
                         @csrf
                         <div class="input-group">
                             <input type="search"  name="search" placeholder="Search book" class="form-control">
                             <span class="input-group-prepend">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                        </span>
+                                <button class="btn btn-primary" type="submit"><i class="ion-md-search"></i></button>
+                            </span>
                         </div>
                     </form>
                 </div>

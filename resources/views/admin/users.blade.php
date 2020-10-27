@@ -8,14 +8,14 @@
 
       <div class="card-body">
           <div class="row d-flex justify-content-center">
-            <a href="{{route('createuser.create')}}" class="btn bg-danger mb-2">{{__('web.add_user')}}</a>
-            <a href="{{route('createAdmin')}}" class="btn bg-danger mx-4 mb-2">{{__('web.add_admin')}}</a>
+            <a href="{{route('createuser.create')}}" class="btn bg-primary mb-2">{{__('web.add_user')}}</a>
+            <a href="{{route('createAdmin')}}" class="btn bg-primary mx-4 mb-2">{{__('web.add_admin')}}</a>
           </div>
           <hr class="bg-white">
           <div class="table-responsive">
             
-            <table class="table mt-4">
-              <thead class="thead bg-danger">
+            <table class="table mt-4 text-center">
+              <thead class="thead bg-primary">
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">{{__('web.name')}}</th>
@@ -27,7 +27,7 @@
                 @if (count($users)>0)
                   @foreach ($users as $user )
                     <tr>
-                      <th scope="row">{{$user->id}}</th>
+                      <td>{{$user->id}}</td>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
                       <td><form class="" action="{{route('createuser.destroy',$user->id)}}" method="post">

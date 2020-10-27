@@ -1,11 +1,11 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 
 @section('title')
 
 @section('content')
-<div class="container">
-            <div class="card bg-dark my-3 mx-md-5 mx-auto" style="border-top: 4px solid var(--danger)">
-                <div class="card-header">Update Book</div>
+    <div class="container dashboard-container">
+            <div class="card bg-dark my-3 border-0 rounded-0 mx-md-5 mx-auto">
+                <div class="card-header rounded-0 bt">{{__('web.edit_book')}}</div>
 
 
                 <div class="card-body">
@@ -14,29 +14,27 @@
                     @method('put')
 
                     <div class="form-group">
-                        <label for="ISBN">ISBN </label>
+                        <label for="ISBN">{{__('web.isbn')}} </label>
                         <input type="number" name="ISBN" id="ISBN" min="1" max="100" value="{{$book->ISBN}}"
                         class="form-control">
 
                     </div>
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title" placeholder="Enter Title" value="{{$book->title}}"
+                        <label for="title">{{__('web.title')}}</label>
+                        <input type="text" name="title" id="title" value="{{$book->title}}"
                         class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="author">author</label>
-                        <input type="text" name="author" id="author" placeholder="Enter the name of author"  value="{{$book->author}}"
+                        <label for="author">{{__('web.author')}}</label>
+                        <input type="text" name="author" id="author" value="{{$book->author}}"
                         class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="info">information</label>
-                        <textarea name="info" id="info"
-                        class="form-control"  >
-
-                        {{$book->info}}
-                       </textarea>
+                        <label for="info">{{__('web.desc')}}</label>
+                        <textarea name="info" id="info" class="form-control"  >
+                            {{$book->info}}
+                        </textarea>
                     </div>
                     <div class="form-group">
                         <select name="category" id="category" class="form-control">
@@ -50,36 +48,25 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="image">Image</label>
+                        <label for="image">{{__('web.cover')}}</label>
                         <input type="file" name="image" id="image"
                         class="form-control" value="old()">
 
                     </div>
                     <div class="form-group">
-                        <label for="book">Add Book </label>
+                        <label for="book">{{trans_choice('web.book',1)}}</label>
                         <input type="file" name="book" id="book"
                         class="form-control">
 
                     </div>
                     <div class="form-group">
-                        <label for="copies">Copies </label>
+                        <label for="copies">{{__('web.copies')}} </label>
                         <input type="number" name="copies" id="copies" min="1" max="100"
                         class="form-control" value="{{$book->copies}}">
 
                     </div>
-                    <div class="form-group">
-                        <label for="available">Availability </label>
-                        <select  name="available" id="available"
-                        class="form-control">
-                        <option value="available">Available</option>
-                        <option value="unavailable">Un Available</option>
-                        </select>
 
-
-
-                    </div>
-
-                    <button type="submit" name="upload" class="btn bg-danger btn-block">Update Book</button>
+                    <button type="submit" name="upload" class="btn bg-danger btn-block">{{__('web.submit')}}</button>
 
 
 

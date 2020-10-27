@@ -173,6 +173,20 @@ class examsController extends Controller
 
 
     }
+
+    public function searchexamsinadmin(Request $request)
+
+    {
+        $search = $request->get('search');
+        $exams= DB::table('exams')->where('title','like','%'.$search.'%')
+            ->orWhere('id','like','%'.$search.'%')
+            ->orWhere('author','like','%'.$search.'%')
+            ->orWhere('examyear','like','%'.$search.'%')
+            ->paginate(10);
+        return view('exams/view_exams' , compact('exams'));
+
+
+    }
 }
 
 
