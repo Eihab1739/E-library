@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div id="swup" class="transition-fade">
     <!--------------------------------------------
         show case section
     --------------------------------------------->
@@ -156,4 +157,5 @@
             </div>
         </div>
     </section>
+</div>
 @endsection

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div id="swup" class="transition-fade">
     <div id="books" class="">
         <div class="row mx-sm-0 mx-md-auto pt-4">
             <div class="col-sm-12 col-md-3 col-lg-3 col-xl-2 pt-5 px-4 shadow d-none d-md-block bg-secondary">
@@ -89,4 +90,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
