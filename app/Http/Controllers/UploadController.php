@@ -38,7 +38,7 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'ISBN'=>'required',
+            'ISBN'=>'required|max:13|min:13',
             'title'=>'required',
             'author'=>'required',
             'info'=>'required',

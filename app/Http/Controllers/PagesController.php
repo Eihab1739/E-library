@@ -24,7 +24,7 @@ class PagesController extends Controller
    }
    public function viewbook($id){
        $book= Book::findOrfail($id);
-       return view('book')->with('book',$book);
+       return view('book')->with('book',$book );
 
 
    }
@@ -42,7 +42,7 @@ class PagesController extends Controller
            $comment->user_id = auth()->user()->id;
            $comment->book_id = $book->id ;
            $comment->comment=$request->input('comment');
-           
+
            $comment->save();
            return redirect()->back();
 

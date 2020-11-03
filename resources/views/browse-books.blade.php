@@ -6,7 +6,7 @@
         <div class="row mx-sm-0 mx-md-auto pt-4">
             <div class="col-sm-12 col-md-3 col-lg-3 col-xl-2 pt-5 px-4 shadow d-none d-md-block bg-secondary">
                 <div  class="categories">
-                    @if (count($allCategories)>0)           
+                    @if (count($allCategories)>0)
                         <h5 class="text-white mb-4"><i class="ion-md-list"></i> {{__('web.categories')}}</h5>
                         <ul class="px-2 navbar-nav">
                             @foreach ($allCategories as $category )
@@ -47,18 +47,20 @@
                     </form>
                 </div>
                 <div class="card bg-transparent border-0">
-                    <div class="card-deck mt-4">
+                    <div class="row my-4">
                         @foreach ($books as $book )
-                            <div id="book" class="card shadow-sm mb-4">
-                                <div class="card-header">
-                                    <img class="card-img-top" src="{{asset('storage/thumbnails/'.$book->image)}}" alt="">
-                                </div>
-                                <div class="card-footer">
-                                    <h5 class="card-title text-uppercase">{{$book->title}}</h5>
-                                    <h6 class="card-subtitle">{{$book->author}}</h6>
-                                    <br>
-                                    <h5 class="card-title"><i class="fa fa-star text-primary mb-2"></i><br>4.5 / 5</h5>
-                                    <a class="btn border-0 rounded-0 btn-primary text-white mt-3" href="{{route('book',$book->id)}}">{{__('web.more')}}</a>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                <div id="book" class="card shadow-sm mb-4">
+                                    <div class="card-header">
+                                        <img class="card-img-top" src="{{asset('storage/thumbnails/'.$book->image)}}" alt="">
+                                    </div>
+                                    <div class="card-footer">
+                                        <h5 class="card-title text-uppercase">{{$book->title}}</h5>
+                                        <h6 class="card-subtitle">{{$book->author}}</h6>
+                                        <br>
+                                        <h5 class="card-title"><i class="fa fa-star text-primary mb-2"></i><br>4.5 / 5</h5>
+                                        <a class="btn border-0 rounded-0 btn-primary text-white mt-3" href="{{route('book',$book->id)}}">{{__('web.more')}}</a>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -80,7 +82,7 @@
                           <li class="page-item">
                             <a class="page-link" href="#" aria-label="Next">
                               <span class="">{{__('web.next')}}</span>
-                              <span aria-hidden="true">&raquo;</span>                        
+                              <span aria-hidden="true">&raquo;</span>
                             </a>
                           </li>
                           <li class="page-item "><a class="page-link" href="#">{{(__('web.last'))}}</a></li>

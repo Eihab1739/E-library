@@ -9,11 +9,11 @@
 
     {{-- <title>{{ config('app.name', 'Library') }}</title> --}}
     <title>{{__('web.library')}}</title>
-    
 
-    @if ( app()->getLocale() == 'ar') 
+
+    @if ( app()->getLocale() == 'ar')
         <!-- Font  -->
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
         <!-- Styles -->
         <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
@@ -45,7 +45,7 @@
                 margin-left: auto;
             }
         </style>
-    @endif 
+    @endif
 
 </head>
 <body>
@@ -66,11 +66,11 @@
                         <li class="nav-item"><a class="nav-link text-white" href="/">
                             {{__('web.home')}}
                         </a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
                         <li class="nav-item"><a class="nav-link text-white" href="/books"> {{trans_choice('web.book',10)}}</a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
                         <li class="nav-item"><a class="nav-link text-white" href="/exams"> {{trans_choice('web.exam',10)}}</a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
                         <li class="nav-item"><a class="nav-link text-white" href="/projects"> {{trans_choice('web.project',10)}}</a></li>
 
                     </ul>

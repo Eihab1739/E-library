@@ -24,7 +24,7 @@ class CreateBooksTable extends Migration
 
 
             $table->text('info');
-            $table->integer('Rate')->nullable(true);
+            $table->float('Rate')->nullable();
             $table->integer('copies');
             $table->integer('available')->nullable(true);
             $table->integer('user_id');

@@ -17,22 +17,26 @@ use App\Category;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], function(){ 
+    ], function(){
 
     Route::get('/','PagesController@index')->name('index');
 
     Route::get('/category/{id}','PagesController@viewcategory')->name('category');
     Route::get('/book/{id}','PagesController@viewbook')->name('book');
     Route::post('/comment/{id}',['uses'=>'PagesController@addcomment','middleware'=>'auth'])->name('comment');
+  //  Route::resource('/rate','rate');
 
 
     Route::group(['middleware'=>'roles','roles'=>'admins'],function(){
     Route::resource('/upload','UploadController');
+    Route::resource('/borroww','borrowBookController');
+Route::post('/borrow/{id}','borrowBookController@borrow')->name('borrow');
+Route::resource('/reserve','reserveBookController');
+Route::post('/reserve/{id}','reserveBookController@reserve')->name('reserve');
 
     });
 
@@ -45,6 +49,7 @@ Route::group(
         Route::resource('books','booksController');
         Route::resource('projects','projectController');
     });
+    Route::post('/rate/{id}','booksController@rate')->name('rate');
     Route::resource('createuser','createuserController');
     Route::get('createAdmin','createuserController@showAddAdmin')->name('createAdmin');
     Route::post('storeAdmin','createuserController@storeAdmin')->name('storeAdmin');
@@ -83,7 +88,7 @@ Route::group(
             ->name('profile.portfolios.store');
     });
 
-    Auth::routes();
+    Auth::routes(['register'=>false]);
 
     Route::get('/books', function () {
     $books = Book::all();
@@ -93,6 +98,11 @@ Route::group(
     Route::get('/projects', function () {
         $projects=Project::all();
         return view('browse-projects' , compact('projects'));
+    });
+    Route::get
+    ('admin/CreateCategory', function () {
+        return view('admin/CreateCategory');
+
     });
 
     // Route::get('/books', function () {
@@ -117,10 +127,10 @@ Route::group(
     });
 
 
-    Route::get('admin/categories', function () {
-        $category =Category::all();
-        return view('admin/categories' ,compact('category'));
-    });
+    // Route::get('admin/categories', function () {
+    //     $categoryadmin =Category::all();
+    //     return view('admin/categories' ,compact('categoryadmin'));
+    // });
 
 
 
@@ -129,7 +139,7 @@ Route::group(
 
 
     Route::get('/email', function () {
-    // Mail::to('emails.notify@gmail.com')->send(new NotifyUser());
+     Mail::to('emails@email.com')->send(new NotifyUser());
         return new NotifyUser();
     });
 
@@ -170,6 +180,6 @@ Route::group(
 
     });
 
-   
+
 
 });

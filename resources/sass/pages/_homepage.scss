@@ -1,125 +1,152 @@
 /*/------------------------ SHOWCASE SECTION ----------------------------/*/
+
 .showcase {
-    background: url('images/library.jpg');    
+    background: url('images/library.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
     z-index: 1;
-    height: 100vh;    
-    overflow: hidden;  
-    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 95%);
-    .text {      
-      position: relative;      
-      color: #fff;      
-      z-index: 2; 
-      h1 {
-        font-size: clamp(1.5em,5vw,3.5em);
-      }     
-      h5 {
-        font-size: clamp(.7em,5vw,1.8em);        
-      }
-      h5:nth-of-type(1) {
-        text-align-last: left;
-      }
-      h5:nth-of-type(2) {
-        text-align: right;
-      }
-    }  
-    img {
-      position: absolute;
-      z-index: 1;
-    }    
-    .shape {
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;      
-    }
-}
-@media screen and (max-width: 768px) {
-  .showcase {
-    height: 70vh;
-    padding: .8em;
-    h5 {
-      text-align: center !important;
-    }    
-    .shape {
-      height: 100px;
-      bottom: -2px;
-    }
-  }
-}
-@media screen and (max-height: 360px) {
-  .showcase {
     height: 100vh;
-    padding: .8em;
-  }
+    overflow: hidden;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 95%);
+    .text {
+        position: relative;
+        color: #fff;
+        z-index: 2;
+        h1 {
+            font-size: clamp(1.5em, 5vw, 3.5em);
+        }
+        h5 {
+            font-size: clamp(.7em, 5vw, 1.8em);
+        }
+        h5:nth-of-type(1) {
+            text-align-last: left;
+        }
+        h5:nth-of-type(2) {
+            text-align: right;
+        }
+    }
+    img {
+        position: absolute;
+        z-index: 1;
+    }
+    .shape {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+    }
 }
 
+@media screen and (max-width: 768px) {
+    .showcase {
+        height: 70vh;
+        padding: .8em;
+        h5 {
+            text-align: center !important;
+        }
+        .shape {
+            height: 100px;
+            bottom: -2px;
+        }
+    }
+}
+
+@media screen and (max-height: 360px) {
+    .showcase {
+        height: 100vh;
+        padding: .8em;
+    }
+}
+
+
 /*/------------------------ SERVICES SECTION ----------------------------/*/
+
 .services {
-  .card {
-    position: relative;
-    border: 0;
-    background: var(--secondary);
-    &:hover:before{
-      margin-top: 0;
-      opacity: 1;
+    .card {
+        position: relative;
+        border: 0;
+        background: var(--secondary);
+        &:hover:before {
+            margin-top: 0;
+            opacity: 1;
+        }
+        .card-header {
+            background: var(--secondary);
+            color: #fff;
+            i {
+                color: var(--primary)
+            }
+        }
+        .card-body {
+            color: var(--gray);
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            width: 95%;
+            height: 95%;
+            left: 50%;
+            top: 50%;
+            opacity: 0;
+            margin-top: 40px;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            border: 7px solid var(--primary);
+            transition: .4s ease-in-out;
+            pointer-events: none;
+        }
     }
-    .card-header {
-      background: var(--secondary);
-      color: #fff;
-      i {
-        color: var(--primary)
-      }
-    }
-    .card-body {
-      color: var(--gray);
-    }  
-    &:before {
-      content: '';
-      position: absolute;
-      width: 95%;
-      height: 95%;
-      left: 50%;
-      top: 50%;
-      opacity: 0;
-      margin-top: 40px;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      border: 7px solid var(--primary);
-      transition: .4s ease-in-out;
-      pointer-events: none;
-    }
-  }
 }
+
+@media screen and (max-width: 991px) {
+    .services {
+        .card-deck {
+            display: block !important;
+        }
+        .card {
+            display: block;
+            margin: 2rem 0;
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+
 /*/------------------------ REQUEST SECTION ----------------------------/*/
+
 .request {
-  background-color: var(--black);
-  color: #fff;
-  .card {
-    background-color: var(--secondary);
-  }
+    background-color: var(--black);
+    color: #fff;
+    .card {
+        background-color: var(--secondary);
+    }
 }
+
+
 /*/------------------------ CONTACT SECTION ----------------------------/*/
+
 .form-control {
-  background-color: var(--secondary) !important;
-  border: 2px solid var(--secondary) !important;
-  color: #fff !important;
-  border-bottom: 2px solid var(--primary) !important;
-  border-radius: 0px !important;
-  transition: all .4s ease-in-out;
-  &:focus {
-    border-color: var(--yellow) !important;
-    box-shadow: none !important;
-    outline: none !important;
-  }
-  &::placeholder {
+    background-color: var(--secondary) !important;
+    border: 2px solid var(--secondary) !important;
     color: #fff !important;
-  }
+    border-bottom: 2px solid var(--primary) !important;
+    border-radius: 0px !important;
+    transition: all .4s ease-in-out;
+    &:focus {
+        border-color: var(--yellow) !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+    &::placeholder {
+        color: #fff !important;
+    }
 }
+
 .contact {
     position: relative;
     color: #fff;
@@ -129,32 +156,33 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         h3 {
-          position: relative;
-          z-index: 2;
+            position: relative;
+            z-index: 2;
         }
     }
     .card {
         margin-top: -3.5rem;
-    }    
+    }
 }
 
-@media screen and (max-width: 991px){
-  .contact .card {
-      margin-top: 1rem;
-  }
+@media screen and (max-width: 991px) {
+    .contact .card {
+        margin-top: 1rem;
+    }
 }
+
+
 /*/------------------------ Footer ----------------------------/*/
 
 footer {
-  background: #000;
-  position: relative;
-  z-index: 1 !important;
+    background: #000;
+    position: relative;
+    z-index: 1 !important;
 }
 
 .social {
-  a {
-    font-size: 20px;
-    padding: 0rem 1rem
-  }
+    a {
+        font-size: 20px;
+        padding: 0rem 1rem
+    }
 }
-

@@ -10,6 +10,8 @@
                 </div>
                 <div class="col-md-8">
                 <div class="card-body spacer">
+                    @include('partials.alerts')
+
                     <h3 class="card-title text-white text-uppercase mb-3">
                         <b>{{$book ->title}}</b>
                     </h3>
@@ -23,19 +25,41 @@
                             <span class="lead my-1"><b class="text-white">{{__('web.available_copies')}} :</b> {{$book->copies}}</span>
                             <span class="rating d-inline-block">
                                 <div class="text-yellow my-1">
-                                    <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i>
+                                    @if (($book->Rate)==1)
+                                    <i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i>
+                                    @elseif (($book->Rate)==2)
+                                    <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i>
+                                    @elseif (($book->Rate)==3)
+                                    <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star-outline h2"></i>
+                                    @elseif (($book->Rate)==4)
+                                    <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i>
+                                    @elseif (($book->Rate)==5)
+                                    <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i>
+
+
+
+
+
+
+                                    @endif
+
                                 </div>
                             </span>
                         </div>
                     <hr class="bg-white">
                     <h5 class="text-white">{{__('web.desc')}} :- </h5>
                     <p class="my-4 lead text-white"> {{$book->info}}</p>
-                    
+
                     <hr class="bg-white">
 
                     <div class="link mt-4 d-flex flex-wrap justify-content-start">
                         <a href="{{asset('storage/books/'.$book->bookfile)}}" class="m-1 btn btn-lg btn-success text-white border-0 rounded-0">{{__('web.download')}} <i class="ion-md-download mx-1"></i></a>
-                        <a href="#!" class="m-1 btn btn-lg bg-blue text-white rounded-0">{{__('web.borrow')}} <i class="ion-md-log-out mx-1"></i></a>                    
+                        @if (($book->copies)>0)
+                        <a href="{{route('borroww.show',$book->id)}}" class="m-1 btn btn-lg bg-blue text-white rounded-0">{{__('web.borrow')}} <i class="ion-md-log-out mx-1"></i></a>
+                        @else
+                        <a href="{{route('reserve.show',$book->id)}}" class="m-1 btn btn-lg bg-black text-white rounded-0">{{__('Reserve')}} <i class="ion-md-log-out mx-1"></i></a>
+                        @endif
+
                     </div>
                 </div>
                 </div>
@@ -45,13 +69,17 @@
     <br>
     <div class="container">
 
-        
 
-        <div class="card rateing-box p-4">           
+
+        <div class="card rateing-box p-4">
             <h4 class=""> {{__('web.rtb')}}</h4>
             <br>
+           {{-- @ dd($request->all()) --}}
             <span class="rating d-flex">
+                <form action="{{route('rate',$book->id)}}"  method="POST">
+                    @csrf
                 <div class="star-rating">
+                    {{-- <input type="hidden" value="{{$book->id}}"> --}}
                     <div class="rate">
                         <input type="radio" id="star5" name="rate" value="5" />
                         <label for="star5" title="text">5 stars</label>
@@ -64,8 +92,30 @@
                         <input type="radio" id="star1" name="rate" value="1" />
                         <label for="star1" title="text">1 star</label>
                     </div>
+                    <button class="btn btn-primary" type="submit">submit</button>
+
                 </div>
+            </form>
             </span>
+            <script>
+                $('#addStar').change('.star', function(e) {
+                    $.ajaxSetup({
+                      headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                      }
+                    });
+                    $.ajax({
+                      type: 'POST',
+                      cache: false,
+                      dataType: 'JSON',
+                      url: $(this).attr('action'),
+                      data: $(this).serialize(),
+                      success: function(data) {
+                        console.log(data);
+                      }
+                    });
+                  });
+            </script>
         </div>
 
         <div class="mt-4 mt-md-5 pt-md-4">

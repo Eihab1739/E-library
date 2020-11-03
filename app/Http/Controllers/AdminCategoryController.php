@@ -24,6 +24,7 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
+        // return [""];
         return view('admin.CreateCategory');
     }
 
@@ -95,9 +96,9 @@ class AdminCategoryController extends Controller
 
     {
         $search = $request->get('search');
-        $category = DB::table('cateogries')->where('name', 'like', '%' . $search . '%')
+        $categoryadmin = DB::table('categories')->where('name', 'like', '%' . $search . '%')
             ->orWhere('id', 'like', '%' . $search . '%')
             ->paginate(10);
-        return view('admin/categories', compact('category'));
+        return view('admin/categories', compact('categoryadmin'));
     }
 }

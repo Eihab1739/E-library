@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "mcamara/laravel-localization": "^1.6",
+        "willvincent/laravel-rateable": "^2.2",
         "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {

@@ -23,13 +23,13 @@ return [
     'lang' => 'Language',
     'copyright' => 'Library 2020 | All Rights Reserved',
 
-    // welcome page 
+    // welcome page
     'better' => 'Better Education For A Better Future',
     'welcome' => 'Welcome To The',
     'hob' => 'Home Of Books',
     'access' => 'Get Access To Hundreds of Books Online',
     'browse' => 'Browse Books Now !',
-    // services section 
+    // services section
     'services' => 'Services',
     'read_books' => 'Read Books',
     'read_books_text' => 'You can access hundreds of books online without going to the library',
@@ -39,14 +39,14 @@ return [
     'borrow_books' => 'Borrow Books',
     'borrow_books_text' => 'You found an interesting book you can come to the library and borrow it',
     'more' => 'More',
-    // request books section 
+    // request books section
     'request_books' => 'Request Books',
     'email' => 'E-Mail Address',
     'name' => 'Name',
     'book_name' => 'Book Name',
     'author_name' => 'Author Name',
     'request' => 'Request',
-    // contact section 
+    // contact section
     'get_in_touch' => 'Get In Touch',
     'send_message' => 'Send Us a Message',
     'feel_free' => 'Feel free to send us a message fill the form below',
@@ -62,11 +62,11 @@ return [
     'hours_text' => '7:00 Am to 3:00 Pm',
     'working_days' => 'Working Days',
     'days_text' => 'Sunday to Thursday',
-    // login page 
+    // login page
     'password' => 'Password',
     'remember_me' => 'Remember Me ',
     'fyp' => 'Forgot Your Password?',
-    // Register page 
+    // Register page
     'cpassword' => 'Confirm Password',
     // browse books page
     'categories' => 'Categories',
@@ -92,9 +92,9 @@ return [
     // browse exams page
     'date' => 'Date',
     'teacher' => 'Teacher',
-    // projects page 
+    // projects page
     'project_makers' => 'Project Makers',
-    // admin books section 
+    // admin books section
     'add_book' => 'Add A Book',
     'all_books' => 'All Books',
     'cover' => 'Cover',
@@ -126,4 +126,5 @@ return [
     'edit_book' => 'Edit Book',
     'edit_project' => 'Edit Project',
     'submit' => 'submit',
+    'send_notification' => 'Send Notification',
 ];

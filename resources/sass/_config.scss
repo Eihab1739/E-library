@@ -12,10 +12,12 @@
 .bt {
     border-top: 4px solid var(--primary)
 }
+
 // border bottom
 .bb {
     position: relative;
 }
+
 .bb::before {
     content: "";
     position: absolute;
@@ -34,15 +36,15 @@
     letter-spacing: 0.5px;
     -webkit-transition: background-color 0.2s ease-out;
     transition: background-color 0.2s ease-out;
-    cursor: pointer;    
+    cursor: pointer;
     outline: 0;
     border: none;
     border-radius: 2px !important;
-    display: inline-block;        
+    display: inline-block;
     padding: 0 16px;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     -webkit-tap-highlight-color: transparent;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);    
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
     font-size: 1.3em;
 }
 
@@ -66,7 +68,7 @@
 }
 
 // make some space between elements
-.spacer > * + * {
+.spacer>*+* {
     margin-top: 1rem;
 }
 
@@ -89,11 +91,15 @@
     color: $primary;
 }
 
+@media screen and (max-width: 991px) {
+    .navbar {}
+}
+
 @media screen and (max-width: 768px) {
-    .card-img, .card-img-top {
+    .card-img,
+    .card-img-top {
         height: 40vh !important;
     }
-
     .categories {
         height: 40vh !important;
         overflow: scroll;

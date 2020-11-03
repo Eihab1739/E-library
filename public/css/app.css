@@ -349,6 +349,21 @@ h6,
   pointer-events: none;
 }
 
+@media screen and (max-width: 991px) {
+  .services .card-deck {
+    display: block !important;
+  }
+
+  .services .card {
+    display: block;
+    margin: 2rem 0;
+  }
+
+  .services .card p {
+    text-align: center;
+  }
+}
+
 /*/------------------------ REQUEST SECTION ----------------------------/*/
 
 .request {

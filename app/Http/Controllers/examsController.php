@@ -56,6 +56,7 @@ class examsController extends Controller
             'examfile' => 'required|mimes:pdf',
 
 
+
         ]);
 
         if ($request->hasFile('examfile')) {

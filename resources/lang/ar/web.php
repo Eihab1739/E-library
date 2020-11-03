@@ -22,13 +22,13 @@ return [
     'lang' => 'اللغة',
     'copyright' => 'المكتبة 2020 | كل الحقوق محفوظة',
 
-    // welcome page 
+    // welcome page
     'better' => 'تعليم أفضل لمستقبل أفضل',
     'welcome' => 'مرحبا بك في',
     'hob' => 'منزل الكتب',
     'access' => 'احصل على الوصول إلى مئات الكتب عبر الإنترنت',
     'browse' => 'تصفح الكتب الآن!',
-     // services section 
+     // services section
     'services' => 'الخدمات',
     'read_books' => 'اقراء الكتب',
     'read_books_text' => 'يمكنك الوصول إلى مئات الكتب عبر الإنترنت دون الذهاب إلى المكتبة',
@@ -38,14 +38,14 @@ return [
     'borrow_books' => 'استعارة الكتب',
     'borrow_books_text' => 'لقد وجدت كتابًا مثيرًا للاهتمام يمكنك القدوم إلى المكتبة واستعارته',
     'more' => 'المزيد',
-    // request books section 
+    // request books section
     'request_books' => 'اطلب كتاب',
     'email' => 'البريد الالكتروني',
     'name' => 'الاسم',
     'book_name' => 'اسم الكتاب',
     'author_name' => 'اسم الكاتب',
     'request' => 'أطلب',
-    // contact section 
+    // contact section
     'get_in_touch' => 'ابقى على تواصل',
     'send_message' => 'أرسل لنا رسالة',
     'feel_free' => 'لا تتردد في إرسال رسالة إلينا وتعبئة النموذج أدناه',
@@ -61,11 +61,11 @@ return [
     'hours_text' => '7:00 ص الي 3:00 م',
     'working_days' => 'ايام العمل',
     'days_text' => 'الاحد الي الخميس',
-    // login page 
+    // login page
     'password' => 'كلمه السر',
     'remember_me' => 'تذكرنى ',
     'fyp' => ' هل نسيت كلمه السر؟',
-    // Register page 
+    // Register page
     'cpassword' => 'تأكيد كلمة السر',
     // browse books page
     'categories' => 'الاقسام',
@@ -91,7 +91,7 @@ return [
     'date' => 'التاريخ',
     'teacher' => 'الاستاذ',
     'project_makers' => 'صناع المشروع',
-    // admin books section 
+    // admin books section
     'add_book' => 'أضف كتاب',
     'all_books' => 'كل الكتب',
     'cover' => 'الغلاف',
@@ -123,4 +123,6 @@ return [
     'edit_book' => 'تعديل الكتاب',
     'edit_project' => 'تعديل المشروع',
     'submit' => 'إرسال',
+    'send_notification' => 'ارسال اشعار',
+    'reservation' => 'الحجوزات',
 ];
