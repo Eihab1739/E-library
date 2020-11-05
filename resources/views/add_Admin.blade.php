@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+extends('layouts.admin')
 
 @section('title')
 
@@ -7,7 +7,7 @@
     <div class="container dashboard-container">
         <div class="card rounded-0 border-0 mx-auto bg-dark">
           <div class="card-header bt rounded-0">
-            <h3><i class="fa fa-user-plus"></i> {{__('web.add_user')}}</h3>
+            <h3>{{__('web.add_user')}}</h3>
             <p>{{__('web.add_user_text')}}</p>
           </div>
           <div class="card-body">

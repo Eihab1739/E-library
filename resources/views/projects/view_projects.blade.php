@@ -2,8 +2,10 @@
 @section('title')
 @section('content')
   <div class="container dashboard-container">
+    @include('partials.alerts')
+
     <div class="card rounded-0 bg-dark" style="border-top: 5px solid var(--primary)">
-      <h4 class="card-header"><i class="fa fa-book mr-1"></i> {{trans_choice('web.project',10)}}</h4>
+      <h4 class="card-header"><i class="fa fa-box-open mr-1"></i> {{trans_choice('web.project',10)}}</h4>
       <div class="card-body">
         <a href="/admin/projects/create" class="btn btn-block bg-primary mb-4">{{__('web.add_project')}}</a>
         {{-- <hr class="bg-white"> --}}

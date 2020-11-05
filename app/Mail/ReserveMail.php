@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class NotifyUser extends Mailable
+class ReserveMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,7 +28,6 @@ class NotifyUser extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.notify');
-
+        return $this->markdown('email.reserve');
     }
 }

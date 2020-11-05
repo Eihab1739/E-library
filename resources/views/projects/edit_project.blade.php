@@ -4,16 +4,17 @@
 
 @section('content')
     <div class="container dashboard-container pb-4">
+        @include('partials.alerts')
+
         <div class="card bg-dark rounded-0 border-0">
-            <div class="card-header h5 bt rounded-0"><i class="fa fa-file-alt"></i> {{__('web.edit_project')}}</div>
+            <h3 class="card-header h5 bt rounded-0"><i class="fa fa-box-open"></i> {{__('web.edit_project')}}</h3>
             <div class="card-body">
-                @include('partials.alerts')
                  <form action="{{route('projects.update',$project->id)}}" enctype="multipart/form-data" method="POST" >
 
                      @csrf
                      @method('put')
 
-                    <div class="row">                        
+                    <div class="row">
                         <div class="col-sm-12">
                             <div class="border px-4 py-2 mb-3 rounded">
                                 <div class="form-group">
@@ -23,7 +24,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
@@ -31,7 +32,7 @@
                                 <input type="text" name="title" id="title" class="form-control" value="{{$project->title}}">
                             </div>
                         </div>
-                        
+
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
                                 <label>{{__('web.makers')}}</label>

@@ -87,18 +87,34 @@ class AdminCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+
+
+
+
+
+
 
     public function searchforcategories(Request $request)
 
     {
+
+        // $search = $request->get('search');
+        // $categoryadmin = DB::table('categories')->where('name', 'like', '%' . $search . '%')
+        //     ->orWhere('id', 'like', '%' . $search . '%')
+        //     ->paginate(10);
+        // return view('admin/categories', compact('categoryadmin'));
+
         $search = $request->get('search');
-        $categoryadmin = DB::table('categories')->where('name', 'like', '%' . $search . '%')
-            ->orWhere('id', 'like', '%' . $search . '%')
+        $categoryadmin = DB::table('books')->where('title', 'like', '%' . $search . '%')
+            ->Where('category_id', 'like', '%' . search . '%')
             ->paginate(10);
         return view('admin/categories', compact('categoryadmin'));
     }
+
+    public function destroy($id)
+    {
+        $cat=Category::find($id);
+        $cat->delete();
+        return redirect()->back()->with('msg', 'Deleted Successfuly');
+}
 }

@@ -14,6 +14,15 @@ class examsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function view(){
+
+ $exams = exam::latest()->paginate(8);
+        return view('browse-exams')->with('exams', $exams);
+
+
+    }
+
     public function index()
     {
         $exams = exam::latest()->get();
@@ -53,7 +62,7 @@ class examsController extends Controller
             'title' => 'required',
             'author' => 'required',
             'info' => 'required',
-            'examfile' => 'required|mimes:pdf',
+            'examfile' => 'required|mimes:pdf|mimes:doc,docx',
 
 
 
@@ -80,7 +89,7 @@ class examsController extends Controller
 
 
         $exam->save();
-        return redirect(route('exams.index'))->with('msg', 'Upload Done');
+        return redirect(route('exams'))->with('msg', 'Upload Done');
     }
 
     /**
@@ -146,7 +155,7 @@ class examsController extends Controller
 
 
         $exam->save();
-        return redirect(route('exams.index'))->with('msg', 'Update Done');
+        return redirect(route('exams'))->with('msg', 'Update Done');
 
     }
 
@@ -159,7 +168,7 @@ class examsController extends Controller
     public function destroy(exam $exam)
     {
         $exam->delete();
-        return redirect(route('exams.index'))->with('msg', 'Delete Done');
+        return redirect()->back()->with('msg', 'Delete Done');
     }
 
     public function searchexams(Request $request)

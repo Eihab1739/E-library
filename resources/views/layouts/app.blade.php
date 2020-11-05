@@ -111,7 +111,6 @@
                                 <a class="nav-link text-white dropdown-toggle" href="#" role="button" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-flag"></i> {{__('web.lang')}}
                                 </a>
-
                                 <div class="dropdown-menu" aria-labelledby="lang">
                                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                         <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">

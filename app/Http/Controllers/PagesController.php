@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
+
+
     public function index(){
         $books=Book::latest()->paginate(3);
         return view('welcome')->with('books',$books);
@@ -17,6 +20,7 @@ class PagesController extends Controller
 
 
     }
+
    public function viewCategory($id){
        $category= Category::find($id);
        $books=$category->books;
@@ -44,7 +48,7 @@ class PagesController extends Controller
            $comment->comment=$request->input('comment');
 
            $comment->save();
-           return redirect()->back();
+           return redirect()->back()->with('msg','Your Review submitted successfuly');
 
 
 

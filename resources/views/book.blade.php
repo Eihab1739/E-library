@@ -1,16 +1,18 @@
 @extends('layouts.app')
 @section('content')
 <div class="single-book py-1 py-md-4 bg-black">
-    <div class="header bg-transparent border-0 mb-5" style="background: url({{asset('storage/thumbnails/'.$book ->image)}})">
-        <div class="overlay-dark"></div>
+    <div class="header bg-transparent border-0 mb-5">
+        <div class="overlay-dark" style="background: url({{asset('storage/thumbnails/'.$book ->image)}}) center /cover;filter:blur(10px)"></div>
+        <div class="overlay"></div>
         <div class="container">
+            @include('partials.alerts')
             <div class="row">
                 <div class="col-md-4">
                     <img class="card-img shadow" src="{{asset('storage/thumbnails/'.$book ->image)}}" alt="book cover">
                 </div>
                 <div class="col-md-8">
                 <div class="card-body spacer">
-                    @include('partials.alerts')
+
 
                     <h3 class="card-title text-white text-uppercase mb-3">
                         <b>{{$book ->title}}</b>
@@ -23,6 +25,7 @@
                         <div class="details text-white d-flex justify-content-between flex-wrap">
                             <span class="lead my-1"><b class="text-white">{{__('web.isbn')}} :</b> {{$book->ISBN}}</span>
                             <span class="lead my-1"><b class="text-white">{{__('web.available_copies')}} :</b> {{$book->copies}}</span>
+
                             <span class="rating d-inline-block">
                                 <div class="text-yellow my-1">
                                     @if (($book->Rate)==1)
@@ -35,14 +38,7 @@
                                     <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star-outline h2"></i>
                                     @elseif (($book->Rate)==5)
                                     <i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i><i class="ion-md-star h2"></i>
-
-
-
-
-
-
                                     @endif
-
                                 </div>
                             </span>
                         </div>
@@ -92,7 +88,8 @@
                         <input type="radio" id="star1" name="rate" value="1" />
                         <label for="star1" title="text">1 star</label>
                     </div>
-                    <button class="btn btn-primary" type="submit">submit</button>
+                    <br>
+                    <button class="btn btn-primary mt-3" type="submit">submit</button>
 
                 </div>
             </form>

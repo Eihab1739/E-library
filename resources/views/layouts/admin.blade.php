@@ -50,7 +50,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md fixed-top bg-black" style="border-bottom: 2px solid #333;z-index: 2">
+        <nav class="navbar navbar-expand-lg fixed-top bg-black" style="border-bottom: 2px solid #333;z-index: 2">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/admin/users') }}">
                     <i class="text-primary ion-md-cog"></i>
@@ -66,20 +66,21 @@
                         <li class="nav-item"><a class="nav-link text-white" href="/admin/users">
                             {{__('web.users')}}
                         </a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
                         <li class="nav-item"><a class="nav-link text-white" href="/admin/books"> {{trans_choice('web.book',10)}}</a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
                         <li class="nav-item"><a class="nav-link text-white" href="/admin/exams"> {{trans_choice('web.exam',10)}}</a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
                         <li class="nav-item"><a class="nav-link text-white" href="/admin/projects"> {{trans_choice('web.project',10)}}</a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
                         <li class="nav-item"><a class="nav-link text-white" href="/admin/categories"> {{trans_choice('web.categories',10)}}</a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
 
-                        <li class="nav-item"><a class="nav-link text-white" href="/borroww"> {{trans_choice('Borrows',10)}}</a></li>
-                        <li class="nav-item d-none d-sm-inline-block"><span class="nav-link text-gray">|</span></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="/reserve"> {{trans_choice('reservations',10)}}</a></li>
-
+                        <li class="nav-item"><a class="nav-link text-white" href="/borroww"> {{__('web.borrowes')}}</a></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/reserve"> {{__('web.reservation')}}</a></li>
+                        <li class="nav-item d-none d-lg-inline-block"><span class="nav-link text-gray">|</span></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/display"> {{__('web.requests')}}</a></li>
 
 
 

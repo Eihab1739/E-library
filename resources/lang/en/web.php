@@ -127,4 +127,12 @@ return [
     'edit_project' => 'Edit Project',
     'submit' => 'submit',
     'send_notification' => 'Send Notification',
+    'borrow' => 'Borrow',
+    'borrowes' => 'Borrowes',
+    'return' => 'Return',
+    'return_time' => 'Return Time',
+    'return_book' => 'Return Book',
+    'reservation' => 'Reservation',
+    'requests' => 'Requests',
+    'replay' => 'Replay',
 ];

@@ -4,8 +4,10 @@
 
 @section('content')
     <div class="container dashboard-container pb-4">
+        @include('partials.alerts')
+
         <div class="card bg-dark rounded-0 border-0">
-            <div class="card-header bt rounded-0 h5"><i class="fa fa-file-alt"></i> {{__('web.edit_exam')}}</div>
+            <h3 class="card-header bt rounded-0 h5"><i class="fa fa-file-alt"></i> {{__('web.edit_exam')}}</h3>
             <div class="card-body">
                 @include('partials.alerts')
                  <form action="{{route('exams.update',$exam->id)}}" enctype="multipart/form-data" method="POST" >

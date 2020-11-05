@@ -4,13 +4,14 @@
 
 @section('content')
     <div class="container pb-4 dashboard-container">
+        @include('partials.alerts')
         <div class="card bg-dark rounded-0 border-0">
             <div class="card-header bt rounded-0 h5"><i class="fa fa-file-alt"></i> {{__('web.add_exam')}}</div>
             <div class="card-body">
-                @include('partials.alerts')
+
                  <form action="{{route('exams.store')}}" method="POST" enctype="multipart/form-data">
                      @csrf
-                    <div class="row">                        
+                    <div class="row">
                         <div class="col-sm-12">
                             <div class="border px-4 py-2 mb-3 rounded">
                                 <div class="form-group">
@@ -20,14 +21,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
                                 <input type="text" name="title" id="title" placeholder="{{__('web.title')}}"
                                 class="form-control">
                             </div>
-                        </div>                        
+                        </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
                                 <input type="text" name="author" id="subject" placeholder="{{__('web.teacher')}}"

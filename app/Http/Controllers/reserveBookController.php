@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Book ;
 use App\Reserve ;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\ReserveMail;
+
+
 
 
 class reserveBookController extends Controller
@@ -30,7 +35,10 @@ class reserveBookController extends Controller
      */
     public function create()
     {
-        //
+        Mail::to('eihabo@gmail.com')->send(new WelcomeMail());
+        return redirect()->back();
+
+
     }
 
     /**
@@ -88,7 +96,26 @@ class reserveBookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reserve=Reserve::find($id);
+        // $books = DB::table('books')->where('title', $borrow->book_name)->first();
+        //    $books->copies+=1;
+
+        // $affectedRows = Book::where('title',$borrow->book_name)->update(array('copies' => $books->copies+=1));
+
+        //    $affectedRows->save();
+
+
+        //    dd($books);
+
+
+        // return $book ;
+        // $book->copies =  $book->copies+=1 ;
+        //  $book->save();
+
+            $reserve->delete();
+
+
+            return redirect(route('reserve.index'))->with('msg', 'Delete Done');
     }
     public function reserve(Request $request,$id){
         $this->validate($request,[
@@ -124,6 +151,17 @@ $book=Book::find($id);
 
 
 
+
+    }
+    public function notification($id)
+    {
+        $ress=Reserve::find($id);
+        $result=$ress->email ;
+
+
+        Mail::to($result)->send(new ReserveMail());
+       // return redirect()->back();
+        return redirect(route('reserve.index'))->with('msg','Notification sent successfully');
 
     }
 }

@@ -132,6 +132,13 @@ h6,
   background-color: #272a31 !important;
 }
 
+.gmap3 {
+  margin: 20px auto;
+  border: 1px dashed #C0C0C0;
+  width: 1000px;
+  height: 500px;
+}
+
 .navbar-white {
   -webkit-text-fill-color: #fff;
 }
@@ -174,6 +181,10 @@ h6,
   -webkit-tap-highlight-color: transparent;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
   font-size: 1.3em;
+}
+
+.btn:hover {
+  color: #fff !important;
 }
 
 .overlay {
@@ -533,7 +544,9 @@ footer {
   background-color: var(--primary);
   padding-top: 5rem;
   position: relative;
-  height: 95vh;
+  min-height: 95vh;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);
+          clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);
 }
 
 .single-book .header img.shape {
@@ -578,6 +591,12 @@ footer {
 .single-book .avatar {
   position: relative;
   transform: translateY(-1.5rem);
+}
+
+.single-book .rate:not(:checked) > input {
+  position: absolute;
+  /* top:-9999px; */
+  clip: rect(0, 0, 0, 0);
 }
 
 /*-------------- single book media -----------------------*/

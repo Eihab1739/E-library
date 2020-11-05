@@ -15,6 +15,14 @@ class projectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function view()
+    {
+        $projects = Project::latest()->paginate(8);
+        return view('browse-projects')->with('projects', $projects);
+    }
+
+
     public function index()
     {
         $projects = Project::latest()->get();
@@ -40,7 +48,7 @@ class projectController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-
+            'projectfile'=>'required|mimes:doc,docx,pdf',
             'title' => 'required',
             'maker' => 'required',
             'info' => 'required',
@@ -70,7 +78,7 @@ class projectController extends Controller
 
 
         $project->save();
-        return redirect(route('projects.index'))->with('msg', 'Upload Done');
+        return redirect(route('projects'))->with('msg', 'Upload Done');
     }
 
     /**

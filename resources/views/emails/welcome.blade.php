@@ -1,6 +1,9 @@
 @component('mail::message')
-# sending notify email to user to retrive the book
-Thanks,
-<br>
+# Introduction
+
+You have to come to library  !!
+
+
+Thanks,<br>
 {{ config('app.name') }}
 @endcomponent

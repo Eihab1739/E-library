@@ -8,12 +8,11 @@
 
       <div class="card-body">
           <div class="row d-flex justify-content-center">
-            <a href="{{route('createuser.create')}}" class="btn bg-primary mb-2">{{__('web.add_user')}}</a>
-            <a href="{{route('createAdmin')}}" class="btn bg-primary mx-4 mb-2">{{__('web.add_admin')}}</a>
+            <a href="{{route('createAdmin')}}" class="btn btn-block bg-primary mx-4 mb-2"><i class="fa fa-user-plus"></i> {{__('web.add_user')}}</a>
           </div>
-          <hr class="bg-white">
+
           <div class="table-responsive">
-            
+
             <table class="table mt-4 text-center">
               <thead class="thead bg-primary">
                     <tr>

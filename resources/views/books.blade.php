@@ -9,7 +9,7 @@
 
             <div class="card-body">
                 <a href="/upload" class="btn btn-block bg-primary mb-4 shadow-sm">{{__('web.add_book')}}</a>
-                
+
                 <div class="table-responsive">
                     <table class="table text-center">
                         {{-- search form --}}

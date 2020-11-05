@@ -39,7 +39,7 @@
                     <form action="{{route('search')}}" method="get">
                         @csrf
                         <div class="input-group">
-                            <input type="search"  name="search" placeholder="Search book" class="form-control">
+                            <input type="search"  name="search" placeholder="{{__('web.search')}}" class="form-control">
                             <span class="input-group-prepend">
                                 <button class="btn btn-primary" type="submit"><i class="ion-md-search"></i></button>
                             </span>
@@ -58,7 +58,7 @@
                                         <h5 class="card-title text-uppercase">{{$book->title}}</h5>
                                         <h6 class="card-subtitle">{{$book->author}}</h6>
                                         <br>
-                                        <h5 class="card-title"><i class="fa fa-star text-primary mb-2"></i><br>4.5 / 5</h5>
+                                        <h6 class="card-title text-center mt-2">{{$book->ISBN}}</h6>
                                         <a class="btn border-0 rounded-0 btn-primary text-white mt-3" href="{{route('book',$book->id)}}">{{__('web.more')}}</a>
                                     </div>
                                 </div>
@@ -68,7 +68,8 @@
                 </div>
                 <div class="my-4 d-flex justify-content-center">
                     <nav aria-label="Page navigation">
-                        <ul class="pagination">
+                        {{$books->links()}}
+                        {{--  <ul class="pagination">
                           <li class="page-item disabled"><a class="page-link" href="#">{{__('web.first')}}</a></li>
                           <li class="page-item disabled">
                             <a class="page-link" href="#" aria-label="Previous">
@@ -86,7 +87,7 @@
                             </a>
                           </li>
                           <li class="page-item "><a class="page-link" href="#">{{(__('web.last'))}}</a></li>
-                        </ul>
+                        </ul>  --}}
                     </nav>
                 </div>
             </div>

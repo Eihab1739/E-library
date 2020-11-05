@@ -2,7 +2,8 @@
 @section('title')
 
 @section('content')
-  <div class="container pb-4 dashboard-container">
+    <div class="container pb-4 dashboard-container">
+      @include('partials.alerts')
     <div class="card bg-dark rounded-0 border-0">
       <div class="card-header mb-4 bt rounded-0">
         <h4><i class="mr-1 fa fa-list"></i> {{__('web.categories')}}</h4>
@@ -23,26 +24,37 @@
       </div>  --}}
 
 
+
           <a href="{{route('categories.create')}}" class="btn bg-danger shadow-sm mx-5">{{__('web.add_category')}}</a>
           <hr>
           <div class="card-body">
             @if (count($categories)>0)
-              <div class="row">
-                @foreach ($categories as $category )
-                  <div class="col-sm-6 col-md-4 col-lg-3">
-                    <a href="/category/{{$category->id}}">
-                      <div class="card bg-secondary text-center rounded-0" style="border-top: 4px solid var(--danger)">
-                        <div class="card-body text-white">
-                          <div class="card-title">
-                            #{{$category->id}}
-                          </div>
-                          {{$category->name}}
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                @endforeach
-              </div>
+                <div class="table-responsive">
+                    <table class="table table-dark text-center">
+                            <thead class="thead bg-primary">
+                                <tr>
+                                    <th scope="col">{{__('web.category')}}</th>
+                                    <th scope="col">{{__('web.goto')}}</th>
+                                    <th scope="col">{{__('web.delete')}}</th>
+                                </tr>
+                            </thead>
+                        @foreach ($categories as $category )
+                            <tbody>
+                                <tr>
+                                    <td><div class="text-white"> {{$category->name}} </div></td>
+                                    <td><a href="/category/{{$category->id}}" class="btn btn-success mx-2"><i class="fa fa-sign-out-alt"></i></a></td>
+                                    <td>
+                                        <form  action="{{route('categories.destroy',$category->id)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger mx-2"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        @endforeach
+                    </table>
+                </div>
             @endif
           </div>
       </div>

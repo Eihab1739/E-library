@@ -2,12 +2,14 @@
 @section('title')
 @section('content')
     <div class="container dashboard-container">
+        @include('partials.alerts')
+
         <div class="card bg-dark rounded-0" style="border-top: 5px solid var(--primary)">
-            <h4 class="card-header"><i clas="fa fa-book mr-1"></i> {{trans_choice('web.exam',10)}}</h4>
-            
+            <h4 class="card-header"><i class="fa fa-file-alt mr-1"></i> {{trans_choice('web.exam',10)}}</h4>
+
             <div class="card-body">
                 <a href="/admin/exams/create" class="btn btn-block bg-primary mb-4">{{__('web.add_exam')}}</a>
-                
+
                 <div class="table-responsive">
                     <table class="table table-default text-center">
                         <thead class="thead-default bg-primary border-0">
@@ -16,7 +18,7 @@
                                 <form action="{{route('searchexamsinadmin')}}" method="get">
                                     @csrf
                                     <div class="input-group">
-                                        <input type="search"  name="search" placeholder="Search exam" class="form-control">
+                                        <input type="search"  name="search" placeholder="{{__('web.search')}}" class="form-control">
                                         <span class="input-group-prepend">
                                             <button class="btn btn-primary" type="submit"><i class="ion-md-search"></i></button>
                                         </span>
@@ -43,7 +45,7 @@
                                             @csrf
                                             @method('delete')
                                             <td><a href="{{route('exams.edit',$exam->id)}}" class="btn btn-warning text-white rounded-0"><i class="fa fa-edit"></i></a></td>
-                                            <td><button class="btn btn-danger rounded-0" onclick="confirm('Are You Sure You Want To Delete This ?')"><i class="ion-md-trash"></i></button></td>
+                                            <td><button class="btn btn-danger rounded-0"><i class="ion-md-trash"></i></button></td>
                                         </form>
                                         <td><a href="{{route('exams.show',$exam->id)}}" class="btn bg-success rounded-0"><i class="fa fa-sign-out-alt"></i></a></td>
                                     </tr>

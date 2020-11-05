@@ -4,8 +4,10 @@
 
 @section('content')
     <div class="container pb-4 dashboard-container">
+        @include('partials.alerts')
+
         <div class="card bg-dark rounded-0 border-0">
-            <div class="card-header h5 rounded-0 bt"><i class="fa fa-file-alt"></i> {{__('web.add_project')}}</div>
+            <h3 class="card-header h5 rounded-0 bt"><i class="fa fa-box-open"></i> {{__('web.add_project')}}</h3>
             <div class="card-body">
                 @include('partials.alerts')
                <form action="{{route('projects.store')}}" method="POST" enctype="multipart/form-data">

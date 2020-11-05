@@ -5,6 +5,10 @@ use App\Book ;
 use App\borrow ;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\WelcomeMail ;
+use App\Mail\ReserveMail ;
 
 
 use Illuminate\Http\Request;
@@ -187,7 +191,8 @@ $sub=1;
 
              $book->save();
              $borrow->save();
-             return redirect()->back();
+            //  return redirect(route(''.$request->id));
+             return redirect('/book/'.$request->id)->with('msg','Borrow Done Successfuly');
     }
     public function returnBook($id)
     {
@@ -216,6 +221,19 @@ $book=Book::find($id);
 
 
 
+
+    }
+    public  function borrowNotification($id){
+
+        $ress=borrow::find($id);
+       // dd($ress);
+        // dd($ress);
+         $result=$ress->email ;
+
+
+        Mail::to($result)->send(new WelcomeMail());
+       // return redirect()->back();
+        return redirect(route('borroww.index'))->with('msg','Notification sent successfully');
 
     }
 

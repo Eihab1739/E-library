@@ -7,7 +7,7 @@
     <div class="container dashboard-container">
         <div class="card bg-dark rounded-0 border-0 mx-auto">
           <div class="card-header rounded-0" style="border-top: 4px solid var(--primary) ">
-            <h3>{{__('web.add_user')}}</h3>
+            <h3><i class="fa fa-user-plus"></i> {{__('web.add_user')}}</h3>
             <p>{{__('web.add_user_text')}}</p>
           </div>
           <div class="card-body">
@@ -27,12 +27,12 @@
               </div>
               <div class="form-group">
                 <label for="psw-repeat">{{__('web.cpassword')}}</label>
-                <input class="form-control" type="password" name="psw-repeat" id="psw-repeat" required>                  
+                <input class="form-control" type="password" name="psw-repeat" id="psw-repeat" required>
               </div>
-    
+
               <button type="submit" class="registerbtn btn btn-block bg-primary">{{__('web.register')}}</button>
-            </form>            
-          </div>          
+            </form>
+          </div>
         </div>
-    </div>  
+    </div>
  @endsection

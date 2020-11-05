@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Rating;
+use App\RequestBook;
 //use willvincent\Rateable\Rating;
 
 
@@ -19,13 +20,59 @@ class booksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function deleteRequest($id){
+        $del=RequestBook::find($id);
+        $del->delete();
+        return redirect()->back();
+
+
+
+
+    }
+    public function viewRequest(){
+        $display=RequestBook::latest()->get();;
+        return view('admin.mail')->with('display',$display);
+
+
+
+
+
+    }
+    public function requestBook(Request $request){
+        $req= new RequestBook();
+
+
+        $req->email=$request->input('email');
+        $req->name=$request->input('name');
+        $req->book_name=$request->input('book_name');
+        $req->author=$request->input('author');
+
+
+
+        $req->save();
+        return redirect('/#req-book')->with('msg','Request Sent Successfuly');
+
+
+
+
+
+
+    }
     public function index()
     {
         $books=Book::latest()->get();
-
         return view('books')->with('books',$books);
 
     }
+    Public function view(){
+        $books=Book::latest()->paginate(8);
+        return view('browse-books')->with('books',$books);
+
+
+
+
+    }
+
 
 
 public function search(Request $request)
@@ -104,6 +151,7 @@ public function search(Request $request)
     public function update(Request $request, Book $book)
     {
         $this->validate($request,[
+             'ISBN'=>'unique|min:13|max:13',
             'title'=>'required',
             'author'=>'required',
             'info'=>'required',
@@ -124,6 +172,7 @@ public function search(Request $request)
 
             }
             $book = new Book();
+            // $book->
             $book->title=$request->input('title');
             $book->author=$request->input('author');
             $book->info=$request->input('info');
@@ -136,9 +185,11 @@ public function search(Request $request)
 
 
             $book->save();
-            return redirect(route('upload'))->with('msg','Update Done');
+            // return redirect(route('upload'))->with('msg','Update Done');
 
-        return redirect(route('books'));
+        // return redirect(route('books'))->with('msg','Update Done');
+        return redirect(admin/books)->with('msg','Update Done');
+
 
 
 
@@ -207,14 +258,14 @@ public function search(Request $request)
         // ->first() will simply pick the first result if it exists
         $rating = $book->ratings()->where('user_id', auth()->user()->id)->first();
         //  dd( $rating->ratingPercent(10));
-// dd($rating);
+        // dd($rating);
         // in case there is no rating allocated to the user and the book
         // we can continue creating the new rating
         if(is_null($rating)){
             // $rating = Rating::first();
             $rating = new Rating();
 
-          //   $rating=Rating::first()->ratings();
+              //   $rating=Rating::first()->ratings();
             $rating->rating = $request->input('rate');
             $rating->user_id = auth()->user()->id;
             $book->ratings()->save($rating);

@@ -4,8 +4,10 @@
 
 @section('content')
     <div class="container dashboard-container">
+        @include('partials.alerts')
+
             <div class="card bg-dark my-3 border-0 rounded-0 mx-md-5 mx-auto">
-                <div class="card-header rounded-0 bt">{{__('web.edit_book')}}</div>
+                <h3 class="card-header rounded-0 bt"><i class="fa fa-edit"></i> {{__('web.edit_book')}}</h3>
 
 
                 <div class="card-body">
@@ -15,7 +17,7 @@
 
                     <div class="form-group">
                         <label for="ISBN">{{__('web.isbn')}} </label>
-                        <input type="number" name="ISBN" id="ISBN" min="1" max="100" value="{{$book->ISBN}}"
+                        <input type="number" name="ISBN" id="ISBN"   value="{{$book->ISBN}}"
                         class="form-control">
 
                     </div>
